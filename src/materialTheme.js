@@ -26,4 +26,7 @@ export const theme = createTheme({
       main: '#8aa48c',
     },
   },
+  typography: {
+    fontFamily: "Bodoni-Bold",
+  }
 });

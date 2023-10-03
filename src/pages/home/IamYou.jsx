@@ -7,7 +7,7 @@ const IamYou = () => {
   return (
     <Box sx={{height: "100vh"}}>
       <Grid container sx={{height: "100%"}}>
-        <Grid item xs={5} sx={{display: "flex", alignItems: "center"}}>
+        {/* <Grid item xs={5} sx={{display: "flex", alignItems: "center"}}>
           <Typography sx={{textAlign: "left", fontSize: {xl: 25}, letterSpacing: 2, transform: "skewX(-12deg)", opacity: .9, lineHeight: 1.4 }}>
             <Box component="span" sx={{display: "block"}}>
               I am not just me;
@@ -39,6 +39,19 @@ const IamYou = () => {
           >
             <Image src={image} sx={{zIndex: -1}}/>
           </Box>
+        </Grid> */}
+        <Grid item xs={12} sx={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+          <Typography sx={{textAlign: "center", fontSize: {xl: 22}, letterSpacing: 2, transform: "skewX(-12deg)", opacity: .9, lineHeight: 1.35 }}>
+            <Box component="span" sx={{display: "block"}}>
+              I am not just me;
+            </Box>
+            <Box component="span" sx={{display: "block"}}>
+              I am you and you are me--
+            </Box>
+            <Box component="span" sx={{display: "block"}}>
+              We are. Hereafter.
+            </Box>
+          </Typography>
         </Grid>
       </Grid>
     </Box>

@@ -15,9 +15,9 @@ export const theme = createTheme({
       paper: '#d8cec2',
     },
     text: {
-      primary: '#565857',
-      secondary: 'rgba(86,88,87,0.75)',
-      disabled: 'rgba(86,88,87,0.5)',
+      // primary: '#565857',
+      // secondary: 'rgba(86,88,87,0.75)',
+      // disabled: 'rgba(86,88,87,0.5)',
     },
     info: {
       main: '#cad9d2',
@@ -27,6 +27,19 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Bodoni-Bold",
+    fontFamily: "Bodoni",
+    h1: {
+      fontFamily: "Bodoni-Bold",
+      textTransform: 'uppercase',
+    },
+    h2: {
+      fontFamily: "Bodoni-Bold",
+      textTransform: 'uppercase',
+    },
+    h3: {
+      fontFamily: "Bodoni-Bold",
+      textTransform: 'uppercase',
+      letterSpacing: 6
+    },
   }
 });

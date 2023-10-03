@@ -7,9 +7,9 @@ const Home = () => {
   return (
     <Container>
       <Box sx={{height: "100vh"}}>
-        <Box sx={{height: "100%", display: "flex", flexDirection: "column", alignItems: 'center', justifyContent: "center", gap: 5}}>
-          <Box>
-            <Typography sx={{letterSpacing: 5, fontSize: {xl: 18}}}>THE WEDDING OF</Typography>
+        <Box sx={{height: "100%", display: "flex", flexDirection: "column", alignItems: 'center', justifyContent: "center", gap: 8}}>
+          <Box mb={4}>
+            <Typography sx={{letterSpacing: 7, fontSize: {xl: 20}}}>THE WEDDING OF</Typography>
           </Box>
           <Box sx={{height: 350, width: 200, border: 1}}>
             {/* image here */}
@@ -20,10 +20,10 @@ const Home = () => {
             <Typography variant="h3">GAEA</Typography>
           </Box>
           <Box>
-            <Typography sx={{letterSpacing: 7}}>DECEMBER  .  22  .  2023</Typography>
-            <Typography sx={{transform: "skewX(-12deg)", letterSpacing: 1.5}}> at four o'clock in the afternoon</Typography>
-            <Typography sx={{letterSpacing: 5}}>THE  V  FARM</Typography>
-            <Typography sx={{transform: "skewX(-12deg)", letterSpacing: 1.5}}> Tarlac, Philippines</Typography>
+            <Typography sx={{letterSpacing: 7, fontSize: {xl: 25}}}>DECEMBER  .  22  .  2023</Typography>
+            <Typography sx={{transform: "skewX(-12deg)", mt: 1, letterSpacing: 2, fontSize:{xl: 20}}}> at four o'clock in the afternoon</Typography>
+            <Typography sx={{letterSpacing: 7, fontSize:{xl: 22}, my: .5}}>THE  V  FARM</Typography>
+            <Typography sx={{transform: "skewX(-12deg)", letterSpacing: 2, fontSize:{xl: 18}}}> Tarlac, Philippines</Typography>
 
           </Box>
         </Box>

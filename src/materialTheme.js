@@ -39,7 +39,7 @@ export const theme = createTheme({
     h3: {
       fontFamily: "Bodoni-Bold",
       textTransform: 'uppercase',
-      letterSpacing: 6
+      letterSpacing: 8
     },
   }
 });

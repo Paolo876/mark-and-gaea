@@ -1,16 +1,24 @@
 @font-face {
   font-family: Bodoni;
-  src: url("./assets/fonts/BodoniFLF-Roman.woff");
+  src: url("./assets/fonts/BodoniflfRoman-vmAD.ttf") format('woff');
+  font-weight: normal;
+font-style: normal;
 }
 @font-face {
   font-family: Bodoni-Bold;
-  src: url("./assets/fonts/BodoniFLF-Bold.woff");
+  src: url("./assets/fonts/BodoniflfBold-MVZx.ttf") format('woff');
+  font-weight: normal;
+font-style: normal;
 }
 
+html { 
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  -webkit-text-stroke: 0.15pt;
+}
 body {
   margin: 0;
   font-family: Bodoni;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 

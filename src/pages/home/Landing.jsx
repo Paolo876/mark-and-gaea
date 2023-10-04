@@ -2,6 +2,7 @@ import React from 'react'
 import { Box, Typography } from '@mui/material';
 import Image from 'mui-image';
 import and from "../../assets/images/and.svg"
+import flower from "../../assets/images/flower.svg"
 
 const Landing = () => {
   return (
@@ -10,8 +11,8 @@ const Landing = () => {
         <Box mb={4}>
           <Typography sx={{letterSpacing: 7, fontSize: {xl: 20}, opacity: .8}}>THE WEDDING OF</Typography>
         </Box>
-        <Box sx={{height: 350, width: 200, border: 1}}>
-          {/* image here */}
+        <Box sx={{height: 350, width: "auto"}}>
+          <Image src={flower}/>
         </Box>
         <Box sx={{display: "flex", flexDirection: "row"}}>
           <Typography variant="h3">MARK</Typography>

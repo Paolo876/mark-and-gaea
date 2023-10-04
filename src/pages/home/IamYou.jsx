@@ -5,7 +5,7 @@ import image from "../../assets/images/home_1.jpg"
 
 const IamYou = () => {
   return (
-    <Box sx={{height: "100vh"}}>
+    <Box sx={{height: "120vh"}}>
       <Grid container sx={{height: "100%"}}>
         {/* <Grid item xs={5} sx={{display: "flex", alignItems: "center"}}>
           <Typography sx={{textAlign: "left", fontSize: {xl: 25}, letterSpacing: 2, transform: "skewX(-12deg)", opacity: .9, lineHeight: 1.4 }}>

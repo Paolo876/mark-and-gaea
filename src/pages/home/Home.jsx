@@ -1,14 +1,15 @@
 import React from 'react'
-import { Container } from '@mui/material'
 import Landing from './Landing'
 import IamYou from './IamYou'
+import SecondLanding from './SecondLanding'
 
 const Home = () => {
   return (
-    <Container>
+    <>
       <Landing/>
-      <IamYou/>
-    </Container>
+      <SecondLanding/>
+      {/* <IamYou/> */}
+    </>
   )
 }
 

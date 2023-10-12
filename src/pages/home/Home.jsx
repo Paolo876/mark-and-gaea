@@ -2,12 +2,14 @@ import React from 'react'
 import Landing from './Landing'
 import IamYou from './IamYou'
 import SecondLanding from './SecondLanding'
+import Introduction from './Introduction'
 
 const Home = () => {
   return (
     <>
-      <Landing/>
-      <SecondLanding/>
+      <Introduction/>
+      {/* <Landing/>
+      <SecondLanding/> */}
       {/* <IamYou/> */}
     </>
   )

@@ -20,5 +20,7 @@ html {
 body {
   margin: 0;
   font-family: Bodoni;
+  background-image: url("./assets/images/bg-pattern.png");
+
 }
 

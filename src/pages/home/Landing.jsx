@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Landing = () => {
   return (
-    <Container>
+    <Container maxWidth="xl">
       <Box sx={{height: "100vh"}}>
         <Box sx={{height: "100%", display: "flex", flexDirection: "column", alignItems: 'center', justifyContent: "center", gap: 8}}>
           <Box sx={{display: "flex", justifyContent: "space-between", width: "100%","a": { textDecoration: "none", color: "text.primary", fontSize: 18}}}>

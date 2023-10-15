@@ -3,7 +3,10 @@ import Landing from './Landing'
 import IamYou from './IamYou'
 import SecondLanding from './SecondLanding'
 import Introduction from './Introduction'
+
+//page components
 import MainLanding from './MainLanding'
+import Details from './Details'
 
 const Home = () => {
   return (
@@ -11,6 +14,7 @@ const Home = () => {
       <MainLanding/>
       {/* <Introduction/> */}
       <Landing/>
+      <Details/>
       {/* <SecondLanding/> */}
       {/* <IamYou/> */}
     </>

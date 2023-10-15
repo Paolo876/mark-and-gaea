@@ -11,6 +11,15 @@ font-style: normal;
 font-style: normal;
 }
 
+*,*::before,*::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+
+
 html { 
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;

@@ -7,14 +7,16 @@ import Introduction from './Introduction'
 //page components
 import MainLanding from './MainLanding'
 import Details from './Details'
+import Appbar from '../../components/Appbar'
 
 const Home = () => {
   return (
     <>
-      <MainLanding/>
+      <Appbar/>
+      {/* <MainLanding/> */}
       {/* <Introduction/> */}
-      <Landing/>
-      <Details/>
+      {/* <Landing/> */}
+      {/* <Details/> */}
       {/* <SecondLanding/> */}
       {/* <IamYou/> */}
     </>

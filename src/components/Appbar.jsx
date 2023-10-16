@@ -9,15 +9,47 @@ import "./Appbar.scss"
 const linkStyles = {
   textDecoration: "none",
   color: "text.primary",
-  fontSize: 16,
+  fontSize: 17,
   letterSpacing: 3, 
   fontFamily: "Bodoni",
   opacity: .75,
-  transition: "all 150ms ease-in-out",
+  transition: "all 200ms ease-in-out",
+  position: "relative",
+
+  "&::before, &::after": {
+    content: "''",
+    position: "absolute",
+    top: "50%",
+    transform: "translateY(-50%)",
+    height: "1px",
+    width: "3px",
+    background:"black",
+    opacity: 0,
+    transition: "all 250ms ease"
+  },
+  "&::before": {
+    left: 0,
+  },
+  "&::after": {
+    right: 0,
+  },
   "&:hover": {
-    transform: "scale(1.025)"
-  }
+    opacity: 1,
+    textShadow: "1px 1px 1px rgba(0,0,0,.05)",
+    "&::before": {
+      left: "-11px",
+      opacity: .5
+    },
+    "&::after": {
+      right: "-8px",
+      opacity: .5
+
+    },
+
+  },
 }
+
+
 const Appbar = () => {
 
   const [ currentOffset, setCurrentOffset ] = useState(window.pageYOffset);
@@ -43,7 +75,7 @@ const Appbar = () => {
               <Image src={headerImg} alt="MARK & GAEA" fit="cover" height={175}/>
             </Box>
           </Box>
-          <Box sx={{display: "flex", justifyContent: "center", mt: 1.75}}>
+          <Box sx={{display: "flex", justifyContent: "center", mt: 2}}>
             <Typography sx={{fontSize: 13, letterSpacing: 6, opacity: .4, px: 1.5}}>-</Typography>
             <Typography sx={{fontSize: 14, letterSpacing: 6, opacity: .7}}>12</Typography>
             <Typography sx={{fontSize: 13, letterSpacing: 6, opacity: .6, transform: "translateY(-15%)", px: 1}}>.</Typography>
@@ -52,12 +84,13 @@ const Appbar = () => {
             <Typography sx={{fontSize: 14, letterSpacing: 6, opacity: .6}}>23</Typography>
             <Typography sx={{fontSize: 13, letterSpacing: 6, opacity: .4, px: 1.5}}>-</Typography>
           </Box>
-
         </Box>
       </Container>
-      <Box item xs={12} sx={{position: "sticky", top: 0, zIndex: 20, py: 1.2, boxShadow: 0}} 
-            className={`navbar ${isScrolledDown === "top" ? "page-top" : isScrolledDown ? "scroll-down" : "scroll-up"}`} 
->
+      <Box 
+        item xs={12} 
+        sx={{position: "sticky", top: 0, zIndex: 20, py: 1.2, boxShadow: 0}} 
+        className={`navbar ${isScrolledDown === "top" ? "page-top" : isScrolledDown ? "scroll-down" : "scroll-up"}`} 
+      >
         <Container>
           <Box sx={{display: "flex", justifyContent: "space-between"}}>
             <Link component={ReactLink} to="/" sx={linkStyles}>Home</Link>

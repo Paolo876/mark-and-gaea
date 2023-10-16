@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { Link as ReactLink } from 'react-router-dom';
 import { Box, Container, Link, Typography } from '@mui/material'
 import Image from 'mui-image'
 import headerImg from "../assets/images/nav-header-png.png";
 import "./Appbar.scss"
-
+import { HashLink as ReactLink } from 'react-router-hash-link';
 
 const linkStyles = {
   textDecoration: "none",
@@ -16,7 +15,7 @@ const linkStyles = {
   transition: "all 200ms ease-in-out",
   position: "relative",
   color: "secondary.main",
-  textShadow: "1px 1px 1px rgba(0,0,0,.025)",
+  textShadow: "1px 1px 1px rgba(255,255,255, .025)",
 
   "&::before, &::after": {
     content: "''",
@@ -68,6 +67,7 @@ const Appbar = () => {
     }
   }
 
+
   return (
     <>
       <Container>
@@ -96,7 +96,7 @@ const Appbar = () => {
         <Container>
           <Box sx={{display: "flex", justifyContent: "space-between"}}>
             <Link component={ReactLink} to="/" sx={linkStyles}>Home</Link>
-            <Link component={ReactLink} to="/" sx={linkStyles}>Details</Link>
+            <Link component={ReactLink} to="/#details" sx={linkStyles}>Details</Link>
             <Link component={ReactLink} to="/" sx={linkStyles}>Map</Link>
             <Link component={ReactLink} to="/" sx={linkStyles}>RSVP</Link>
           </Box>

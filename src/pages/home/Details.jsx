@@ -26,7 +26,7 @@ const Details = () => {
           <Grid item xs={12} sx={{mb: 15}}>
             <Typography variant="h4" sx={{fontSize: {lg: 50}}}>Details</Typography>
           </Grid>
-          <Grid xs={12}>
+          <Grid item xs={12}>
             <Box sx={{height: 35, width: "2px", backgroundColor: "success.main", mx: "auto", my: 2}}></Box>          
           </Grid>
           <Grid item xs={4.5}>
@@ -48,7 +48,7 @@ const Details = () => {
             <Box sx={{height: 15, width: "1px", backgroundColor: "success.main", mx: "auto", my: 2}}></Box>          
             <Typography sx={descriptionStyles}>Reception follows after the ceremony at "The Shed" in V-Farm.</Typography>
           </Grid>
-          <Grid xs={12}>
+          <Grid item xs={12}>
             <Box sx={{height: 80, width: "2px", backgroundColor: "success.main", mx: "auto", my: 2}}></Box>          
           </Grid>
           <Grid item xs={12} mt={20}>

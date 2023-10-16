@@ -8,17 +8,19 @@ import Introduction from './Introduction'
 import MainLanding from './MainLanding'
 import Details from './Details'
 import Appbar from '../../components/Appbar'
+import Map from './Map'
+import RsvpForm from './RsvpForm'
+
 
 const Home = () => {
   return (
     <>
       <Appbar/>
-      {/* <MainLanding/> */}
-      {/* <Introduction/> */}
       <Landing/>
       <IamYou/>
       <Details/>
-      {/* <SecondLanding/> */}
+      <Map/>
+      <RsvpForm/>
     </>
   )
 }

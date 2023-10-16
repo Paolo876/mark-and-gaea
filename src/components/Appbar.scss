@@ -2,14 +2,14 @@
     transform: translateY(0);
     &.scroll-up{
         animation: scrollUp .2s ease-in 1 normal;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
-        backdrop-filter: blur(30px) contrast(120%);
+        box-shadow: rgba(0, 0, 0, 0.01) 0px 3px 8px;  
+        backdrop-filter: blur(30px) contrast(110%);
     }
     &.scroll-down{
         transform: translateY(-100%);
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        box-shadow: rgba(0, 0, 0, 0.01) 0px 3px 8px;
         animation: scrollDown .25s ease-in 1 normal;
-        backdrop-filter: blur(30px) contrast(120%);
+        backdrop-filter: blur(30px) contrast(125%);
     }
     &.page-top{
         transform: translateY(0);

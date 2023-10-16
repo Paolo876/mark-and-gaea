@@ -10,11 +10,13 @@ const linkStyles = {
   textDecoration: "none",
   color: "text.primary",
   fontSize: 17,
-  letterSpacing: 3, 
+  letterSpacing: 4, 
   fontFamily: "Bodoni",
-  opacity: .75,
+  opacity: .9,
   transition: "all 200ms ease-in-out",
   position: "relative",
+  color: "secondary.main",
+  textShadow: "1px 1px 1px rgba(0,0,0,.025)",
 
   "&::before, &::after": {
     content: "''",
@@ -56,7 +58,7 @@ const Appbar = () => {
   const [ isScrolledDown, setIsScrolledDown ] = useState("top");
 
   window.onscroll = () => {
-    if(window.pageYOffset < 500) {
+    if(window.pageYOffset < 300) {
       setIsScrolledDown("top");
     } else {
       if((currentOffset + 3) < window.pageYOffset || currentOffset > (window.pageYOffset + 8) ) {
@@ -88,7 +90,7 @@ const Appbar = () => {
       </Container>
       <Box 
         item xs={12} 
-        sx={{position: "sticky", top: 0, zIndex: 20, py: 1.2, boxShadow: 0}} 
+        sx={{position: "sticky", top: 0, zIndex: 20, py: 2, boxShadow: 0}} 
         className={`navbar ${isScrolledDown === "top" ? "page-top" : isScrolledDown ? "scroll-down" : "scroll-up"}`} 
       >
         <Container>

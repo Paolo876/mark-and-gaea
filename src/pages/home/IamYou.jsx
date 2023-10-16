@@ -8,7 +8,7 @@ const IamYou = () => {
     <Box sx={{height: "110vh"}}>
       <Grid container sx={{height: "100%"}}>
         <Grid item xs={12} sx={{display: "flex", alignItems: "center", justifyContent: "center"}}>
-          <Typography sx={{textAlign: "center", fontSize: {xl: 22}, letterSpacing: 2, transform: "skewX(-12deg)", opacity: .9, lineHeight: 1.35 }}>
+          <Typography sx={{textAlign: "center", fontSize: {xl: 20}, letterSpacing: 2, transform: "skewX(-12deg)", opacity: .9, lineHeight: 1.35 }}>
             <Box component="span" sx={{display: "block"}}>
               I am not just me;
             </Box>

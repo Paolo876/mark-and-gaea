@@ -16,9 +16,10 @@ const Home = () => {
       {/* <MainLanding/> */}
       {/* <Introduction/> */}
       <Landing/>
-      {/* <Details/> */}
-      {/* <SecondLanding/> */}
       <IamYou/>
+
+      <Details/>
+      {/* <SecondLanding/> */}
     </>
   )
 }

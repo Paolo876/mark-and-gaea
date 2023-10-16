@@ -43,8 +43,11 @@ export const theme = createTheme({
     },
     h4: {
       fontFamily: "Amalfi",
+      letterSpacing: 2,
+    },
+    h5: {
+      fontFamily: "Amalfi",
       letterSpacing: 4,
-
     },
   }
 });

@@ -1,41 +1,37 @@
-import React from 'react'
-import { Link as ReactLink } from 'react-router-dom';
-import { Box, Container, Grid, Link, Typography } from '@mui/material'
+import { Box } from '@mui/material'
 import Image from 'mui-image'
-import image2 from "../../assets/images/webp/image2_wide.webp"
+import Carousel from 'react-material-ui-carousel'
 
-const linkStyles = {
-  textDecoration: "none",
-  color: "text.primary",
-  fontSize: 20,
-  letterSpacing: 2, 
-  fontFamily: "Bodoni-Bold",
-  opacity: .75
-}
+//media
+import image0 from "../../assets/images/webp/image0.webp"
+import image1 from "../../assets/images/webp/image1.webp"
+import image2 from "../../assets/images/webp/image2.webp"
+import image3 from "../../assets/images/webp/image3.webp"
 
-
+const images = [
+  {src: image0, alt: "image0"},
+  {src: image1, alt: "image1"},
+  {src: image2, alt: "image2"},
+  {src: image3, alt: "image3"},
+]
 const Landing = () => {
+
+
   return (
-    // <Container>
-      <Box sx={{maxWidth: "98vw", mx: "auto", mt: 20, position: "relative"}}>
-        {/* <Box sx={{position: "absolute", top: "5%", zIndex: 10, width: "100%", py: 5, mixBlendMode: "hard-light", textShadow: "-1px -1px 3px rgba(255,255,255,.5), 2px 2px 4px #1b1b1b"}}>
-          <Typography sx={{textAlign: "center", fontSize: {xl: 22}, letterSpacing: 2, transform: "skewX(-12deg)", opacity: .8, lineHeight: 1.35 }}>
-            <Box component="span" sx={{display: "block"}}>
-              I am not just me;
-            </Box>
-            <Box component="span" sx={{display: "block"}}>
-              I am you and you are me--
-            </Box>
-            <Box component="span" sx={{display: "block"}}>
-              We are. Hereafter.
-            </Box>
-          </Typography>
-        </Box> */}
-        <Box>
-          <Image src={image2} sx={{filter: "grayscale(15%) opacity(.9)"}}/>
-        </Box>
-      </Box>
-    // </Container>
+    <Box sx={{maxWidth: "100vw", mx: "auto", mt: 10, position: "relative"}}>
+      <Carousel
+        indicators={false}
+        duration={400}
+        interval={5000}
+        swipe={false}
+        stopAutoPlayOnHover={true}
+        animation="fade"
+      >
+        {images.map(item => <Box key={item.alt}>
+          <Image src={item.src} alt={item.alt} sx={{filter: "grayscale(50%) opacity(.9)"}} duration={0}/>
+        </Box>)}
+      </Carousel>
+    </Box>
   )
 }
 

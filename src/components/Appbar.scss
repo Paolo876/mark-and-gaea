@@ -1,0 +1,26 @@
+.navbar{
+    transform: translateY(0);
+    &.scroll-up{
+        animation: scrollUp .2s ease-in 1 normal;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
+        backdrop-filter: blur(30px) contrast(120%);
+    }
+    &.scroll-down{
+        transform: translateY(-100%);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        animation: scrollDown .25s ease-in 1 normal;
+        backdrop-filter: blur(30px) contrast(120%);
+    }
+    &.page-top{
+        transform: translateY(0);
+    }
+}
+
+@keyframes scrollDown {
+    from {transform: translateY(0);}
+    to {transform: translateY(-100%);}
+  }
+@keyframes scrollUp {
+    from {transform: translateY(-100%);}
+    to {transform: translateY(0);}
+  }

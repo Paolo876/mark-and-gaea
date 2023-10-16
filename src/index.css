@@ -39,3 +39,20 @@ body {
 
 }
 
+
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  /* // background-color: rgba(255, 255, 255, 0.705);
+  // background-color: rgba(209, 145, 25, .75); */
+  background-color: #455e58;
+  border-radius: 5px;
+  /* // border: 1px solid transparent; */
+  border-right: 1px solid transparent;
+  background-clip: content-box;
+}

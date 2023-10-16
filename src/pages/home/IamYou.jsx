@@ -18,6 +18,9 @@ const IamYou = () => {
             <Box component="span" sx={{display: "block"}}>
               We are. Hereafter.
             </Box>
+            <Box component="span" sx={{display: "block", fontSize: 16, mt: 1, opacity: .75}}>
+              - Gaea
+            </Box>
           </Typography>
         </Grid>
       </Grid>

@@ -17,7 +17,6 @@ const Home = () => {
       {/* <Introduction/> */}
       <Landing/>
       <IamYou/>
-
       <Details/>
       {/* <SecondLanding/> */}
     </>

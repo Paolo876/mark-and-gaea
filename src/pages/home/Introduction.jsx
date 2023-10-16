@@ -9,7 +9,7 @@ import flower from "../../assets/images/flower.svg"
 const Introduction = () => {
   return (
     <Container>
-      <Appbar/>
+      {/* <Appbar/> */}
       <Box sx={{zIndex: 1, height: "100vh", display: "flex", flexDirection: "column", alignItems: 'center', gap: 3, justifyContent: "center"}}>
         <Box mb={4}>
           <Typography sx={{letterSpacing: 7, fontSize: {xl: 20}, opacity: .8}}>THE WEDDING OF</Typography>

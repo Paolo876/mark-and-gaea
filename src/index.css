@@ -1,14 +1,20 @@
 @font-face {
   font-family: Bodoni;
-  src: url("./assets/fonts/BodoniflfRoman-vmAD.ttf") format('woff');
+  src: url("./assets/fonts/BodoniflfRoman-vmAD.ttf") format('opentype');
   font-weight: normal;
 font-style: normal;
 }
 @font-face {
   font-family: Bodoni-Bold;
-  src: url("./assets/fonts/BodoniflfBold-MVZx.ttf") format('woff');
+  src: url("./assets/fonts/BodoniflfBold-MVZx.ttf") format('opentype');
   font-weight: normal;
 font-style: normal;
+}
+@font-face {
+  font-family: Amalfi;
+  src: url("./assets/fonts/AmalfiCoast.ttf") format('opentype');
+  /* font-weight: normal;
+  font-style: normal; */
 }
 
 *,*::before,*::after{

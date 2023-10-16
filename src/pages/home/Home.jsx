@@ -15,10 +15,10 @@ const Home = () => {
       <Appbar/>
       {/* <MainLanding/> */}
       {/* <Introduction/> */}
-      {/* <Landing/> */}
+      <Landing/>
       {/* <Details/> */}
       {/* <SecondLanding/> */}
-      {/* <IamYou/> */}
+      <IamYou/>
     </>
   )
 }

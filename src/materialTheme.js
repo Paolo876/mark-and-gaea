@@ -41,5 +41,10 @@ export const theme = createTheme({
       textTransform: 'uppercase',
       letterSpacing: 8
     },
+    h4: {
+      fontFamily: "Amalfi",
+      letterSpacing: 4,
+
+    },
   }
 });

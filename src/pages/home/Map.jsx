@@ -3,7 +3,7 @@ import { Box, Typography, Container, Grid } from '@mui/material';
 
 const Map = () => {
   return (
-    <Container maxWidth="xl">
+    <Container>
       <Box sx={{height: "110vh", position: 'relative'}}>
         <Grid container>
           <Grid item xs={12} sx={{mb: 15}}>

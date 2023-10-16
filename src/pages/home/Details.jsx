@@ -21,9 +21,9 @@ const Details = () => {
   
   return (
     <Container id="details">
-      <Box sx={{height: "120vh", position: 'relative'}}>
+      <Box sx={{position: 'relative'}}>
         <Grid container>
-          <Grid item xs={12} sx={{mb: 15}}>
+          <Grid item xs={12} sx={{mb: 16}}>
             <Typography variant="h4" sx={{fontSize: {lg: 50}}}>Details</Typography>
           </Grid>
           <Grid item xs={12}>
@@ -52,31 +52,31 @@ const Details = () => {
             <Box sx={{height: 80, width: "2px", backgroundColor: "success.main", mx: "auto", my: 2}}></Box>          
           </Grid>
 
-          <Grid item xs={12} mt={25}>
+          <Grid item xs={12} mt={35}>
             <Grid container>
               <Grid xs={5.5}>
-                <Typography sx={{fontFamily: "Bodoni", fontSize: 28, letterSpacing: .1, textAlign: "left", lineHeight: 1.5, color: "secondary.main"}}>
+                <Typography sx={{fontFamily: "Bodoni", fontSize: 30, letterSpacing: .1, textAlign: "left", lineHeight: 1.4, color: "secondary.main"}}>
                 <Box sx={{height: "1px", width: 25, backgroundColor: "primary.main", display: "inline-block", transform: "translateY(-8px)", mr: .5, opacity: .25}}></Box>
                   We kindly request that our honored guests will be dressed in a formal attire and in accordance to these colors for our special day.
                 </Typography>
               </Grid>
               <Grid xs={1.25}></Grid>
               <Grid xs={5.25} sx={{display: "flex", flexDirection: "column", justifyContent: "center", pl: 2, mt: 3}}>
-                <Box sx={{ml: .5, display: "flex", flexDirection: "column", gap: 1, mb: 5}}>
+                <Box sx={{ml: .5, display: "flex", flexDirection: "column", gap: 3, mb: 5}}>
                   <Box sx={{display: "flex", alignItems: "center", gap: 2}}>
-                    <Typography sx={{fontSize: 25, fontFamily: "Bodoni-Bold", letterSpacing: 1, color: "primary.main"}}>Ladies</Typography>
+                    <Typography sx={{fontSize: 26, fontFamily: "Bodoni-Bold", letterSpacing: 1, color: "primary.main"}}>Ladies</Typography>
                     <Box sx={{width: 15, height: "1px", backgroundColor: "success.main", my: 2}}></Box>
-                    <Typography sx={{fontSize: 22, letterSpacing: .5, color: "primary.main"}}>Long Dress</Typography>
+                    <Typography sx={{fontSize: 24, letterSpacing: .5, color: "primary.main"}}>Long Dress</Typography>
                   </Box>
                   <Box sx={{display: "flex", alignItems: "center", gap: 2}}>
-                    <Typography sx={{fontSize: 25, fontFamily: "Bodoni-Bold", letterSpacing: 1, color: "primary.main"}}>Men</Typography>
+                    <Typography sx={{fontSize: 26, fontFamily: "Bodoni-Bold", letterSpacing: 1, color: "primary.main"}}>Men</Typography>
                     <Box sx={{width: 15, height: "1px", backgroundColor: "success.main", my: 2}}></Box>
-                    <Typography sx={{fontSize: 22, letterSpacing: .5, color: "primary.main"}}>Long sleeves and black slacks</Typography>
+                    <Typography sx={{fontSize: 24, letterSpacing: .5, color: "primary.main"}}>Long sleeves and black slacks</Typography>
                   </Box>
                 </Box>
               </Grid>
             </Grid>
-            <Grid xs={7} mx="auto" mt={8}>
+            <Grid xs={7} mx="auto" mt={12}>
               <Box>
                 <Image src={palette} alt="palette" duration={0}/>
               </Box>

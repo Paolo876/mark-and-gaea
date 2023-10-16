@@ -4,7 +4,7 @@ import { Box, Typography, Container, Grid } from '@mui/material';
 const Map = () => {
   return (
     <Container>
-      <Box sx={{height: "110vh", position: 'relative'}}>
+      <Box sx={{height: "110vh", position: 'relative', mt: 50}}>
         <Grid container>
           <Grid item xs={12} sx={{mb: 15}}>
             <Typography variant="h4" sx={{fontSize: {lg: 50}}}>Map</Typography>

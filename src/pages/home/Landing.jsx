@@ -21,10 +21,10 @@ const Landing = () => {
     <Box sx={{maxWidth: "100vw", mx: "auto", mt: 10, position: "relative"}}>
       <Carousel
         indicators={false}
-        duration={500}
-        interval={4000}
+        duration={900}
+        interval={5000}
         swipe={false}
-        stopAutoPlayOnHover={true}
+        stopAutoPlayOnHover={false}
         animation="fade"
       >
         {images.map(item => <Box key={item.alt}>

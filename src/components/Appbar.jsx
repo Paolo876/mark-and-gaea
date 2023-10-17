@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Container, Link, Typography } from '@mui/material'
+import { Box, Container, Link, Typography, Button } from '@mui/material'
 import Image from 'mui-image'
 import headerImg from "../assets/images/nav-header-png.png";
 import "./Appbar.scss"
@@ -16,7 +16,7 @@ const linkStyles = {
   position: "relative",
   color: "secondary.main",
   textShadow: "1px 1px 1px rgba(255,255,255, .025)",
-
+  cursor: "pointer",
   "&::before, &::after": {
     content: "''",
     position: "absolute",
@@ -51,7 +51,7 @@ const linkStyles = {
 }
 
 
-const Appbar = () => {
+const Appbar = ({ detailsRef, }) => {
 
   const [ currentOffset, setCurrentOffset ] = useState(window.pageYOffset);
   const [ isScrolledDown, setIsScrolledDown ] = useState("top");
@@ -96,7 +96,7 @@ const Appbar = () => {
         <Container>
           <Box sx={{display: "flex", justifyContent: "space-between"}}>
             <Link component={ReactLink} to="/" sx={linkStyles}>Home</Link>
-            <Link component={ReactLink} to="/#details" sx={linkStyles}>Details</Link>
+            <Link sx={linkStyles} onClick={() => detailsRef.current.scrollIntoView({behavior:"smooth", block: "start", inline:"start"})}>Details</Link>
             <Link component={ReactLink} to="/" sx={linkStyles}>Map</Link>
             <Link component={ReactLink} to="/" sx={linkStyles}>RSVP</Link>
           </Box>

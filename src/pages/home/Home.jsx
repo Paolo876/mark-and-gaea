@@ -1,4 +1,5 @@
-import React from 'react'
+import { useRef, createRef } from 'react'
+import { Box } from '@mui/material'
 import Landing from './Landing'
 import IamYou from './IamYou'
 import SecondLanding from './SecondLanding'
@@ -13,12 +14,14 @@ import RsvpForm from './RsvpForm'
 
 
 const Home = () => {
+  const detailsRef = createRef();
+
   return (
     <>
-      <Appbar/>
+      <Appbar detailsRef={detailsRef}/>
       <Landing/>
       <IamYou/>
-      <Details/>
+        <Details ref={detailsRef}/>
       <Map/>
       <RsvpForm/>
     </>

@@ -17,13 +17,13 @@ const descriptionStyles = {
 }
 
 
-const Details = () => {
+const Details = React.forwardRef((props, ref) => {
   
   return (
-    <Container id="details">
+    <Container>
       <Box sx={{position: 'relative'}}>
         <Grid container>
-          <Grid item xs={12} sx={{mb: 16}}>
+          <Grid item xs={12} sx={{mb: 16, pt: 15}} ref={ref}>
             <Typography variant="h4" sx={{fontSize: {lg: 50}}}>Details</Typography>
           </Grid>
           <Grid item xs={12}>
@@ -115,6 +115,6 @@ const Details = () => {
       </Box>
     </Container>
   )
-}
+})
 
 export default Details

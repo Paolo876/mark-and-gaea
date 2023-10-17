@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box } from '@mui/material'
 import Image from 'mui-image'
 import Carousel from 'react-material-ui-carousel'
+import generateRandomNumbers from '../../helpers/generateRandomNumbers'
 
 //media
 import image0 from "../../assets/images/webp/image0.webp"
@@ -15,20 +16,26 @@ const images = [
   {src: image2, alt: "image2"},
   {src: image3, alt: "image3"},
 ]
+
+
 const Landing = () => {
+  const [ updatedImages, setUpdatedImages ] = useState(null)
+  useEffect(() => {
+    setUpdatedImages(generateRandomNumbers(4,4).map(item => images[item]))
+  }, [])
 
 
   return (
     <Box sx={{maxWidth: "100vw", mx: "auto", mt: 10, position: "relative"}}>
       <Carousel
         indicators={false}
-        duration={900}
-        interval={5000}
+        duration={800}
+        interval={4000}
         swipe={false}
         stopAutoPlayOnHover={false}
         animation="fade"
       >
-        {images.map(item => <Box key={item.alt}>
+        {updatedImages && updatedImages.map(item => <Box key={item.alt}>
           <Image src={item.src} alt={item.alt} sx={{filter: "grayscale(25%) opacity(.85)"}} duration={0}/>
         </Box>)}
       </Carousel>

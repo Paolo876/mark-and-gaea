@@ -38,6 +38,7 @@ const linkStyles = {
   "&:hover": {
     opacity: 1,
     textShadow: "1px 1px 1px rgba(0,0,0,.05)",
+    letterSpacing: .75,
     "&::before": {
       left: "-11px",
       opacity: .5

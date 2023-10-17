@@ -8,8 +8,9 @@ import { HashLink as ReactLink } from 'react-router-hash-link';
 const linkStyles = {
   textDecoration: "none",
   color: "text.primary",
-  fontSize: 17,
-  letterSpacing: 4, 
+  fontSize: 16,
+  letterSpacing: .5, 
+  textTransform: "uppercase",
   fontFamily: "Bodoni",
   opacity: .9,
   transition: "all 200ms ease-in-out",
@@ -51,7 +52,7 @@ const linkStyles = {
 }
 
 
-const Appbar = ({ detailsRef, }) => {
+const Appbar = ({ detailsRef, mapRef, rsvpRef }) => {
 
   const [ currentOffset, setCurrentOffset ] = useState(window.pageYOffset);
   const [ isScrolledDown, setIsScrolledDown ] = useState("top");
@@ -95,10 +96,10 @@ const Appbar = ({ detailsRef, }) => {
       >
         <Container>
           <Box sx={{display: "flex", justifyContent: "space-between"}}>
-            <Link component={ReactLink} to="/" sx={linkStyles}>Home</Link>
+            <Link sx={linkStyles} onClick={() => window.scrollTo({top:0, left:0, behavior: "smooth"})}>Home</Link>
             <Link sx={linkStyles} onClick={() => detailsRef.current.scrollIntoView({behavior:"smooth", block: "start", inline:"start"})}>Details</Link>
-            <Link component={ReactLink} to="/" sx={linkStyles}>Map</Link>
-            <Link component={ReactLink} to="/" sx={linkStyles}>RSVP</Link>
+            <Link sx={linkStyles} onClick={() => mapRef.current.scrollIntoView({behavior:"smooth", block: "start", inline:"start"})}>Map</Link>
+            <Link sx={linkStyles} onClick={() => rsvpRef.current.scrollIntoView({behavior:"smooth", block: "start", inline:"start"})}>Rsvp</Link>
           </Box>
         </Container>
       </Box>

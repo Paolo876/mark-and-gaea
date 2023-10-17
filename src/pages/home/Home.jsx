@@ -15,15 +15,17 @@ import RsvpForm from './RsvpForm'
 
 const Home = () => {
   const detailsRef = createRef();
+  const mapRef = createRef();
+  const rsvpRef = createRef();
 
   return (
     <>
-      <Appbar detailsRef={detailsRef}/>
+      <Appbar detailsRef={detailsRef} mapRef={mapRef} rsvpRef={rsvpRef} />
       <Landing/>
       <IamYou/>
-        <Details ref={detailsRef}/>
-      <Map/>
-      <RsvpForm/>
+      <Details ref={detailsRef}/>
+      <Map ref={mapRef}/>
+      <RsvpForm ref={rsvpRef}/>
     </>
   )
 }

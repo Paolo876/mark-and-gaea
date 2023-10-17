@@ -55,13 +55,13 @@ const Details = () => {
           <Grid item xs={12} mt={35}>
             <Grid container>
               <Grid xs={5.5}>
-                <Typography sx={{fontFamily: "Bodoni", fontSize: 30, letterSpacing: .1, textAlign: "left", lineHeight: 1.4, color: "secondary.main"}}>
+                <Typography sx={{fontFamily: "Bodoni", fontSize: 27, letterSpacing: .1, textAlign: "left", lineHeight: 1.4, color: "secondary.main"}}>
                 <Box sx={{height: "1px", width: 25, backgroundColor: "primary.main", display: "inline-block", transform: "translateY(-8px)", mr: .5, opacity: .25}}></Box>
-                  We kindly request that our honored guests will be dressed in a formal attire and in accordance to these colors for our special day.
+                  We kindly request our guests to be dressed in a formal attire and be guided with our color palette for our special day.
                 </Typography>
               </Grid>
               <Grid xs={1.25}></Grid>
-              <Grid xs={5.25} sx={{display: "flex", flexDirection: "column", justifyContent: "center", pl: 2, mt: 3}}>
+              <Grid xs={5.25} sx={{display: "flex", flexDirection: "column", justifyContent: "center", pl: 2, mt: 1}}>
                 <Box sx={{ml: .5, display: "flex", flexDirection: "column", gap: 3, mb: 5}}>
                   <Box sx={{display: "flex", alignItems: "center", gap: 2}}>
                     <Typography sx={{fontSize: 26, fontFamily: "Bodoni-Bold", letterSpacing: 1, color: "primary.main"}}>Ladies</Typography>
@@ -76,7 +76,7 @@ const Details = () => {
                 </Box>
               </Grid>
             </Grid>
-            <Grid xs={7} mx="auto" mt={12}>
+            <Grid xs={6} mx="auto" mt={12}>
               <Box>
                 <Image src={palette} alt="palette" duration={0}/>
               </Box>

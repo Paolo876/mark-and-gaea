@@ -36,7 +36,7 @@ const Landing = () => {
         animation="fade"
       >
         {updatedImages && updatedImages.map(item => <Box key={item.alt}>
-          <Image src={item.src} alt={item.alt} sx={{filter: "grayscale(10%) opacity(.85)", maxHeight: "80vh"}} duration={0} fit="cover" />
+          <Image src={item.src} alt={item.alt} sx={{filter: "grayscale(5%) opacity(1)"}} duration={0} fit="cover" />
         </Box>)}
       </Carousel>
     </Box>

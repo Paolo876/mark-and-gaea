@@ -6,7 +6,7 @@ import palette from "../../assets/images/palette.svg"
 const headerStyles = {
   fontFamily: "Bodoni-Bold",
   fontSize: 22,
-  letterSpacing: 3,
+  letterSpacing: 3.5,
   opacity: .85,
 }
 
@@ -14,7 +14,8 @@ const descriptionStyles = {
   fontFamily: "Bodoni",
   letterSpacing: .5,
   fontSize: 18,
-  opacity: .75
+  opacity: .75,
+  lineHeight: 1.55
 }
 
 
@@ -31,10 +32,14 @@ const Details = React.forwardRef((props, ref) => {
             <Box sx={{height: 35, width: "2px", backgroundColor: "success.main", mx: "auto", my: 2}}></Box>          
           </Grid>
           <Grid item xs={5}>
-            <Typography sx={headerStyles}>CEREMONY</Typography>
-            <Box sx={{height: 15, width: "1px", backgroundColor: "success.main", mx: "auto", my: 2}}></Box>          
-            <Typography sx={descriptionStyles}>Ceremony will be held at <Box sx={{fontFamily: "Bodoni-Bold", display: "inline"}}>The V Farm Bamban, Tarlac</Box>- <Box component="span" sx={{display: "block"}}>at four o'clock in the afternoon at the garden.</Box></Typography>
-            {/* <Typography sx={descriptionStyles}>Celebration starts at four o'clock in the afternoon at the garden.</Typography> */}
+            <Typography sx={headerStyles}>CEREMONY & RECEPTION</Typography>
+            <Box sx={{height: 15, width: "1px", backgroundColor: "success.main", mx: "auto", my: 2.5}}></Box>          
+            <Typography sx={descriptionStyles}>
+              <Box component="span" sx={{display: "block"}}>Celebration starts at four o'clock in the afternoon</Box>
+              <Box component="span" sx={{display: "block"}}>at the garden, and reception follows</Box>
+              <Box component="span" sx={{display: "block"}}>at <Box sx={{display:"inline-block", letterSpacing: 4, mx: .75}}>The Shed by The V Farm</Box></Box>
+              <Box component="span" sx={{display: "block"}}>Bamban, Tarlac</Box>
+            </Typography>
           </Grid>
           <Grid item xs={2}>
             <Box sx={{display: "flex", alignItems: "center", flexDirection: "column", gap: .75}}>
@@ -44,20 +49,26 @@ const Details = React.forwardRef((props, ref) => {
               </Box>
               <Typography sx={{fontSize: 18, letterSpacing: .5, opacity: .75}}>2023</Typography>
             </Box>
+            <Box sx={{height: 80, width: "2px", backgroundColor: "success.main", mx: "auto", my: 2}}></Box>          
+
           </Grid>
           <Grid item xs={5}>
-            <Typography sx={headerStyles}>RECEPTION</Typography>
-            <Box sx={{height: 15, width: "1px", backgroundColor: "success.main", mx: "auto", my: 2}}></Box>          
-            <Typography sx={descriptionStyles}>Reception follows after the ceremony at <Box sx={{fontFamily: "Bodoni-Bold"}}>The Shed by the V Farm</Box></Typography>
+              <Typography sx={{fontSize: 20, letterSpacing: 1, opacity: .85}}>a little note on gifts</Typography>
+            <Box sx={{height: 15, width: "1px", backgroundColor: "success.main", mx: "auto", my: 2.5}}></Box>          
+            <Typography sx={descriptionStyles}>
+              Your love, laughter, and company is all we wish for on our special day.
+              However, if you wish to delight us with a gift,
+              <Box component="span" sx={{display: "block"}}>just surprise us in your own way.</Box>
+            </Typography>
           </Grid>
-          <Grid item xs={12}>
+          {/* <Grid item xs={12}>
             <Box sx={{height: 80, width: "2px", backgroundColor: "success.main", mx: "auto", my: 2}}></Box>          
-          </Grid>
+          </Grid> */}
 
           <Grid item xs={12} mt={35}>
             <Grid container>
               <Grid xs={5.5}>
-                <Typography sx={{fontFamily: "Bodoni", fontSize: 27, letterSpacing: .1, textAlign: "left", lineHeight: 1.35, color: "secondary.main"}}>
+                <Typography sx={{fontFamily: "Bodoni", fontSize: 25, letterSpacing: .1, textAlign: "left", lineHeight: 1.5, color: "secondary.main"}}>
                 <Box sx={{height: "1px", width: 25, backgroundColor: "primary.main", display: "inline-block", transform: "translateY(-8px)", mr: .5, opacity: .25}}></Box>
                   We kindly request our guests to be dressed in a formal attire for our special day. Please be guided with our color palette below.
                 </Typography>

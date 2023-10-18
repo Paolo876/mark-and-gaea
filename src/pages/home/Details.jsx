@@ -80,7 +80,7 @@ const Details = React.forwardRef((props, ref) => {
             </Grid>
             <Grid xs={5.5} mx="auto" mt={12}>
               <Box>
-                <Image src={palette} alt="palette" duration={0}/>
+                <Image src={palette} alt="palette" duration={0} sx={{filter: "drop-shadow(2px 2px 3px rgb(0 0 0 / 0.1))"}}/>
               </Box>
             </Grid>
           </Grid>

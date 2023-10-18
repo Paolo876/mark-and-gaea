@@ -9,7 +9,7 @@ const linkStyles = {
   textDecoration: "none",
   color: "text.primary",
   fontSize: 16,
-  letterSpacing: .5, 
+  letterSpacing: 3.5, 
   textTransform: "uppercase",
   fontFamily: "Bodoni",
   opacity: .9,
@@ -37,8 +37,8 @@ const linkStyles = {
   },
   "&:hover": {
     opacity: 1,
-    textShadow: "1px 1px 1px rgba(0,0,0,.05)",
-    letterSpacing: .75,
+    textShadow: "1px 1px 1px rgba(0,0,0,.025)",
+    letterSpacing: 3.75, 
     "&::before": {
       left: "-11px",
       opacity: .5

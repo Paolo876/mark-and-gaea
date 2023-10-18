@@ -5,10 +5,14 @@ import Carousel from 'react-material-ui-carousel'
 import generateRandomNumbers from '../../helpers/generateRandomNumbers'
 
 //media
-import image0 from "../../assets/images/webp/wide/image0_w.webp"
-import image1 from "../../assets/images/webp/wide/image1_w.webp"
-import image2 from "../../assets/images/webp/wide/image2_w.webp"
-import image3 from "../../assets/images/webp/wide/image3_w.webp"
+import image0 from "../../assets/images/webp/image0.webp"
+import image1 from "../../assets/images/webp/image1.webp"
+import image2 from "../../assets/images/webp/image2.webp"
+import image3 from "../../assets/images/webp/image3.webp"
+// import image0 from "../../assets/images/webp/wide/image0_w.webp"
+// import image1 from "../../assets/images/webp/wide/image1_w.webp"
+// import image2 from "../../assets/images/webp/wide/image2_w.webp"
+// import image3 from "../../assets/images/webp/wide/image3_w.webp"
 
 const images = [
   {src: image0, alt: "image0"},
@@ -36,7 +40,8 @@ const Landing = () => {
         animation="fade"
       >
         {updatedImages && updatedImages.map(item => <Box key={item.alt}>
-          <Image src={item.src} alt={item.alt} sx={{filter: "grayscale(5%) opacity(1)"}} duration={0} fit="cover" />
+          <Image src={item.src} alt={item.alt} sx={{filter: "grayscale(55%) opacity(.9)"}} duration={0} fit="cover" />
+          {/* <Image src={item.src} alt={item.alt} sx={{filter: "grayscale(5%) opacity(1)"}} duration={0} fit="cover" /> */}
         </Box>)}
       </Carousel>
     </Box>

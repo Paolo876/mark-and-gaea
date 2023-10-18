@@ -95,35 +95,6 @@ const Details = React.forwardRef((props, ref) => {
               </Box>
             </Grid>
           </Grid>
-          {/* <Grid item xs={12} mt={20} align="left">
-            <Typography sx={{fontFamily: "Bodoni", fontSize: 28, letterSpacing: .35, textAlign: "center"}}>
-              We kindly request that our honored guests will be dressed in a formal attire and in accordance to these colors for our special day.
-            </Typography>
-            <Grid container mt={10}>
-              <Grid item xs={5}>
-                <Box sx={{ml: .5, mt: 4, display: "flex", flexDirection: "column", gap: 3, justifyContent: "center", alignItems: "center"}}>
-                  <Box sx={{display: "flex", alignItems: "center", gap: 2}}>
-                    <Typography sx={headerStyles}>Ladies</Typography>
-                    <Box sx={{width: 15, height: "1px", backgroundColor: "success.main", my: 2}}></Box>
-                    <Typography sx={descriptionStyles}>Long Dress</Typography>
-                  </Box>
-                  <Box sx={{display: "flex", alignItems: "center", gap: 2}}>
-                    <Typography sx={headerStyles}>Men</Typography>
-                    <Box sx={{width: 15, height: "1px", backgroundColor: "success.main", my: 2}}></Box>
-                    <Typography sx={descriptionStyles}>Long sleeves and black slacks</Typography>
-                  </Box>
-                </Box>
-              </Grid>
-              <Grid item xs={2}>
-                <Box sx={{height: "100%", width: "1px", backgroundColor: "success.main", mx: "auto", my: 2}}></Box>          
-              </Grid>
-              <Grid item xs={5} sx={{display:"block", ml: "auto", mt: 4}}>
-                <Box >
-                  <Image src={palette} alt="palette" />
-                </Box>
-              </Grid>
-            </Grid>
-          </Grid> */}
         </Grid>
       </Box>
     </Container>

@@ -1,32 +1,28 @@
 import React from 'react'
-import { Box, Typography, Container, Grid, TextField, Radio, RadioGroup, FormControlLabel, FormControl, } from '@mui/material';
+import { Box, Typography, Container, Grid, TextField, Radio, RadioGroup, FormControlLabel, FormControl, Button, } from '@mui/material';
 import Image from 'mui-image';
 import image from "../../assets/images/webp/image4.webp"
-
-const headerStyles = {
-  fontFamily: "Bodoni-Bold",
-  fontSize: 22,
-  letterSpacing: 3.5,
-  opacity: .85,
-}
 
 
 const descriptionStyles = {
   fontFamily: "Bodoni",
-  letterSpacing: 1,
-  fontSize: 21,
-  opacity: .9,
-  lineHeight: 1.55
+  letterSpacing: 1.25,
+  fontSize: 19,
+  lineHeight: 1.35,
+  color: "secondary.main"
 }
 
 const labelStyles = {
-  fontFamily: "Bodoni-Bold",
-  letterSpacing: 1,
-  fontSize: 22,
-  opacity: .9,
-  color: "secondary.main",
-  textShadow: "1px 1px 3px rgba(15,15,15,.05)",
-  mb: 1.5,
+  sx: {
+    fontFamily: "Bodoni-Bold",
+    letterSpacing: 2.5,
+    fontSize: 20,
+    opacity: .9,
+    color: "secondary.main",
+    textShadow: "1px 1px 3px rgba(15,15,15,.05)",
+    pb: 1.5,
+    px: .5,
+  }
 }
 
 const inputStyles = {
@@ -36,12 +32,14 @@ const inputStyles = {
     color: "text.secondary",
     textShadow: "1px 1px 3px rgba(15,15,15,.05)",
     pl: .5,
-    fontFamily: "Bodoni-Bold"
+    fontFamily: "Bodoni-Bold",
+    lineHeight: 1,
+    opacity: .9
   }
 }
 
 const formItemContainer = {
-  mb: 9
+  mb: 7
 }
 
 const radioLabelStyles = {
@@ -62,19 +60,26 @@ const RsvpForm = React.forwardRef((props, ref) => {
           <Grid item xs={12} sx={{mb: 16, pt: 15}} ref={ref}>
             <Typography variant="h4" sx={{fontSize: {lg: 50}}}>be our guest</Typography>
           </Grid>
+          <Grid item xs={12} sx={{textAlign: "left", mb: 1}}>
+            <Typography sx={{fontSize: 35, letterSpacing: 6, fontFamily: "Bodoni-Bold", opacity: .85}}>RSVP</Typography>
+          </Grid>
+
           <Grid item xs={12}>
             <Grid container>
-              <Grid item xs={7} sx={{textAlign: "left"}}>
-                <Typography sx={headerStyles}>RSVP</Typography>
-                {/* <Typography sx={headerStyles}>We'd love for you to join us for our special day</Typography> */}
-                {/* <Box sx={{height: "1px", width: "95%", backgroundColor: "success.main", my: .25, ml: .25, opacity: .7}}></Box>           */}
-                <Box component="form" sx={{mt: 10}}>
+              <Grid item xs={7.5} sx={{textAlign: "left", mt: 1}}>
+                <Box component="form" sx={{display: "flex", flexDirection: "column", pr: 10}}>
                   <Box sx={formItemContainer}>
-                    <Typography sx={labelStyles}>Name</Typography>
-                    <TextField variant="standard" sx={{width: "80%"}} InputProps={inputStyles} color='secondary'/>
+                    <TextField 
+                      variant="standard" 
+                      color='secondary'
+                      label="Name"
+                      sx={{width: "100%"}} 
+                      InputProps={inputStyles} 
+                      InputLabelProps={labelStyles}
+                    />
                   </Box>
                   <Box sx={formItemContainer}>
-                    <Typography sx={labelStyles}>Would you be able to attend the occasion?</Typography>
+                    <Typography sx={labelStyles.sx}>Would you be able to attend the occasion?</Typography>
                     <FormControl sx={{pl: .5}}>
                       <RadioGroup
                         aria-labelledby="demo-radio-buttons-group-label"
@@ -96,14 +101,35 @@ const RsvpForm = React.forwardRef((props, ref) => {
                       </RadioGroup>
                     </FormControl>
                   </Box>
+                  <Box sx={{...formItemContainer, display: "flex", justifyContent: "space-between", width: "100%"}}>
+                    <Typography sx={labelStyles.sx}>How many are in your party?</Typography>
+                    <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} variant="standard"/>
+                  </Box>
+                  <Box sx={{...formItemContainer, display: "flex", justifyContent: "space-between", width: "100%"}}>
+                    <Typography sx={labelStyles.sx}>Contact Number</Typography>
+                    <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*'}} variant="standard" InputProps={{sx: {width: "100%"}}}/>
+                  </Box>
                   <Box sx={formItemContainer}>
-                    <Typography sx={labelStyles}>How many additional guests are in your party?</Typography>
-                    {/* <TextField variant="standard" sx={{width: "90%"}} InputProps={inputStyles}/> */}
+                    <Typography sx={labelStyles.sx}>
+                      Any message or requests?
+                      <Box component="small" sx={{opacity: .9, pl: 1, letterSpacing: 1.25, fontFamily: "Bodoni"}}>(optional)</Box>
+                    </Typography>
+                    <TextField color='secondary' multiline rows={3} sx={{width: "100%"}} value="di pa tapos to ha. nabusy ako sa homeworks knina e, aadjust ko pa sizing ng inputs hehehe ----pao"/>
                   </Box>
                 </Box>
+                <Box>
+                  <Button variant="contained" color="success" sx={{color: "white", fontSize: 18, letterSpacing: 1, fontFamily: "Bodoni-Bold"}}>Submit</Button>
+                </Box>
               </Grid>
-              <Grid item xs={5}>
-                <Image src={image} fit="scale-down" sx={{filter: "grayscale(50%)"}}/>
+              <Grid item xs={4.5} sx={{display: "flex", alignItems: "flex-start", flexDirection: "column"}}>
+                <Box>
+                  <Image src={image} fit="scale-down" sx={{filter: "grayscale(50%)"}}/>
+                </Box>
+                <Box sx={{textAlign: "left"}}>
+                  <Typography sx={descriptionStyles}>
+                    Your love, laughter, and company is all we wish for on our special day. However, if you wish to delight us with a gift, just surprise us in your own way.
+                  </Typography>
+                </Box>
               </Grid>
             </Grid>
           </Grid>

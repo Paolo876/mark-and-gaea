@@ -26,7 +26,7 @@ const Details = React.forwardRef((props, ref) => {
       <Box sx={{position: 'relative'}}>
         <Grid container>
           <Grid item xs={12} sx={{mb: 16, pt: 15}} ref={ref}>
-            <Typography variant="h4" sx={{fontSize: {lg: 50}}}>details</Typography>
+            <Typography variant="h4" sx={{fontSize: {lg: 60}}}>details</Typography>
           </Grid>
           <Grid item xs={12}>
             <Box sx={{height: 35, width: "2px", backgroundColor: "success.main", mx: "auto", my: 2}}></Box>          
@@ -82,7 +82,7 @@ const Details = React.forwardRef((props, ref) => {
               </Grid>
               <Grid xs={1.25}></Grid>
               <Grid xs={5.25} sx={{display: "flex", flexDirection: "column", justifyContent: "center", pl: 2, mt: 3}}>
-                <Box sx={{ml: .5, display: "flex", flexDirection: "column", gap: 2, mb: 5}}>
+                <Box sx={{mx: "auto", display: "flex", flexDirection: "column", gap: 2, mb: 5, justifyContent: "center"}}>
                   <Box sx={{display: "flex", alignItems: "center", gap: 2}}>
                     <Typography sx={{fontSize: 22, fontFamily: "Bodoni-Bold", letterSpacing: 1, color: "primary.main"}}>Ladies</Typography>
                     <Box sx={{width: 15, height: "1px", backgroundColor: "success.main", my: 2}}></Box>
@@ -99,7 +99,6 @@ const Details = React.forwardRef((props, ref) => {
             <Grid xs={5.5} mx="auto" mt={15}>
               <Typography sx={{fontSize: 30, letterSpacing: 2, color: "primary.main", opacity: .85, transform: "skewX(-8deg)"}}>Be guided with our color palette</Typography>
               <Box sx={{height: "1px", width: 35, backgroundColor: "success.main", mx: "auto", my: 2}}></Box>          
-
               <Box mt={6}>
                 <Image src={palette} alt="palette" duration={0} sx={{filter: "drop-shadow(2px 2px 3px rgb(0 0 0 / 0.1))"}}/>
               </Box>

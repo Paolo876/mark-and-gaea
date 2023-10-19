@@ -5,9 +5,9 @@ import image from "../../assets/images/webp/image4.webp"
 
 const headerStyles = {
   fontFamily: "Bodoni-Bold",
-  fontSize: 25,
-  letterSpacing: 1.2,
-  opacity: .9,
+  fontSize: 22,
+  letterSpacing: 3.5,
+  opacity: .85,
 }
 
 
@@ -60,12 +60,12 @@ const RsvpForm = React.forwardRef((props, ref) => {
       <Box sx={{position: 'relative', mb: 10}}>
         <Grid container>
           <Grid item xs={12} sx={{mb: 16, pt: 15}} ref={ref}>
-            <Typography variant="h4" sx={{fontSize: {lg: 50}}}>Rsvp</Typography>
+            <Typography variant="h4" sx={{fontSize: {lg: 50}}}>be our guest</Typography>
           </Grid>
           <Grid item xs={12}>
             <Grid container>
               <Grid item xs={7} sx={{textAlign: "left"}}>
-                <Typography sx={headerStyles}>We'd love to have you join us for our special day</Typography>
+                <Typography sx={headerStyles}>RSVP</Typography>
                 {/* <Typography sx={headerStyles}>We'd love for you to join us for our special day</Typography> */}
                 {/* <Box sx={{height: "1px", width: "95%", backgroundColor: "success.main", my: .25, ml: .25, opacity: .7}}></Box>           */}
                 <Box component="form" sx={{mt: 10}}>
@@ -84,13 +84,13 @@ const RsvpForm = React.forwardRef((props, ref) => {
                         <FormControlLabel 
                           value="yes" 
                           control={<Radio />} 
-                          label="Yes, I accept the invitation" 
+                          label="Gladly accepts" 
                           componentsProps={radioLabelStyles} 
                         />
                         <FormControlLabel 
                           value="no" 
                           control={<Radio />} 
-                          label="No, unfortunately, I can't make it" 
+                          label="Can't make it" 
                           componentsProps={radioLabelStyles} 
                         />
                       </RadioGroup>

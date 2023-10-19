@@ -26,7 +26,7 @@ const Details = React.forwardRef((props, ref) => {
       <Box sx={{position: 'relative'}}>
         <Grid container>
           <Grid item xs={12} sx={{mb: 16, pt: 15}} ref={ref}>
-            <Typography variant="h4" sx={{fontSize: {lg: 50}}}>Details</Typography>
+            <Typography variant="h4" sx={{fontSize: {lg: 50}}}>details</Typography>
           </Grid>
           <Grid item xs={12}>
             <Box sx={{height: 35, width: "2px", backgroundColor: "success.main", mx: "auto", my: 2}}></Box>          

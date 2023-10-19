@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { Box, Container, Link, Typography, Button } from '@mui/material'
 import Image from 'mui-image'
-import headerImg from "../assets/images/nav-header-png.png";
+import headerImg from "../assets/images/nav-header-png-350.png";
 import "./Appbar.scss"
-import { HashLink as ReactLink } from 'react-router-hash-link';
 
 const linkStyles = {
   textDecoration: "none",
@@ -97,7 +96,7 @@ const Appbar = ({ detailsRef, mapRef, rsvpRef }) => {
       >
         <Container>
           <Box sx={{display: "flex", justifyContent: "space-between"}}>
-            <Link sx={linkStyles} onClick={() => window.scrollTo({top:0, left:0, behavior: "smooth"})}>Home</Link>
+            <Link sx={linkStyles} onClick={() => window.scrollTo({top:0, left:0, behavior: "smooth"})}>The Wedding</Link>
             <Link sx={linkStyles} onClick={() => detailsRef.current.scrollIntoView({behavior:"smooth", block: "start", inline:"start"})}>Details</Link>
             <Link sx={linkStyles} onClick={() => mapRef.current.scrollIntoView({behavior:"smooth", block: "start", inline:"start"})}>Map</Link>
             <Link sx={linkStyles} onClick={() => rsvpRef.current.scrollIntoView({behavior:"smooth", block: "start", inline:"start"})}>Rsvp</Link>

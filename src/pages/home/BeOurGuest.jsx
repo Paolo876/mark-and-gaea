@@ -31,8 +31,8 @@ const BeOurGuest = React.forwardRef(( props, ref ) => {
           <Grid item xs={6} sx={{mt: 35, mx: "auto"}}>
             <Typography variant="h4" sx={{fontSize: {lg: 35}, mb: 9, letterSpacing: "initial"}}>a little note on gifts</Typography>
             <Typography sx={{fontFamily: "Bodoni", fontSize: 25, letterSpacing: .25, textAlign: "center", lineHeight: 1.35, color: "secondary.main",}}>
-              <Box sx={{height: "1px", width: 20, backgroundColor: "primary.main", display: "inline-block", transform: "translateY(-8px)", mr: .5, opacity: .35}}></Box>
-              <Box sx={{transform: "skewX(-8deg)", display: "inline"}}>
+              <Box component="span" sx={{height: "1px", width: 20, backgroundColor: "primary.main", display: "inline-block", transform: "translateY(-8px)", mr: .5, opacity: .35}}></Box>
+              <Box component="span" sx={{transform: "skewX(-8deg)", display: "inline"}}>
                 Your love, laughter, and company is all we wish for on our special day. However, if you wish to delight us with a gift, just surprise us in your own way.
               </Box>
             </Typography>

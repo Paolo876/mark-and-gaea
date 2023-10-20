@@ -9,10 +9,7 @@ import image0 from "../../assets/images/webp/image0.webp"
 import image1 from "../../assets/images/webp/image1.webp"
 import image2 from "../../assets/images/webp/image2.webp"
 import image3 from "../../assets/images/webp/image3.webp"
-// import image0 from "../../assets/images/webp/wide/image0_w.webp"
-// import image1 from "../../assets/images/webp/wide/image1_w.webp"
-// import image2 from "../../assets/images/webp/wide/image2_w.webp"
-// import image3 from "../../assets/images/webp/wide/image3_w.webp"
+
 
 const images = [
   {src: image0, alt: "image0"},

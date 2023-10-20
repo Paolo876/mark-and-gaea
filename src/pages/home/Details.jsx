@@ -55,33 +55,23 @@ const Details = React.forwardRef((props, ref) => {
             <Box sx={{height: 15, width: "1px", backgroundColor: "success.main", mx: "auto", my: 2.5}}></Box>          
             <Typography sx={descriptionStyles}>
               <Box component="span" sx={{display: "block"}}>Reception follows after the ceremony</Box>
-              <Box component="span" sx={{display: "block"}}>at <Box sx={{display:"inline-block", letterSpacing: 4, mx: .75}}>The Shed by The V Farm</Box></Box>
+              <Box component="span" sx={{display: "block"}}>at <Box component="span" sx={{display:"inline-block", letterSpacing: 4, mx: .75}}>The Shed by The V Farm</Box></Box>
               <Box component="span" sx={{display: "block"}}>Bamban, Tarlac</Box>
             </Typography>
-            {/* <Box component="span" sx={{display: "block"}}>at the garden, and reception follows</Box>
-              <Box component="span" sx={{display: "block"}}>at <Box sx={{display:"inline-block", letterSpacing: 4, mx: .75}}>The Shed by The V Farm</Box></Box>
-              <Box component="span" sx={{display: "block"}}>Bamban, Tarlac</Box> */}
           </Grid>
-          {/* <Grid item xs={12}>
-            <Box sx={{height: 80, width: "2px", backgroundColor: "success.main", mx: "auto", my: 2}}></Box>          
-          </Grid> */}
 
           <Grid item xs={12} mt={35}>
             <Grid container>
-              <Grid xs={5.5}>
+              <Grid item xs={5.5}>
                 <Typography sx={headerStyles}>DRESS CODE</Typography>
                 <Box sx={{height: 15, width: "1px", backgroundColor: "success.main", mx: "auto", my: 2.5}}></Box>          
 
                 <Typography sx={{fontFamily: "Bodoni", fontSize: 24, letterSpacing: .5, opacity: .75}}>
                 We would love to see our guests in formal attire
                 </Typography>
-                {/* <Typography sx={{fontFamily: "Bodoni", fontSize: 25, letterSpacing: .1, textAlign: "left", lineHeight: 1.5, color: "secondary.main"}}>
-                <Box sx={{height: "1px", width: 25, backgroundColor: "primary.main", display: "inline-block", transform: "translateY(-8px)", mr: .5, opacity: .25}}></Box>
-                  We kindly request our guests to be dressed in a formal attire for our special day. Please be guided with our color palette below.
-                </Typography> */}
               </Grid>
-              <Grid xs={1.25}></Grid>
-              <Grid xs={5.25} sx={{display: "flex", flexDirection: "column", justifyContent: "center", pl: 2, mt: 3}}>
+              <Grid item xs={1.25}></Grid>
+              <Grid item xs={5.25} sx={{display: "flex", flexDirection: "column", justifyContent: "center", pl: 2, mt: 3}}>
                 <Box sx={{mx: "auto", display: "flex", flexDirection: "column", gap: 2, mb: 5, justifyContent: "center"}}>
                   <Box sx={{display: "flex", alignItems: "center", gap: 2}}>
                     <Typography sx={{fontSize: 22, fontFamily: "Bodoni-Bold", letterSpacing: 1, color: "primary.main"}}>Ladies</Typography>
@@ -96,7 +86,7 @@ const Details = React.forwardRef((props, ref) => {
                 </Box>
               </Grid>
             </Grid>
-            <Grid xs={5.5} mx="auto" mt={15}>
+            <Grid item xs={5.5} mx="auto" mt={15}>
               <Typography sx={{fontSize: 30, letterSpacing: 2, color: "primary.main", opacity: .85, transform: "skewX(-8deg)"}}>Be guided with our color palette</Typography>
               <Box sx={{height: "1px", width: 35, backgroundColor: "success.main", mx: "auto", my: 2}}></Box>          
               <Box mt={6}>

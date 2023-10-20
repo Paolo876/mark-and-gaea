@@ -90,7 +90,6 @@ const Appbar = ({ detailsRef, mapRef, rsvpRef }) => {
         </Box>
       </Container>
       <Box 
-        item xs={12} 
         sx={{position: "sticky", top: 0, zIndex: 20, py: 2, boxShadow: 0}} 
         className={`navbar ${isScrolledDown === "top" ? "page-top" : isScrolledDown ? "scroll-down" : "scroll-up"}`} 
       >

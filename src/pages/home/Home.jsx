@@ -1,17 +1,12 @@
-import { useRef, createRef } from 'react'
-import { Box } from '@mui/material'
+import { createRef } from 'react'
 import Landing from './Landing'
 import IamYou from './IamYou'
-import SecondLanding from './SecondLanding'
-import Introduction from './Introduction'
 
 //page components
-import MainLanding from './MainLanding'
 import Details from './Details'
 import Appbar from '../../components/Appbar'
 import Map from './Map'
-import RsvpForm from './RsvpForm'
-
+import BeOurGuest from './BeOurGuest'
 
 const Home = () => {
   const detailsRef = createRef();
@@ -25,7 +20,7 @@ const Home = () => {
       <IamYou/>
       <Details ref={detailsRef}/>
       <Map ref={mapRef}/>
-      <RsvpForm ref={rsvpRef}/>
+      <BeOurGuest ref={rsvpRef}/>
     </>
   )
 }

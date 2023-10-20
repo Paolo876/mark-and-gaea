@@ -1,0 +1,112 @@
+import React from 'react'
+import { Box, Typography, TextField, Radio, RadioGroup, FormControlLabel, FormControl, Button, } from '@mui/material';
+
+
+const labelStyles = {
+  sx: {
+    fontFamily: "Bodoni-Bold",
+    letterSpacing: 2.5,
+    fontSize: 20,
+    opacity: .9,
+    color: "secondary.main",
+    textShadow: "1px 1px 3px rgba(15,15,15,.05)",
+    pb: 1.5,
+    px: .5,
+  }
+}
+
+const inputStyles = {
+  sx: {
+    fontSize: 20,
+    letterSpacing: 1,
+    color: "text.secondary",
+    textShadow: "1px 1px 3px rgba(15,15,15,.05)",
+    pl: .5,
+    fontFamily: "Bodoni-Bold",
+    lineHeight: 1,
+    opacity: .9
+  }
+}
+
+const formItemContainer = {
+  mb: 6
+}
+
+const radioLabelStyles = {
+  typography: {
+    fontSize: 20,
+    letterSpacing: 1.5,
+    color: "text.secondary",
+    textShadow: "1px 1px 3px rgba(15,15,15,.05)",
+    pl: .5,
+    fontFamily: "Bodoni-Bold"
+  }
+}
+
+
+const RsvpForm = () => {
+  return (
+    <Box component="form" sx={{display: "flex", flexDirection: "column", pr: 10, height: "100%", pb: .5}}>
+      <Box sx={formItemContainer}>
+        <TextField 
+          variant="standard" 
+          color='secondary'
+          label="Name"
+          sx={{width: "100%"}} 
+          InputProps={inputStyles} 
+          InputLabelProps={labelStyles}
+        />
+      </Box>
+      <Box sx={formItemContainer}>
+        <FormControl sx={{pl: .5}}>
+          <RadioGroup
+            aria-labelledby="demo-radio-buttons-group-label"
+            defaultValue="female"
+            name="radio-buttons-group"
+          >
+            <FormControlLabel 
+              value="yes" 
+              control={<Radio />} 
+              label="I'll be there to celebrate!" 
+              componentsProps={radioLabelStyles} 
+            />
+            <FormControlLabel 
+              value="no" 
+              control={<Radio />} 
+              label="Can't make it" 
+              componentsProps={radioLabelStyles} 
+            />
+          </RadioGroup>
+        </FormControl>
+      </Box>
+      <Box sx={{...formItemContainer, display: "flex", justifyContent: "space-between", width: "100%"}}>
+        <Box>
+          <Typography sx={labelStyles.sx}>How many are in your party?</Typography>
+        </Box>
+        <Box sx={{width: "20%"}}>
+          <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} variant="standard" sx={{width: "100%"}} InputProps={inputStyles}/>
+        </Box>
+      </Box>
+      <Box sx={{...formItemContainer, display: "flex", justifyContent: "space-between", width: "100%"}}>
+        <Box>
+          <Typography sx={labelStyles.sx}>Contact Number</Typography>
+        </Box>
+        <Box sx={{width: "50%"}}>
+          <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*'}} variant="standard" sx={{width: "100%"}} InputProps={inputStyles}/>
+        </Box>
+      </Box>
+      <Box sx={formItemContainer}>
+        <Typography sx={labelStyles.sx}>
+          Any message or requests?
+          <Box component="small" sx={{opacity: .9, pl: 1, letterSpacing: 1.25, fontFamily: "Bodoni"}}>(optional)</Box>
+        </Typography>
+        <TextField color='secondary' multiline rows={3} sx={{width: "100%"}}/>
+      </Box>
+      <Box mt="auto">
+        <Button variant="contained" color="success" sx={{color: "white", fontSize: 19, letterSpacing: 4, fontFamily: "Bodoni-Bold"}} disabled>Submit</Button>
+      </Box>
+    </Box>
+  )
+}
+
+export default RsvpForm

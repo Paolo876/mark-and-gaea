@@ -136,12 +136,12 @@ const RsvpForm = React.forwardRef((props, ref) => {
             </Grid>
           </Grid>
           <Grid item xs={6} sx={{mt: 35, mx: "auto"}}>
-            {/* <Typography sx={{fontSize: 25, letterSpacing: 8, fontFamily: "Bodoni-Bold", opacity: .75, mb: 5,}}>A LITTLE NOTE ON GIFTS</Typography> */}
-            <Typography variant="h4" sx={{fontSize: {lg: 35}, mb: 8, letterSpacing: "initial"}}>a little note on gifts</Typography>
-
-            <Typography sx={{fontFamily: "Bodoni", fontSize: 25, letterSpacing: .25, textAlign: "center", lineHeight: 1.4, color: "secondary.main",}}>
+            <Typography variant="h4" sx={{fontSize: {lg: 35}, mb: 8, letterSpacing: "initial"}}>a little note on gifts</Typography>\
+            <Typography sx={{fontFamily: "Bodoni", fontSize: 25, letterSpacing: .25, textAlign: "center", lineHeight: 1.35, color: "secondary.main",}}>
               <Box sx={{height: "1px", width: 20, backgroundColor: "primary.main", display: "inline-block", transform: "translateY(-8px)", mr: .5, opacity: .35}}></Box>
-              Your love, laughter, and company is all we wish for on our special day. However, if you wish to delight us with a gift, just surprise us in your own way.
+              <Box sx={{transform: "skewX(-8deg)", display: "inline"}}>
+                Your love, laughter, and company is all we wish for on our special day. However, if you wish to delight us with a gift, just surprise us in your own way.
+              </Box>
             </Typography>
           </Grid>
         </Grid>

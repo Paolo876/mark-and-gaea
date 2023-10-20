@@ -55,7 +55,7 @@ const radioLabelStyles = {
 const RsvpForm = React.forwardRef((props, ref) => {
   return (
     <Container>
-      <Box sx={{position: 'relative', mb: 10}}>
+      <Box sx={{position: 'relative', mb: 20}}>
         <Grid container>
           <Grid item xs={12} sx={{mb: 16, pt: 15}} ref={ref}>
             <Typography variant="h4" sx={{fontSize: {lg: 50}}}>be our guest</Typography>
@@ -66,8 +66,8 @@ const RsvpForm = React.forwardRef((props, ref) => {
 
           <Grid item xs={12}>
             <Grid container>
-              <Grid item xs={7.5} sx={{textAlign: "left", mt: 1}}>
-                <Box component="form" sx={{display: "flex", flexDirection: "column", pr: 10}}>
+              <Grid item xs={7} sx={{textAlign: "left", mt: 1}}>
+                <Box component="form" sx={{display: "flex", flexDirection: "column", pr: 10, height: "100%", pb: 5}}>
                   <Box sx={formItemContainer}>
                     <TextField 
                       variant="standard" 
@@ -79,7 +79,7 @@ const RsvpForm = React.forwardRef((props, ref) => {
                     />
                   </Box>
                   <Box sx={formItemContainer}>
-                    <Typography sx={labelStyles.sx}>Would you be able to attend the occasion?</Typography>
+                    {/* <Typography sx={labelStyles.sx}>Would you be able to attend the occasion?</Typography> */}
                     <FormControl sx={{pl: .5}}>
                       <RadioGroup
                         aria-labelledby="demo-radio-buttons-group-label"
@@ -89,7 +89,7 @@ const RsvpForm = React.forwardRef((props, ref) => {
                         <FormControlLabel 
                           value="yes" 
                           control={<Radio />} 
-                          label="Gladly accepts" 
+                          label="I'll be there to celebrate!" 
                           componentsProps={radioLabelStyles} 
                         />
                         <FormControlLabel 
@@ -116,19 +116,24 @@ const RsvpForm = React.forwardRef((props, ref) => {
                     </Typography>
                     <TextField color='secondary' multiline rows={3} sx={{width: "100%"}} value="di pa tapos to ha. nabusy ako sa homeworks knina e, aadjust ko pa sizing ng inputs hehehe ----pao"/>
                   </Box>
+                  <Box mt="auto">
+                    <Button variant="contained" color="success" sx={{color: "white", fontSize: 19, letterSpacing: 4, fontFamily: "Bodoni-Bold"}}>Submit</Button>
+                  </Box>
                 </Box>
-                <Box>
-                  <Button variant="contained" color="success" sx={{color: "white", fontSize: 18, letterSpacing: 1, fontFamily: "Bodoni-Bold"}}>Submit</Button>
-                </Box>
+
               </Grid>
-              <Grid item xs={4.5} sx={{display: "flex", alignItems: "flex-start", flexDirection: "column"}}>
+              <Grid item xs={5} sx={{display: "flex", alignItems: "flex-start", flexDirection: "column"}}>
                 <Box>
                   <Image src={image} fit="scale-down" sx={{filter: "grayscale(50%)"}}/>
                 </Box>
-                <Box sx={{textAlign: "left"}}>
-                  <Typography sx={descriptionStyles}>
+                <Box sx={{textAlign: "left", mt: 3}}>
+                  <Typography sx={{fontFamily: "Bodoni", fontSize: 20, letterSpacing: .25, textAlign: "left", lineHeight: 1.4, color: "secondary.main"}}>
+                    <Box sx={{height: "1px", width: 20, backgroundColor: "primary.main", display: "inline-block", transform: "translateY(-8px)", mr: .5, opacity: .35}}></Box>
                     Your love, laughter, and company is all we wish for on our special day. However, if you wish to delight us with a gift, just surprise us in your own way.
                   </Typography>
+                  {/* <Typography sx={descriptionStyles}>
+                    Your love, laughter, and company is all we wish for on our special day. However, if you wish to delight us with a gift, just surprise us in your own way.
+                  </Typography> */}
                 </Box>
               </Grid>
             </Grid>

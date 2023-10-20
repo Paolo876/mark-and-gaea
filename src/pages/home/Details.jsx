@@ -2,6 +2,8 @@ import React from 'react'
 import { Box, Typography, Container, Grid } from '@mui/material';
 import Image from 'mui-image';
 import palette from "../../assets/images/palette.svg"
+import shedImage from "../../assets/images/shed_sketch.png"
+
 
 const headerStyles = {
   fontFamily: "Bodoni-Bold",
@@ -59,8 +61,14 @@ const Details = React.forwardRef((props, ref) => {
               <Box component="span" sx={{display: "block"}}>Bamban, Tarlac</Box>
             </Typography>
           </Grid>
-
-          <Grid item xs={12} mt={35}>
+          <Grid item xs={12}>
+            <Grid container>
+              <Grid item xs={4.5} mx="auto" sx={{opacity: .85, transition: "all 500ms ease", "&:hover": {transform: "scale(1.025)", opacity: 1}}}>
+                <Image src={shedImage} sx={{filter: "grayscale(15%)"}}/>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item xs={12} mt={5}>
             <Grid container>
               <Grid item xs={5.5}>
                 <Typography sx={headerStyles}>DRESS CODE</Typography>
@@ -86,7 +94,7 @@ const Details = React.forwardRef((props, ref) => {
                 </Box>
               </Grid>
             </Grid>
-            <Grid item xs={5.5} mx="auto" mt={15}>
+            <Grid item xs={5.5} mx="auto" mt={18}>
               <Typography sx={{fontSize: 30, letterSpacing: 2, color: "primary.main", opacity: .85, transform: "skewX(-8deg)"}}>Be guided with our color palette</Typography>
               <Box sx={{height: "1px", width: 35, backgroundColor: "success.main", mx: "auto", my: 2}}></Box>          
               <Box mt={6}>

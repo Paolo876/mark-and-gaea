@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Box, Typography, TextField, Radio, RadioGroup, FormControlLabel, FormControl, Button, } from '@mui/material';
+import { Box, Typography, TextField, Radio, RadioGroup, FormControlLabel, FormControl, Button, Checkbox } from '@mui/material';
 
 
 const labelStyles = {
@@ -47,6 +47,15 @@ const radioLabelStyles = {
 const RsvpForm = () => {
   const [ name, setName ] = useState("");
   const [ isGoing, setIsGoing ] = useState(null);
+  const [ message, setMessage ] = useState("");
+
+  const handleNumberAttendingChange = () => {
+    
+  }
+
+  const handlePhoneNumberChange = () => {
+    
+  }
 
 
   return (
@@ -60,24 +69,38 @@ const RsvpForm = () => {
           InputProps={inputStyles} 
           InputLabelProps={labelStyles}
           spellCheck={false}
+          value={name}
+          onChange={e => setName(e.target.value)}
         />
       </Box>
       <Box sx={formItemContainer}>
+                {/* <FormControlLabel
+            label="I'll be there to celebrate!"
+            control={
+              <Checkbox
+                // checked={checked[0] && checked[1]}
+                // indeterminate={checked[0] !== checked[1]}
+                // onChange={handleChange1}
+              />
+            }
+          /> */}
         <FormControl sx={{pl: .5}}>
           <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="female"
             name="radio-buttons-group"
-            value={null}
+            value={isGoing}
+            onChange={e => setIsGoing(e.target.value)}
           >
+
             <FormControlLabel 
-              value="yes" 
+              value={true} 
               control={<Radio />} 
               label="I'll be there to celebrate!" 
               componentsProps={radioLabelStyles} 
             />
             <FormControlLabel 
-              value="no" 
+              value={false} 
               control={<Radio />} 
               label="Can't make it" 
               componentsProps={radioLabelStyles} 
@@ -106,7 +129,15 @@ const RsvpForm = () => {
           Any message or requests?
           <Box component="small" sx={{opacity: .9, pl: 1, letterSpacing: 1.25, fontFamily: "Bodoni"}}>(optional)</Box>
         </Typography>
-        <TextField color='secondary' multiline rows={3} sx={{width: "100%", letterSpacing: 1}} spellCheck={false}/>
+        <TextField 
+          color='secondary' 
+          multiline 
+          rows={3} 
+          sx={{width: "100%", letterSpacing: 1}} 
+          spellCheck={false}
+          value={message}
+          onChange={e => setMessage(e.target.value)}
+          />
       </Box>
       <Box mt="auto" mx="auto">
         <Button variant="contained" color="success" sx={{color: "white", fontSize: 19, letterSpacing: 4, fontFamily: "Bodoni-Bold", px: 4}} disabled>Submit</Button>

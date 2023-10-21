@@ -5,7 +5,7 @@ import { Box, Typography, TextField, Radio, RadioGroup, FormControlLabel, FormCo
 const labelStyles = {
   sx: {
     fontFamily: "Bodoni-Bold",
-    letterSpacing: 2.5,
+    letterSpacing: 1,
     fontSize: 20,
     opacity: .9,
     color: "secondary.main",
@@ -35,7 +35,7 @@ const formItemContainer = {
 const radioLabelStyles = {
   typography: {
     fontSize: 20,
-    letterSpacing: 1.5,
+    letterSpacing: 1.25,
     color: "text.secondary",
     textshadow: "1px 1px 3px rgba(15,15,15,.05)",
     pl: .5,
@@ -46,11 +46,13 @@ const radioLabelStyles = {
 
 const RsvpForm = () => {
   const [ name, setName ] = useState("");
+  const [ isAttending, setIsAttending ] = useState(null);
   const [ isGoing, setIsGoing ] = useState(null);
+
   const [ message, setMessage ] = useState("");
 
-  const handleNumberAttendingChange = () => {
-    
+  const handleIsAttendingChange = e => {
+    console.log(e.target.value)
   }
 
   const handlePhoneNumberChange = () => {
@@ -74,17 +76,36 @@ const RsvpForm = () => {
         />
       </Box>
       <Box sx={formItemContainer}>
-                {/* <FormControlLabel
+        <Box sx={{display: "flex", flexDirection:"column"}}>
+          <FormControlLabel
             label="I'll be there to celebrate!"
+            color="primary"
+            value="isGoing"
+            componentsProps={radioLabelStyles} 
+            onChange={handleIsAttendingChange}
             control={
               <Checkbox
-                // checked={checked[0] && checked[1]}
-                // indeterminate={checked[0] !== checked[1]}
-                // onChange={handleChange1}
+                variant="primary"
+                color="success"
+                sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }}
               />
             }
-          /> */}
-        <FormControl sx={{pl: .5}}>
+          />
+          <FormControlLabel
+            label="Can't make it"
+            color="primary"
+            value="isNotGoing"
+            componentsProps={radioLabelStyles} 
+            control={
+              <Checkbox
+                variant="primary"
+                color="primary"
+                sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }}
+              />
+            }
+          />
+        </Box>
+        {/* <FormControl sx={{pl: .5}}>
           <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="female"
@@ -106,7 +127,7 @@ const RsvpForm = () => {
               componentsProps={radioLabelStyles} 
             />
           </RadioGroup>
-        </FormControl>
+        </FormControl> */}
       </Box>
       <Box sx={{...formItemContainer, display: "flex", justifyContent: "space-between", width: "100%"}}>
         <Box>

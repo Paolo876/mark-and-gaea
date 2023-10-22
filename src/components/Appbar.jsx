@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Container, Link, Typography, Button } from '@mui/material'
+import { Box, Container, Link, Typography } from '@mui/material'
 import Image from 'mui-image'
 import headerImg from "../assets/images/nav-header-png-350.png";
 import "./Appbar.scss"
@@ -83,8 +83,8 @@ const Appbar = ({ detailsRef, mapRef, rsvpRef }) => {
             <Typography sx={{fontSize: 14, letterSpacing: 6, opacity: .7}}>12</Typography>
             <Typography sx={{fontSize: 13, letterSpacing: 6, opacity: .6, transform: "translateY(-15%)", px: 1}}>.</Typography>
             <Typography sx={{fontSize: 14, letterSpacing: 6, opacity: .7}}>22</Typography>
-            <Typography sx={{fontSize: 13, letterSpacing: 6, opacity: .7, transform: "translateY(-15%)", px: 1}}>.</Typography>
-            <Typography sx={{fontSize: 14, letterSpacing: 6, opacity: .6}}>23</Typography>
+            <Typography sx={{fontSize: 13, letterSpacing: 6, opacity: .6, transform: "translateY(-15%)", px: 1}}>.</Typography>
+            <Typography sx={{fontSize: 14, letterSpacing: 6, opacity: .7}}>23</Typography>
             <Typography sx={{fontSize: 13, letterSpacing: 6, opacity: .4, px: 1.5}}>-</Typography>
           </Box>
         </Box>

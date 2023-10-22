@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
-import { Box, Typography, TextField, Radio, RadioGroup, FormControlLabel, FormControl, Button, Checkbox } from '@mui/material';
+import { Box, Typography, TextField, FormControlLabel, FormControl, Button, Checkbox, Alert } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import Collapse from '@mui/material/Collapse';
 
 
 const labelStyles = {
@@ -44,13 +46,19 @@ const radioLabelStyles = {
 }
 
 
-const RsvpForm = () => {
+const RsvpForm = ({ setIsSubmitted }) => {
   const [ name, setName ] = useState("");
+
   const [ isAttending, setIsAttending ] = useState(null);
   const [ isGoing, setIsGoing ] = useState(null);
   const [ isNotGoing, setIsNotGoing ] = useState(null);
 
+  const [ phone, setPhone ] = useState("")
+  const [ phoneError, setPhoneError ] = useState(false);
+
   const [ message, setMessage ] = useState("");
+
+
 
   const handleIsAttendingChange = e => {
     const { value, checked } = e.target
@@ -78,19 +86,33 @@ const RsvpForm = () => {
     }
   }
 
-  const handlePhoneNumberChange = () => {
-    
+  const validateNumber = () => {
+    const regex = new RegExp(/^(09|\+639)\d{9}$/)
+    const updatedPhone = phone.replaceAll("-", "").replaceAll(/\s/g, "")
+    if(updatedPhone.match(regex)){
+      setPhoneError(false)
+      setPhone(updatedPhone)
+    } else {
+      setPhoneError(true)
+      console.log("no")
+    }
   }
 
-  console.log(isGoing && isNotGoing === null)
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log(name, isAttending, phone, message)
+    setIsSubmitted(true)
+  }
+
   return (
-    <Box component="form" sx={{display: "flex", flexDirection: "column", pr: 10, height: "100%", pb: .5}}>
+    <Box component="form" sx={{display: "flex", flexDirection: "column", pr: 10, height: "100%", pb: .5}} onSubmit={handleSubmit}>
       <Box sx={formItemContainer}>
         <TextField 
           variant="standard" 
           color='secondary'
           label="Name"
-          sx={{width: "100%"}} 
+          sx={{width: "100%"}}
+          inputProps={{ maxLength: 50}} 
           InputProps={inputStyles} 
           InputLabelProps={labelStyles}
           spellCheck={false}
@@ -141,46 +163,36 @@ const RsvpForm = () => {
             }
           />
         </Box>
-        {/* <FormControl sx={{pl: .5}}>
-          <RadioGroup
-            aria-labelledby="demo-radio-buttons-group-label"
-            defaultValue="female"
-            name="radio-buttons-group"
-            value={isGoing}
-            onChange={e => setIsGoing(e.target.value)}
+      </Box>
+      <Box>
+        <Collapse in={phoneError}>
+          <Alert
+            severity='error'
+            sx={{ mb: 1, fontSize: 17, letterSpacing: .75, py: .15, boxShadow: 1, lineHeight: 1.3, opacity: .85 }}
           >
+            Please enter a valid phone number
+          </Alert>
+        </Collapse>
+        <Box sx={{...formItemContainer, display: "flex", justifyContent: "space-between", width: "100%", alignItems: "center"}}>
+          <Box>
+            <Typography sx={labelStyles.sx}>Contact Number</Typography>
+          </Box>
+          <Box sx={{width: "50%"}}>
+            <TextField 
+              inputProps={{ inputMode: 'numeric', pattern: '[0-9]*', maxLength: 13}} 
+              variant="standard" 
+              sx={{width: "100%"}}
+              onBlur={validateNumber}
+              InputProps={inputStyles} 
+              error={phoneError}
+              spellCheck={false}
+              onChange={e => setPhone(e.target.value)}
+              value={phone}
+            />
+          </Box>
+        </Box>
+      </Box>
 
-            <FormControlLabel 
-              value={true} 
-              control={<Radio />} 
-              label="I'll be there to celebrate!" 
-              componentsProps={radioLabelStyles} 
-            />
-            <FormControlLabel 
-              value={false} 
-              control={<Radio />} 
-              label="Can't make it" 
-              componentsProps={radioLabelStyles} 
-            />
-          </RadioGroup>
-        </FormControl> */}
-      </Box>
-      {/* <Box sx={{...formItemContainer, display: "flex", justifyContent: "space-between", width: "100%"}}>
-        <Box>
-          <Typography sx={labelStyles.sx}>How many are in your party?</Typography>
-        </Box>
-        <Box sx={{width: "20%"}}>
-          <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} variant="standard" sx={{width: "100%"}} InputProps={inputStyles} spellCheck={false}/>
-        </Box>
-      </Box> */}
-      <Box sx={{...formItemContainer, display: "flex", justifyContent: "space-between", width: "100%", alignItems: "center"}}>
-        <Box>
-          <Typography sx={labelStyles.sx}>Contact Number</Typography>
-        </Box>
-        <Box sx={{width: "50%"}}>
-          <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*'}} variant="standard" sx={{width: "100%"}} InputProps={inputStyles} spellCheck={false}/>
-        </Box>
-      </Box>
       <Box sx={formItemContainer}>
         <Typography sx={labelStyles.sx}>
           Any message or requests?
@@ -197,7 +209,13 @@ const RsvpForm = () => {
           />
       </Box>
       <Box mt="auto" mx="auto">
-        <Button variant="contained" color="success" sx={{color: "white", fontSize: 19, letterSpacing: 4, fontFamily: "Bodoni-Bold", px: 4}} disabled>Submit</Button>
+        <Button 
+          type="submit"
+          variant="contained" 
+          color="success" 
+          sx={{color: "white", fontSize: 19, letterSpacing: 4, fontFamily: "Bodoni-Bold", px: 4}} 
+          disabled={name === "" || isAttending === null || phoneError === true || phone === "" }
+        >Submit</Button>
       </Box>
     </Box>
   )

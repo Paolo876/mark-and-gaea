@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Box, Typography, Container, Grid } from '@mui/material';
 import Image from 'mui-image';
 import image from "../../assets/images/webp/image4.webp"
 import RsvpForm from '../../components/RsvpForm';
+import RsvpSubmissionMessage from '../../components/RsvpSubmissionMessage';
 
 
 const BeOurGuest = React.forwardRef(( props, ref ) => {
+
+  const [ isSubmitted, setIsSubmitted ] = useState(false);
   return (
     <Container>
       <Box sx={{position: 'relative', mb: 40}}>
@@ -19,7 +22,8 @@ const BeOurGuest = React.forwardRef(( props, ref ) => {
           <Grid item xs={12}>
             <Grid container>
               <Grid item xs={7} sx={{textAlign: "left", mt: 1}}>
-                <RsvpForm/>
+                {!isSubmitted && <RsvpForm setIsSubmitted={setIsSubmitted}/>}
+                {isSubmitted && <RsvpSubmissionMessage setIsSubmitted={setIsSubmitted}/>}
               </Grid>
               <Grid item xs={5} sx={{display: "flex", alignItems: "flex-start", flexDirection: "column"}}>
                 <Box>

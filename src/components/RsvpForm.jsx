@@ -105,7 +105,7 @@ const RsvpForm = ({ setIsSubmitted }) => {
   }
 
   return (
-    <Box component="form" sx={{display: "flex", flexDirection: "column", pr: 10, height: "100%", pb: .5}} onSubmit={handleSubmit}>
+    <Box component="form" sx={{display: "flex", flexDirection: "column", height: "100%", pb: .5}} onSubmit={handleSubmit}>
       <Box sx={formItemContainer}>
         <TextField 
           variant="standard" 

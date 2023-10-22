@@ -11,7 +11,7 @@ const BeOurGuest = React.forwardRef(( props, ref ) => {
   const [ isSubmitted, setIsSubmitted ] = useState(false);
   return (
     <Container>
-      <Box sx={{position: 'relative', mb: 40}}>
+      <Box sx={{position: 'relative', mb: 40,}}>
         <Grid container>
           <Grid item xs={12} sx={{mb: 16, pt: 15}} ref={ref}>
             <Typography variant="h4" sx={{fontSize: {lg: 50}}}>be our guest</Typography>
@@ -21,7 +21,7 @@ const BeOurGuest = React.forwardRef(( props, ref ) => {
           </Grid>
           <Grid item xs={12}>
             <Grid container>
-              <Grid item xs={7} sx={{textAlign: "left", mt: 1}}>
+              <Grid item xs={7} sx={{textAlign: "left", mt: 1, pr: 10}}>
                 {!isSubmitted && <RsvpForm setIsSubmitted={setIsSubmitted}/>}
                 {isSubmitted && <RsvpSubmissionMessage setIsSubmitted={setIsSubmitted}/>}
               </Grid>

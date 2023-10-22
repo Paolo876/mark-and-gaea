@@ -48,18 +48,41 @@ const RsvpForm = () => {
   const [ name, setName ] = useState("");
   const [ isAttending, setIsAttending ] = useState(null);
   const [ isGoing, setIsGoing ] = useState(null);
+  const [ isNotGoing, setIsNotGoing ] = useState(null);
 
   const [ message, setMessage ] = useState("");
 
   const handleIsAttendingChange = e => {
-    console.log(e.target.value)
+    const { value, checked } = e.target
+    if(value === "isGoing") {
+      if(checked){
+        setIsGoing(true)
+        setIsAttending(true)
+        setIsNotGoing(false)
+      } else {
+        setIsGoing(null)
+        setIsNotGoing(null)
+        setIsAttending(null)
+      }
+    }
+    if(value === "isNotGoing") {
+      if(checked){
+        setIsNotGoing(true)
+        setIsGoing(false)
+        setIsAttending(false)
+      } else {
+        setIsGoing(null)
+        setIsNotGoing(null)
+        setIsAttending(null)
+      }
+    }
   }
 
   const handlePhoneNumberChange = () => {
     
   }
 
-
+  console.log(isGoing && isNotGoing === null)
   return (
     <Box component="form" sx={{display: "flex", flexDirection: "column", pr: 10, height: "100%", pb: .5}}>
       <Box sx={formItemContainer}>
@@ -83,6 +106,12 @@ const RsvpForm = () => {
             value="isGoing"
             componentsProps={radioLabelStyles} 
             onChange={handleIsAttendingChange}
+            checked={isGoing}
+            sx={{
+              opacity: (isGoing === null || isGoing ) ? 1 : .5,
+              transition: "all 250ms ease",
+              transform: isGoing ? "scale(1.025) translateX(.35em)" : "scale(1)"
+            }}
             control={
               <Checkbox
                 variant="primary"
@@ -96,6 +125,13 @@ const RsvpForm = () => {
             color="primary"
             value="isNotGoing"
             componentsProps={radioLabelStyles} 
+            onChange={handleIsAttendingChange}
+            checked={isNotGoing}
+            sx={{
+              opacity: (isNotGoing === null || isNotGoing ) ? 1 : .5,
+              transition: "all 250ms ease",
+              transform: isNotGoing ? "scale(1.025) translateX(.35em)" : "scale(1)"
+            }}            
             control={
               <Checkbox
                 variant="primary"
@@ -129,15 +165,15 @@ const RsvpForm = () => {
           </RadioGroup>
         </FormControl> */}
       </Box>
-      <Box sx={{...formItemContainer, display: "flex", justifyContent: "space-between", width: "100%"}}>
+      {/* <Box sx={{...formItemContainer, display: "flex", justifyContent: "space-between", width: "100%"}}>
         <Box>
           <Typography sx={labelStyles.sx}>How many are in your party?</Typography>
         </Box>
         <Box sx={{width: "20%"}}>
           <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} variant="standard" sx={{width: "100%"}} InputProps={inputStyles} spellCheck={false}/>
         </Box>
-      </Box>
-      <Box sx={{...formItemContainer, display: "flex", justifyContent: "space-between", width: "100%"}}>
+      </Box> */}
+      <Box sx={{...formItemContainer, display: "flex", justifyContent: "space-between", width: "100%", alignItems: "center"}}>
         <Box>
           <Typography sx={labelStyles.sx}>Contact Number</Typography>
         </Box>

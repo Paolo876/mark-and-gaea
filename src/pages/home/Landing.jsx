@@ -13,7 +13,7 @@ const Landing = () => {
       style={{ transitionDelay: "1400ms"  }}
       timeout={900}
     >
-      <Box sx={{width: "100%", background: "rgba(25,25,25,.05)", px: "auto", minHeight: {xs: 220, sm: 450, md: 600, lg: 600}}}>
+      <Box sx={{width: "100%", background: "rgba(25,25,25,.05)", px: "auto", minHeight: {xs: 220, sm: 400, md: 420, lg: 450}}}>
         <Box sx={{maxWidth: "1800px", mx: "auto", mt: {xs: 10, sm: 12, md:12, lg:4}, position: "relative"}}>
           <Box sx={{display: {xs: "none", md: "initial"}}}>
             <LandingCarousel/>

@@ -73,7 +73,7 @@ const Appbar = ({ detailsRef, mapRef, rsvpRef }) => {
   return (
     <>
       <Container>
-        <Box sx={{mt: {xs: 4, md:3}, mb: {xs: 2.5, sm:2, md: 2.5}, userSelect: "none"}}>
+        <Box sx={{mt: 4, mb: {xs: 2.5, sm:2, md: 2.5}, userSelect: "none"}}>
           <Box sx={{display: "flex", justifyContent: "center"}}>
             <Box>
               <Image src={headerImg} alt="MARK & GAEA" fit="scale-down" duration={800} sx={{maxHeight: {xs: 145, sm: 155, md: 160, lg: 160}, pointerEvents: "none"}}/>

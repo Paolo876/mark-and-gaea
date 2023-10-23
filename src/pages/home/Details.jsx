@@ -7,7 +7,7 @@ import shedImage from "../../assets/images/shed_sketch.png"
 
 const headerStyles = {
   fontFamily: "Bodoni-Bold",
-  fontSize: {xs:  19, sm: 20, md: 22, lg: 24},
+  fontSize: {xs:  17.5, sm: 20, md: 22, lg: 24},
   letterSpacing: 4,
   opacity: .85,
 }
@@ -15,9 +15,9 @@ const headerStyles = {
 const descriptionStyles = {
   fontFamily: "Bodoni",
   letterSpacing: .25,
-  fontSize: {xs: 15, sm: 16, md: 17, lg: 18, xl:20},
+  fontSize: {xs: 14, sm: 14.25, md: 17, lg: 18, xl:20},
   opacity: .75,
-  lineHeight: 1.6
+  lineHeight: 1.6,
 }
 
 
@@ -48,27 +48,28 @@ const Details = React.forwardRef((props, ref) => {
           <Grid item xs={12} sx={{display: {xs: "none", sm: "initial"}}}>
             <Box sx={{height: 35, width: "2px", backgroundColor: "success.main", mx: "auto", my: 2}}></Box>          
           </Grid>
-          <Grid item xs={12} sm={5} sx={{mb: {xs: 13, sm: 0}}}>
+          
+          <Grid item xs={12} sm={5.25} md={5} sx={{mb: {xs: 13, sm: 0}}}>
             <Typography sx={headerStyles}>CEREMONY</Typography>
             <Box sx={{height: {xs: 10, sm: 13, md:15}, width: "1px", backgroundColor: "success.main", mx: "auto", my: {xs: 1, sm: 1.5, md: 2, lg:2.5}}}></Box>          
             <Typography sx={descriptionStyles}>
-              <Box component="span" sx={{display: "block"}}>Celebration starts at four o'clock in the afternoon</Box>
+              <Box component="span" sx={{display: "block"}}>Celebration starts <Box component="br" sx={{display: {md: "none"}}}></Box>at four o'clock in the afternoon</Box>
               <Box component="span" sx={{display: "block"}}>at the garden.</Box>
             </Typography>
           </Grid>
           
-          <Grid item xs={2} sx={{display: {xs: "none", sm: "initial"}}}>
+          <Grid item sm={1.5} md={2} sx={{display: {xs: "none", sm: "initial"}}}>
             <Box sx={{display: "flex", alignItems: "center", flexDirection: "column", gap: .75}}>
-              <Typography sx={{fontSize: 20, letterSpacing: 2, opacity: .75}}>Dec</Typography>
-              <Box sx={{borderRadius: "50%", border: 1, borderColor: "success.main", width: 75, height: 75, display: "flex", alignItems: "center", justifyContent: "center"}}>
-                <Typography sx={{lineHeight: 1, fontSize: 30, fontFamily: "Bodoni-Bold"}}>22</Typography>
+              <Typography sx={{fontSize: {sm: 18, md: 19, lg: 20}, letterSpacing: 2, opacity: .75}}>Dec</Typography>
+              <Box sx={{borderRadius: "50%", border: 1, borderColor: "success.main", width: {sm: 60, md: 70, lg: 75}, height: {sm: 60, md: 70, lg: 75}, display: "flex", alignItems: "center", justifyContent: "center"}}>
+                <Typography sx={{lineHeight: 1, fontSize: {sm: 27, md: 29, lg: 30}, fontFamily: "Bodoni-Bold"}}>22</Typography>
               </Box>
-              <Typography sx={{fontSize: 18, letterSpacing: .5, opacity: .75}}>2023</Typography>
+              <Typography sx={{fontSize: {sm: 16, md: 17, lg: 18}, letterSpacing: .5, opacity: .75}}>2023</Typography>
             </Box>
             <Box sx={{height: 80, width: "2px", backgroundColor: "success.main", mx: "auto", my: 2}}></Box>          
           </Grid>
           
-          <Grid item  xs={12} sm={5} sx={{mb: {xs: 2, sm: 0}}}>
+          <Grid item  xs={12} sm={5.25} md={5} sx={{mb: {xs: 2, sm: 0}}}>
             <Typography sx={headerStyles}>RECEPTION</Typography>
             <Box sx={{height: {xs: 10, sm: 13, md:15}, width: "1px", backgroundColor: "success.main", mx: "auto", my: {xs: 1, sm: 1.5, md: 2, lg:2.5}}}></Box>          
             <Typography sx={descriptionStyles}>
@@ -77,19 +78,17 @@ const Details = React.forwardRef((props, ref) => {
               <Box component="span" sx={{display: "block"}}>Bamban, Tarlac</Box>
             </Typography>
           </Grid>
-          <Grid item xs={12}>
-            <Grid container>
-              <Grid item xs={8} sm={4.5} mx="auto" sx={{opacity: .75, transition: "all 500ms ease", pointerEvents: "none", my: {xs: 1, sm: 2, md: 3, lg: 4}}}>
-                <Image src={shedImage} sx={{filter: "grayscale(25%)"}} fit="scale-down"/>
-              </Grid>
-            </Grid>
+
+          <Grid item xs={8} sm={4.5} mx="auto" sx={{opacity: .75, transition: "all 500ms ease", pointerEvents: "none", my: {xs: 1, sm: 4, md: 5, lg: 5}}}>
+            <Image src={shedImage} sx={{filter: "grayscale(25%)"}} fit="scale-down"/>
           </Grid>
-          <Grid item xs={12} mt={{xs: 7, sm:5}}>
+          
+          <Grid item xs={12} mt={{xs: 8, sm:5}}>
             <Grid container>
               <Grid item xs={10.5} sm={5.5} sx={{mx: {xs:"auto", sm: "initial"}}}>
                 <Typography sx={headerStyles}>DRESS CODE</Typography>
                 <Box sx={{height: {xs: 10, sm: 13, md:15}, width: "1px", backgroundColor: "success.main", mx: "auto", my: {xs: 1, sm: 1.5, md: 2, lg:2.5}}}></Box>          
-                <Typography sx={{fontFamily: "Bodoni", fontSize: {xs: 19, sm: 20, md: 22, lg: 24}, letterSpacing: .5, opacity: .75}}>
+                <Typography sx={{fontFamily: "Bodoni", fontSize: {xs: 17.5, sm: 20, md: 22, lg: 24}, letterSpacing: .5, opacity: .75}}>
                   We would love to see our guests in formal attire
                 </Typography>
               </Grid>

@@ -7,7 +7,7 @@ import "./Appbar.scss"
 const linkStyles = {
   textDecoration: "none",
   color: "text.primary",
-  fontSize: {xs: 12, sm: 14, md: 15, lg:15.5},
+  fontSize: {xs: 11, sm: 13, md: 14.5, lg:15.5},
   letterSpacing: {xs: 1.5, sm: 3, md: 3.5}, 
   textTransform: "uppercase",
   fontFamily: "Bodoni",
@@ -72,10 +72,10 @@ const Appbar = ({ detailsRef, mapRef, rsvpRef }) => {
   return (
     <>
       <Container>
-        <Box sx={{mt: 3, mb: {xs: 2, sm:2, md: 2.5}}}>
+        <Box sx={{mt: {xs: 4, md:3}, mb: {xs: 2.5, sm:2, md: 2.5}}}>
           <Box sx={{display: "flex", justifyContent: "center"}}>
             <Box>
-              <Image src={headerImg} alt="MARK & GAEA" fit="cover" duration={800} sx={{maxHeight: {xs: 130, sm: 150, md: 160, lg: 160}}}/>
+              <Image src={headerImg} alt="MARK & GAEA" fit="cover" duration={800} sx={{maxHeight: {xs: 145, sm: 155, md: 160, lg: 160}}}/>
             </Box>
           </Box>
           <Fade
@@ -83,7 +83,7 @@ const Appbar = ({ detailsRef, mapRef, rsvpRef }) => {
             style={{ transitionDelay: "350ms"  }}
             timeout={900}
           >
-            <Box sx={{display: "flex", justifyContent: "center", mt: 1.25}}>
+            <Box sx={{display: "flex", justifyContent: "center", mt: {xs: 1.5, sm: 1.25}}}>
               <Typography sx={{fontSize: 12, letterSpacing: 6, opacity: .4, px: 1.5}}>-</Typography>
               <Typography sx={{fontSize: 13, letterSpacing: 6, opacity: .7}}>12</Typography>
               <Typography sx={{fontSize: 12, letterSpacing: 6, opacity: .6, transform: "translateY(-15%)", px: 1}}>.</Typography>

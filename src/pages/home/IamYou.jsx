@@ -8,14 +8,14 @@ const IamYou = () => {
       
   const { ref, inView } = useInView({
     threshold: 0,
-    rootMargin: "0% 0px -50% 0px",
+    rootMargin: "0% 0px -35% 0px",
     delay: 100,
     triggerOnce: true
   });
 
 
   return (
-    <Box sx={{height: {xs: 450, sm: 500, md: 900, lg:1000}}}>
+    <Box sx={{height: {xs: 600, sm: 700, md: 900, lg:1000}}}>
       <Grid container sx={{height: "100%"}}>
         <Grid item xs={12} sx={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}} >
           <Typography sx={{textAlign: "center", fontSize: {xl: 20}, letterSpacing: 2, transform: "skewX(-12deg)", opacity: .9, lineHeight: 1.65}} ref={ref}>

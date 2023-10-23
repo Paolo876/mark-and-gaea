@@ -56,7 +56,7 @@ const Details = React.forwardRef((props, ref) => {
             <Typography sx={headerStyles}>RECEPTION</Typography>
             <Box sx={{height: 15, width: "1px", backgroundColor: "success.main", mx: "auto", my: 2.5}}></Box>          
             <Typography sx={descriptionStyles}>
-              <Box component="span" sx={{display: "block"}}>Reception follows after the ceremony</Box>
+              <Box component="span" sx={{display: "block"}}>Reception follows </Box>
               <Box component="span" sx={{display: "block"}}>at <Box component="span" sx={{display:"inline-block", letterSpacing: 4, mx: .75}}>The Shed by The V Farm</Box></Box>
               <Box component="span" sx={{display: "block"}}>Bamban, Tarlac</Box>
             </Typography>

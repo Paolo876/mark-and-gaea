@@ -6,12 +6,13 @@ import CloseIcon from '@mui/icons-material/Close';
 
 
 const descriptionStyles = {
-  fontFamily: "Bodoni-bold",
-  letterSpacing: .25,
-  fontSize: 28,
+  fontFamily: "Bodoni",
+  letterSpacing: .15,
+  fontSize: 24,
   opacity: .75,
   lineHeight: 1.55,
-  color: "secondary.main"
+  color: "secondary.main",
+  transform: "skewX(-5deg)"
 }
 
 

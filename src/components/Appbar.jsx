@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Container, Link, Typography } from '@mui/material'
+import { Box, Container, Link, Typography, Fade } from '@mui/material'
 import Image from 'mui-image'
 import headerImg from "../assets/images/nav-header-png-350.png";
 import "./Appbar.scss"
@@ -7,11 +7,11 @@ import "./Appbar.scss"
 const linkStyles = {
   textDecoration: "none",
   color: "text.primary",
-  fontSize: 16,
-  letterSpacing: 3.5, 
+  fontSize: {xs: 12, sm: 14, md: 15, lg:16},
+  letterSpacing: {xs: 1.5, sm: 3, md: 3.5}, 
   textTransform: "uppercase",
   fontFamily: "Bodoni",
-  opacity: .9,
+  opacity: {xs:1, lg: .9},
   transition: "all 200ms ease-in-out",
   position: "relative",
   color: "secondary.main",
@@ -37,7 +37,7 @@ const linkStyles = {
   "&:hover": {
     opacity: 1,
     textShadow: "1px 1px 1px rgba(0,0,0,.025)",
-    letterSpacing: 3.75, 
+    letterSpacing: {xs: 1.75, sm: 3.25, md: 3.75}, 
     "&::before": {
       left: "-11px",
       opacity: .5
@@ -72,21 +72,27 @@ const Appbar = ({ detailsRef, mapRef, rsvpRef }) => {
   return (
     <>
       <Container>
-        <Box sx={{mt: 5, mb: 4}}>
+        <Box sx={{mt: 5, mb: {xs: 3, sm:4}}}>
           <Box sx={{display: "flex", justifyContent: "center"}}>
             <Box>
-              <Image src={headerImg} alt="MARK & GAEA" fit="cover" height={175}/>
+              <Image src={headerImg} alt="MARK & GAEA" fit="cover" duration={800} sx={{maxHeight: {xs: 130, sm: 150, md: 175,lg: 200}}}/>
             </Box>
           </Box>
-          <Box sx={{display: "flex", justifyContent: "center", mt: 2}}>
-            <Typography sx={{fontSize: 13, letterSpacing: 6, opacity: .4, px: 1.5}}>-</Typography>
-            <Typography sx={{fontSize: 14, letterSpacing: 6, opacity: .7}}>12</Typography>
-            <Typography sx={{fontSize: 13, letterSpacing: 6, opacity: .6, transform: "translateY(-15%)", px: 1}}>.</Typography>
-            <Typography sx={{fontSize: 14, letterSpacing: 6, opacity: .7}}>22</Typography>
-            <Typography sx={{fontSize: 13, letterSpacing: 6, opacity: .6, transform: "translateY(-15%)", px: 1}}>.</Typography>
-            <Typography sx={{fontSize: 14, letterSpacing: 6, opacity: .7}}>23</Typography>
-            <Typography sx={{fontSize: 13, letterSpacing: 6, opacity: .4, px: 1.5}}>-</Typography>
-          </Box>
+          <Fade
+            in={true}
+            style={{ transitionDelay: "350ms"  }}
+            timeout={900}
+          >
+            <Box sx={{display: "flex", justifyContent: "center", mt: 2}}>
+              <Typography sx={{fontSize: 13, letterSpacing: 6, opacity: .4, px: 1.5}}>-</Typography>
+              <Typography sx={{fontSize: 14, letterSpacing: 6, opacity: .7}}>12</Typography>
+              <Typography sx={{fontSize: 13, letterSpacing: 6, opacity: .6, transform: "translateY(-15%)", px: 1}}>.</Typography>
+              <Typography sx={{fontSize: 14, letterSpacing: 6, opacity: .7}}>22</Typography>
+              <Typography sx={{fontSize: 13, letterSpacing: 6, opacity: .6, transform: "translateY(-15%)", px: 1}}>.</Typography>
+              <Typography sx={{fontSize: 14, letterSpacing: 6, opacity: .7}}>23</Typography>
+              <Typography sx={{fontSize: 13, letterSpacing: 6, opacity: .4, px: 1.5}}>-</Typography>
+            </Box>
+          </Fade>
         </Box>
       </Container>
       <Box 
@@ -95,10 +101,42 @@ const Appbar = ({ detailsRef, mapRef, rsvpRef }) => {
       >
         <Container>
           <Box sx={{display: "flex", justifyContent: "space-between"}}>
-            <Link sx={linkStyles} onClick={() => window.scrollTo({top:0, left:0, behavior: "smooth"})}>The Wedding</Link>
-            <Link sx={linkStyles} onClick={() => detailsRef.current.scrollIntoView({behavior:"smooth", block: "start", inline:"start"})}>Details</Link>
-            <Link sx={linkStyles} onClick={() => mapRef.current.scrollIntoView({behavior:"smooth", block: "start", inline:"start"})}>Map</Link>
-            <Link sx={linkStyles} onClick={() => rsvpRef.current.scrollIntoView({behavior:"smooth", block: "start", inline:"start"})}>Rsvp</Link>
+          <Fade
+            in={true}
+            style={{ transitionDelay: "500ms"  }}
+            timeout={1200}
+          >
+            <Box>
+              <Link sx={linkStyles} onClick={() => window.scrollTo({top:0, left:0, behavior: "smooth"})}>The Wedding</Link>
+            </Box>
+          </Fade>
+          <Fade
+            in={true}
+            style={{ transitionDelay: "750ms"  }}
+            timeout={1200}
+          >
+            <Box>
+              <Link sx={linkStyles} onClick={() => detailsRef.current.scrollIntoView({behavior:"smooth", block: "start", inline:"start"})}>Details</Link>
+            </Box>
+          </Fade>
+          <Fade
+            in={true}
+            style={{ transitionDelay: "1000ms"  }}
+            timeout={1200}
+          >
+            <Box>
+              <Link sx={linkStyles} onClick={() => mapRef.current.scrollIntoView({behavior:"smooth", block: "start", inline:"start"})}>Map</Link>
+            </Box>
+          </Fade>
+          <Fade
+            in={true}
+            style={{ transitionDelay: "1250ms"  }}
+            timeout={1200}
+          >
+            <Box>
+              <Link sx={linkStyles} onClick={() => rsvpRef.current.scrollIntoView({behavior:"smooth", block: "start", inline:"start"})}>Rsvp</Link>
+            </Box>
+          </Fade>
           </Box>
         </Container>
       </Box>

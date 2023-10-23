@@ -1,7 +1,6 @@
 import React from 'react'
 import { Box, Typography, Grid } from '@mui/material';
-import Image from 'mui-image';
-import image from "../../assets/images/home_1.jpg"
+
 
 const IamYou = () => {
   return (

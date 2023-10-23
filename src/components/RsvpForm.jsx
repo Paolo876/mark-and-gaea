@@ -94,7 +94,6 @@ const RsvpForm = ({ setIsSubmitted }) => {
       setPhone(updatedPhone)
     } else {
       setPhoneError(true)
-      console.log("no")
     }
   }
 
@@ -168,7 +167,7 @@ const RsvpForm = ({ setIsSubmitted }) => {
         <Collapse in={phoneError}>
           <Alert
             severity='error'
-            sx={{ mb: 1, fontSize: 17, letterSpacing: .75, py: .15, boxShadow: 1, lineHeight: 1.3, opacity: .85 }}
+            sx={{ mb: 1, fontSize: 17, letterSpacing: .75, py: .15, boxShadow: 1, lineHeight: 1.3, opacity: .65, transform: "skexW(-7deg)" }}
           >
             Please enter a valid phone number
           </Alert>

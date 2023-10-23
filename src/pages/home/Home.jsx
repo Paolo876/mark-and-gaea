@@ -7,6 +7,7 @@ import Details from './Details'
 import Appbar from '../../components/Appbar'
 import Map from './Map'
 import BeOurGuest from './BeOurGuest'
+import { Box } from '@mui/material'
 
 const Home = () => {
   const detailsRef = createRef();
@@ -14,14 +15,14 @@ const Home = () => {
   const rsvpRef = createRef();
 
   return (
-    <>
+    <Box>
       <Appbar detailsRef={detailsRef} mapRef={mapRef} rsvpRef={rsvpRef} />
       <Landing/>
       <IamYou/>
       <Details ref={detailsRef}/>
       <Map ref={mapRef}/>
       <BeOurGuest ref={rsvpRef}/>
-    </>
+    </Box>
   )
 }
 

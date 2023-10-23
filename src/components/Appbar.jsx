@@ -112,7 +112,7 @@ const Appbar = ({ detailsRef, mapRef, rsvpRef }) => {
           </Fade>
           <Fade
             in={true}
-            style={{ transitionDelay: "750ms"  }}
+            style={{ transitionDelay: "700ms"  }}
             timeout={1200}
           >
             <Box>
@@ -121,7 +121,7 @@ const Appbar = ({ detailsRef, mapRef, rsvpRef }) => {
           </Fade>
           <Fade
             in={true}
-            style={{ transitionDelay: "1000ms"  }}
+            style={{ transitionDelay: "900ms"  }}
             timeout={1200}
           >
             <Box>
@@ -130,7 +130,7 @@ const Appbar = ({ detailsRef, mapRef, rsvpRef }) => {
           </Fade>
           <Fade
             in={true}
-            style={{ transitionDelay: "1250ms"  }}
+            style={{ transitionDelay: "1100ms"  }}
             timeout={1200}
           >
             <Box>

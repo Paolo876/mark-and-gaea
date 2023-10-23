@@ -19,9 +19,9 @@ const Home = () => {
       <Appbar detailsRef={detailsRef} mapRef={mapRef} rsvpRef={rsvpRef} />
       <Landing/>
       <IamYou/>
-      <Details ref={detailsRef}/>
+      {/* <Details ref={detailsRef}/> */}
       <Map ref={mapRef}/>
-      <BeOurGuest ref={rsvpRef}/>
+      {/* <BeOurGuest ref={rsvpRef}/> */}
     </Box>
   )
 }

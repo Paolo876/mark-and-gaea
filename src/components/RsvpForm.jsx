@@ -7,20 +7,20 @@ import Collapse from '@mui/material/Collapse';
 const labelStyles = {
   sx: {
     fontFamily: "Bodoni-Bold",
-    letterSpacing: 1,
-    fontSize: 20,
+    letterSpacing: {xs: .5, sm: .7, md: .8, lg: 1},
+    fontSize: {xs: 16, sm: 17, md: 18, lg: 20},
     opacity: .9,
     color: "secondary.main",
     textshadow: "1px 1px 3px rgba(15,15,15,.05)",
-    pb: 1.5,
+    pb: {sm:1.5},
     px: .5,
   }
 }
 
 const inputStyles = {
   sx: {
-    fontSize: 20,
-    letterSpacing: 1,
+    fontSize: {xs: 16, sm: 17, md: 18, lg: 20},
+    letterSpacing: {xs: .5, sm: .7, md: .8, lg: 1},
     color: "text.secondary",
     textshadow: "1px 1px 3px rgba(15,15,15,.05)",
     pl: .5,
@@ -31,13 +31,13 @@ const inputStyles = {
 }
 
 const formItemContainer = {
-  mb: 6
+  mb: {xs:5, sm:6}
 }
 
 const radioLabelStyles = {
   typography: {
-    fontSize: 20,
-    letterSpacing: 1.25,
+    fontSize: {xs: 16, sm: 17, md: 18, lg: 20},
+    letterSpacing: {xs: .5, sm: .7, md: .8, lg: 1},
     color: "text.secondary",
     textshadow: "1px 1px 3px rgba(15,15,15,.05)",
     pl: .5,
@@ -167,7 +167,7 @@ const RsvpForm = ({ setIsSubmitted }) => {
         <Collapse in={phoneError}>
           <Alert
             severity='error'
-            sx={{ mb: 1, fontSize: 17, letterSpacing: .75, py: .15, boxShadow: 1, lineHeight: 1.3, opacity: .65, transform: "skexW(-7deg)" }}
+            sx={{ mb: 1, fontSize: {xs: 14, sm: 14, md: 15, lg: 17}, letterSpacing: {xs: .3, sm: .5, md:.75}, py: .15, boxShadow: 1, lineHeight: 1.3, opacity: .65, transform: "skexW(-7deg)" }}
           >
             Please enter a valid phone number
           </Alert>
@@ -176,7 +176,7 @@ const RsvpForm = ({ setIsSubmitted }) => {
           <Box>
             <Typography sx={labelStyles.sx}>Contact Number</Typography>
           </Box>
-          <Box sx={{width: "50%"}}>
+          <Box sx={{width: {xs: "53%", sm: "50%"}}}>
             <TextField 
               inputProps={{ inputMode: 'numeric', pattern: '[0-9]*', maxLength: 13}} 
               variant="standard" 
@@ -212,7 +212,7 @@ const RsvpForm = ({ setIsSubmitted }) => {
           type="submit"
           variant="contained" 
           color="success" 
-          sx={{color: "white", fontSize: 19, letterSpacing: 4, fontFamily: "Bodoni-Bold", px: 4}} 
+          sx={{color: "white", fontSize: {xs: 15, sm: 17, md: 18, lg:19}, letterSpacing: 4, fontFamily: "Bodoni-Bold", px: {xs: 2.5, sm: 3, md: 4}}} 
           disabled={name === "" || isAttending === null || phoneError === true || phone === "" }
         >Submit</Button>
       </Box>

@@ -16,7 +16,8 @@ const linkStyles = {
   position: "relative",
   color: "secondary.main",
   textShadow: "1px 1px 1px rgba(255,255,255, .025)",
-  cursor: "pointer",
+  cursor: "pointer", 
+  userSelect: "none",
   "&::before, &::after": {
     content: "''",
     position: "absolute",
@@ -72,10 +73,10 @@ const Appbar = ({ detailsRef, mapRef, rsvpRef }) => {
   return (
     <>
       <Container>
-        <Box sx={{mt: {xs: 4, md:3}, mb: {xs: 2.5, sm:2, md: 2.5}}}>
+        <Box sx={{mt: {xs: 4, md:3}, mb: {xs: 2.5, sm:2, md: 2.5}, userSelect: "none"}}>
           <Box sx={{display: "flex", justifyContent: "center"}}>
             <Box>
-              <Image src={headerImg} alt="MARK & GAEA" fit="cover" duration={800} sx={{maxHeight: {xs: 145, sm: 155, md: 160, lg: 160}}}/>
+              <Image src={headerImg} alt="MARK & GAEA" fit="scale-down" duration={800} sx={{maxHeight: {xs: 145, sm: 155, md: 160, lg: 160}, pointerEvents: "none"}}/>
             </Box>
           </Box>
           <Fade

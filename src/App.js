@@ -19,9 +19,12 @@ function App() {
   return (
     <div className="App">
         {/* <WelcomeLoader isLoaded={isLoaded}/> */}
-      {isLoaded && <Routes>
+      {/* {isLoaded && <Routes>
         <Route element={<Home/>} path="/"/>
-      </Routes>}
+      </Routes>} */}
+      <Routes>
+        <Route element={<Home/>} path="/"/>
+      </Routes>
     </div>
   );
 }

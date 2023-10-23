@@ -41,15 +41,26 @@ const BeOurGuest = React.forwardRef(( props, ref ) => {
                   <Typography 
                     sx={{
                       fontFamily: "Bodoni", 
-                      fontSize: {xs: 15, sm: 22, md: 23, lg: 25}, 
-                      letterSpacing: {xs: .15, sm:.25}, 
+                      fontSize: {xs: 16.25, sm: 22, md: 23, lg: 25}, 
+                      letterSpacing: .5, 
                       textAlign: {xs: "left", sm:"center"}, 
                       lineHeight: {xs: 1.6, sm: 1.4}, 
                       color: "secondary.main",
-                      pr: {xs: 2.5, sm: 0}
+                      pr: {xs: 2, sm: 0}
                       }}
                     >
-                    <Box component="span" sx={{height: "1px", width: 20, backgroundColor: "primary.main", display: "inline-block", transform: "translateY(-8px)", mr: .5, opacity: .35}}></Box>
+                    <Box 
+                      component="span" 
+                      sx={{
+                        height: "1px", 
+                        width: {xs: 14, sm: 17, md: 18, lg: 20}, 
+                        backgroundColor: "primary.main", 
+                        display: "inline-block", 
+                        transform: {xs:"translateY(-4px)", sm:"translateY(-5px)", md:"translateY(-6px)", lg:"translateY(-8px)"}, 
+                        mr: .5, 
+                        opacity: .35
+                      }}
+                    ></Box>
                     <Box component="span" sx={{transform: "skewX(-8deg)", display: "inline"}}>
                       Your love, laughter, and company is all we wish for on our special day. However, if you wish to delight us with a gift, just surprise us in your own way.
                     </Box>

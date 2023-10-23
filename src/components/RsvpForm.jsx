@@ -31,7 +31,7 @@ const inputStyles = {
 }
 
 const formItemContainer = {
-  mb: {xs:5, sm:6}
+  mb: {xs:4.25, sm:6}
 }
 
 const radioLabelStyles = {

@@ -3,7 +3,7 @@ import { Box, Typography, Container, Grid } from '@mui/material';
 import Image from 'mui-image';
 import palette from "../../assets/images/palette.svg"
 import shedImage from "../../assets/images/shed_sketch.png"
-import VaraText from '../../components/VaraText';
+// import VaraText from '../../components/VaraText';
 
 const headerStyles = {
   fontFamily: "Bodoni-Bold",

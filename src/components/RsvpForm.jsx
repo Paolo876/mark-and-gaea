@@ -1,6 +1,9 @@
-import { useState, useEffect } from 'react'
-import { Box, Typography, TextField, FormControlLabel, FormControl, Button, Checkbox, Alert } from '@mui/material';
-import IconButton from '@mui/material/IconButton';
+import { useState } from 'react'
+import { Box, Typography, TextField, FormControlLabel, Button, Checkbox, Alert } from '@mui/material';
+import { useFirestore } from "../hooks/useFirestore"
+import { timestamp } from '../firebase/config';
+
+import LoadingButton from '@mui/lab/LoadingButton';
 import Collapse from '@mui/material/Collapse';
 
 
@@ -58,6 +61,10 @@ const RsvpForm = ({ setIsSubmitted }) => {
 
   const [ message, setMessage ] = useState("");
 
+  const [ isLoading, setIsLoading ] = useState(false);
+  const [ error, setError ] = useState(null)
+
+  const { updateArrayDocument, response } = useFirestore("admin")
 
 
   const handleIsAttendingChange = e => {
@@ -88,7 +95,7 @@ const RsvpForm = ({ setIsSubmitted }) => {
 
   const validateNumber = () => {
     const regex = new RegExp(/^(09|\+639)\d{9}$/)
-    const updatedPhone = phone.replaceAll("-", "").replaceAll(/\s/g, "")
+    const updatedPhone = phone.replaceAll("-", "").replaceAll("+63", "0").replaceAll(/\s/g, "")
     if(updatedPhone.match(regex)){
       setPhoneError(false)
       setPhone(updatedPhone)
@@ -97,10 +104,18 @@ const RsvpForm = ({ setIsSubmitted }) => {
     }
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(name, isAttending, phone, message)
-    setIsSubmitted(true)
+    setIsLoading(true)
+    await updateArrayDocument('guests', 'guest-list', {name, isAttending, phone, message, createdAt: timestamp.fromDate(new Date())})
+    await updateArrayDocument('guests', 'backup', {name, isAttending, phone, message, createdAt: timestamp.fromDate(new Date())})
+    if(!response.error){
+      setIsLoading(false)
+      setIsSubmitted(true)
+      setError(null)
+    } else {
+      setError("Server Error. Please try again later.")
+    }
   }
 
   return (
@@ -117,6 +132,7 @@ const RsvpForm = ({ setIsSubmitted }) => {
           spellCheck={false}
           value={name}
           onChange={e => setName(e.target.value)}
+          disabled={isLoading}
         />
       </Box>
       <Box sx={formItemContainer}>
@@ -128,6 +144,7 @@ const RsvpForm = ({ setIsSubmitted }) => {
             componentsProps={radioLabelStyles} 
             onChange={handleIsAttendingChange}
             checked={isGoing}
+            disabled={isLoading}
             sx={{
               opacity: (isGoing === null || isGoing ) ? 1 : .5,
               transition: "all 250ms ease",
@@ -148,6 +165,7 @@ const RsvpForm = ({ setIsSubmitted }) => {
             componentsProps={radioLabelStyles} 
             onChange={handleIsAttendingChange}
             checked={isNotGoing}
+            disabled={isLoading}
             sx={{
               opacity: (isNotGoing === null || isNotGoing ) ? 1 : .5,
               transition: "all 250ms ease",
@@ -187,6 +205,7 @@ const RsvpForm = ({ setIsSubmitted }) => {
               spellCheck={false}
               onChange={e => setPhone(e.target.value)}
               value={phone}
+              disabled={isLoading}
             />
           </Box>
         </Box>
@@ -205,16 +224,28 @@ const RsvpForm = ({ setIsSubmitted }) => {
           spellCheck={false}
           value={message}
           onChange={e => setMessage(e.target.value)}
+          disabled={isLoading}
           />
       </Box>
       <Box mt="auto" mx="auto">
-        <Button 
+        {/* <Button 
           type="submit"
           variant="contained" 
           color="success" 
           sx={{color: "white", fontSize: {xs: 15, sm: 17, md: 18, lg:19}, letterSpacing: 4, fontFamily: "Bodoni-Bold", px: {xs: 2.5, sm: 3, md: 4}}} 
           disabled={name === "" || isAttending === null || phoneError === true || phone === "" }
-        >Submit</Button>
+        >Submit</Button> */}
+        <LoadingButton
+          color="success" 
+          onClick={handleSubmit}
+          loading={isLoading}
+          disabled={name === "" || isAttending === null || phoneError === true || phone === "" }
+          loadingPosition="end"
+          variant="contained"
+          sx={{color: "white", fontSize: {xs: 15, sm: 17, md: 18, lg:19}, letterSpacing: 4, fontFamily: "Bodoni-Bold", px: {xs: 2.5, sm: 3, md: 4}}} 
+        >
+          <span>{isLoading ? "Submitting..." : "Submit"}</span>
+        </LoadingButton>
       </Box>
     </Box>
   )

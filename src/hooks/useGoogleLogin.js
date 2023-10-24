@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
 import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 import { auth } from "../firebase/config";
+
+
 export const useGoogleLogin = () => {
   const [ error, setError ] = useState(null);
   const [ isLoading, setIsLoading ] = useState(false);

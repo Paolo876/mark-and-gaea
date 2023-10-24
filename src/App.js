@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import './App.css';
 
-//pages
-import Home from './pages/home/Home';
 import { Box } from "@mui/material";
 import WelcomeLoader from "./components/WelcomeLoader";
+
+//pages
+import Home from './pages/home/Home';
+import Admin from "./pages/Admin/Admin";
 
 
 function App() {
@@ -24,6 +26,7 @@ function App() {
       </Routes>} */}
       <Routes>
         <Route element={<Home/>} path="/"/>
+        <Route element={<Admin/>} path="/admin"/>
       </Routes>
     </div>
   );

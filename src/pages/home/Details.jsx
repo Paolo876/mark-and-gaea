@@ -3,7 +3,7 @@ import { Box, Typography, Container, Grid } from '@mui/material';
 import Image from 'mui-image';
 import palette from "../../assets/images/palette.svg"
 import shedImage from "../../assets/images/shed_sketch.png"
-
+import VaraText from '../../components/VaraText';
 
 const headerStyles = {
   fontFamily: "Bodoni-Bold",
@@ -29,6 +29,7 @@ const Details = React.forwardRef((props, ref) => {
         <Grid container>
           {/* header */}
           <Grid item xs={12} sx={{mb: {xs: 8, sm: 13, md: 14, lg: 16}, pt: {xs: 8, sm: 12, md: 14, lg: 15}}} ref={ref}>
+            {/* <VaraText text="details"/> */}
             <Typography variant="h4" sx={{fontSize: {xs: 40, sm: 45, md: 55, lg: 60}}}>details</Typography>
           </Grid>
 

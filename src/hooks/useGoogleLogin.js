@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
-import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import { GoogleAuthProvider, signInWithRedirect, signInWithPopup } from "firebase/auth";
 import { auth } from "../firebase/config";
 
 
@@ -12,7 +12,7 @@ export const useGoogleLogin = () => {
     setError(null)
     setIsLoading(true)
     const provider = new GoogleAuthProvider();
-    await signInWithRedirect( auth, provider)
+    await signInWithPopup( auth, provider)
         .then( result => {
             dispatch({type: 'LOGIN', payload: result.user});
         })

@@ -5,6 +5,7 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import MessageIcon from '@mui/icons-material/Message';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import SearchAndFilterBar from './SearchAndFilterBar';
 
 
 const headerStyles = {
@@ -12,12 +13,13 @@ const headerStyles = {
 	textTransform: "uppercase",
 	letterSpacing: 3,
 	fontSize: 18,
+	// py: 1.5,
 }
 
 const bodyStyles = {
 	fontFamily: "Bodoni",
 	letterSpacing: 1,
-	fontSize: 15
+	fontSize: 15,
 }
 
 function createData(name, isAttending, phone, message, createdAt) {
@@ -33,8 +35,8 @@ export default function BasicTable() {
 		createData('Paolo Paolo Paolo Paolo Paolo', false, "09053122966", "", mockDate),	
 	];
   return (
-		<Box>
-			
+		<Box sx={{display: "flex", flexDirection: "column"}}>
+			<SearchAndFilterBar/>
 			<TableContainer component={Paper}>
 				<Table sx={{ minWidth: "fit-content" }} aria-label="simple table">
 					<TableHead>

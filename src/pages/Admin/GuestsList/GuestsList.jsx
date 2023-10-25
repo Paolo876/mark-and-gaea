@@ -1,7 +1,7 @@
 import React from 'react'
-import { useAuthContext } from "../../hooks/useAuthContext"
+import { useAuthContext } from "../../../hooks/useAuthContext"
 import { Container, Box, Typography, Button, Paper, Grid } from '@mui/material';
-import { useLogout } from "../../hooks/useLogout"
+import { useLogout } from "../../../hooks/useLogout"
 import LogoutIcon from '@mui/icons-material/Logout';
 import Image from 'mui-image';
 import GuestsListTable from './GuestsListTable';

@@ -3,7 +3,7 @@ import { useAuthContext } from "../../hooks/useAuthContext"
 
 //pages
 import Login from './Login';
-import GuestsList from './GuestsList';
+import GuestsList from './GuestsList/GuestsList';
 
 const Admin = () => {
 

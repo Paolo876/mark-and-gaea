@@ -46,7 +46,7 @@ const GuestsList = () => {
         <Grid item xs={12}>
           <Typography sx={{fontFamily: "Bodoni-Bold", fontSize: 30, letterSpacing: 4}}>GUESTS LIST</Typography>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} mt={3}>
           <GuestsListTable/>
         </Grid>
       </Grid>

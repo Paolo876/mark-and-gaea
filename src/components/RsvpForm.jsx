@@ -107,8 +107,8 @@ const RsvpForm = ({ setIsSubmitted }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true)
-    await updateArrayDocument('guests', 'guest-list', {name, isAttending, phone, message, createdAt: timestamp.fromDate(new Date())})
-    await updateArrayDocument('guests', 'backup', {name, isAttending, phone, message, createdAt: timestamp.fromDate(new Date())})
+    await updateArrayDocument('guests', 'guestsList', {name, isAttending, phone, message, createdAt: timestamp.fromDate(new Date())})
+    await updateArrayDocument('backup', 'guestsList', {name, isAttending, phone, message, createdAt: timestamp.fromDate(new Date())})
     if(!response.error){
       setIsLoading(false)
       setIsSubmitted(true)

@@ -6,7 +6,7 @@ import MessageIcon from '@mui/icons-material/Message';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SearchAndFilterBar from './SearchAndFilterBar';
-
+import { timestamp } from '../../../firebase/config';
 
 const headerStyles = {
 	fontFamily: "Bodoni-bold",
@@ -28,12 +28,15 @@ function createData(name, isAttending, phone, message, createdAt) {
 
 
 const mockDate = new Date().toLocaleDateString('en-US', {year: 'numeric', month: '2-digit', day: '2-digit'})
-export default function BasicTable() {
-	const rows = [
-		createData('Paolo', true, "09053122966", "Hello", mockDate),
-		createData('Paolo2', false, "09053122966", "", mockDate),
-		createData('Paolo Paolo Paolo Paolo Paolo', false, "09053122966", "", mockDate),	
-	];
+
+
+export default function BasicTable({ guestsList }) {
+	const rows = guestsList.map(item => createData(item.name, item.isAttending, item.phone, item.message, item.createdAt.toDate().toLocaleDateString('en-US', {year: 'numeric', month: '2-digit', day: '2-digit'})))
+	// const rows = [
+	// 	createData('Paolo', true, "09053122966", "Hello", mockDate),
+	// 	createData('Paolo2', false, "09053122966", "", mockDate),
+	// 	createData('Paolo Paolo Paolo Paolo Paolo', false, "09053122966", "", mockDate),	
+	// ];
   return (
 		<Box sx={{display: "flex", flexDirection: "column"}}>
 			<SearchAndFilterBar/>

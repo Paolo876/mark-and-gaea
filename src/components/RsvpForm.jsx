@@ -159,8 +159,8 @@ const RsvpForm = ({ setIsSubmitted }) => {
             }
           />
           <FormControlLabel
-            label="Can't make it"
-            color="primary"
+            label="Can't make it."
+            color="info"
             value="isNotGoing"
             componentsProps={radioLabelStyles} 
             onChange={handleIsAttendingChange}
@@ -174,7 +174,7 @@ const RsvpForm = ({ setIsSubmitted }) => {
             control={
               <Checkbox
                 variant="primary"
-                color="primary"
+                color="warning"
                 sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }}
               />
             }
@@ -225,16 +225,10 @@ const RsvpForm = ({ setIsSubmitted }) => {
           value={message}
           onChange={e => setMessage(e.target.value)}
           disabled={isLoading}
+          inputProps={{ maxLength: 200}} 
           />
       </Box>
       <Box mt="auto" mx="auto">
-        {/* <Button 
-          type="submit"
-          variant="contained" 
-          color="success" 
-          sx={{color: "white", fontSize: {xs: 15, sm: 17, md: 18, lg:19}, letterSpacing: 4, fontFamily: "Bodoni-Bold", px: {xs: 2.5, sm: 3, md: 4}}} 
-          disabled={name === "" || isAttending === null || phoneError === true || phone === "" }
-        >Submit</Button> */}
         <LoadingButton
           color="success" 
           onClick={handleSubmit}

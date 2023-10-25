@@ -12,7 +12,8 @@ export const theme = createTheme({
     },
     background: {
       default: '#f1e9e7',
-      paper: '#d8cec2',
+      // paper: '#d8cec2',
+      paper: '#fff',
     },
     text: {
       // primary: '#565857',
@@ -24,6 +25,9 @@ export const theme = createTheme({
     },
     success: {
       main: '#8aa48c',
+    },
+    warning: {
+      main: '#C38370',
     },
   },
   typography: {

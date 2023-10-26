@@ -43,7 +43,7 @@ const BeOurGuest = React.forwardRef(( props, ref ) => {
                     sx={{
                       fontFamily: "Bodoni", 
                       fontSize: {xs: 16.25, sm: 22, md: 23, lg: 25}, 
-                      letterSpacing: .5, 
+                      letterSpacing: {xs: .2, sm: .25, md:.5}, 
                       textAlign: {xs: "left", sm:"center"}, 
                       lineHeight: {xs: 1.6, sm: 1.4}, 
                       color: "secondary.main",

@@ -42,7 +42,7 @@ const BeOurGuest = React.forwardRef(( props, ref ) => {
                   <Typography 
                     sx={{
                       fontFamily: "Bodoni", 
-                      fontSize: {xs: 16.25, sm: 22, md: 23, lg: 25}, 
+                      fontSize: {xs: 15, sm: 22, md: 23, lg: 25}, 
                       letterSpacing: {xs: .2, sm: .25, md:.5}, 
                       textAlign: {xs: "left", sm:"center"}, 
                       lineHeight: {xs: 1.6, sm: 1.4}, 

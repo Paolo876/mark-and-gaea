@@ -34,7 +34,7 @@ const Map = React.forwardRef((props, ref) => {
             <Grid container>
               <Grid item xs={6} sm={5} md={4.5} sx={{textAlign: "left"}}>
                 <Typography sx={headerStyles}>The V Farm</Typography>
-                <Box sx={{width: {xs: 10, sm: 13, md:15}, height: "1px", backgroundColor: "success.main", mr: "auto", my: {xs: 1, sm: 1.5, md: 2, lg:2.5}}}></Box>          
+                <Box sx={{width: {xs: 10, sm: 13, md:15}, height: "1px", backgroundColor: "success.main", mr: "auto", my: {xs: 1.25, sm: 1.5, md: 2, lg:2.5}}}></Box>          
                 <Typography sx={descriptionStyles}>
                   <Box component="span" sx={{display: "block"}}>Valencia Farm, Macale Extension, </Box>
                   <Box component="span" sx={{display: "block"}}>Sitio Bana, Brgy, Bamban, </Box>

@@ -4,7 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
-
+firestore.rules
+*.rules
+/firestore
 # testing
 /coverage
 
@@ -17,7 +19,6 @@
 .env.development.local
 .env.test.local
 .env.production.local
-firestore.rules
 
 npm-debug.log*
 yarn-debug.log*
@@ -25,3 +26,5 @@ yarn-error.log*
 
 /functions/node_modules
 
+firestore.rules
+firestore.rules

@@ -9,12 +9,13 @@ import RsvpSubmissionMessage from '../../components/RsvpSubmissionMessage';
 const BeOurGuest = React.forwardRef(( props, ref ) => {
 
   const [ isSubmitted, setIsSubmitted ] = useState(false);
+  
   return (
     <Container>
-      <Box sx={{position: 'relative', mb: {xs: 20,sm: 36, md: 38, lg: 40},}}>
+      <Box sx={{position: 'relative', mb: {xs: 20,sm: 36, md: 38, lg: 40}, mt: {xs: 10, sm: 18, md: 23, lg:25}}}>
         <Grid container>
           <Grid item xs={12} sx={{mb: {xs: 10, sm: 13, md: 14, lg: 16}, pt: {xs: 8, sm: 12, md: 14, lg: 15}}} ref={ref}>
-            <Typography variant="h4" sx={{fontSize: {xs: 32, sm: 40, md: 50, lg: 55}}}>be our guest</Typography>
+            <Typography variant="h4" sx={{fontSize: {xs: 36, sm: 52, md: 58, lg: 58}}}>be our guest</Typography>
           </Grid>
           <Grid item xs={11.25} sm={12} sx={{textAlign: "left", mb: 1, mx: {xs: "auto", sm: 0}}}>
             <Typography sx={{fontSize: {xs: 26, sm: 27, md: 30, lg: 35}, letterSpacing: 8, fontFamily: "Bodoni-Bold", opacity: .85}}>RSVP</Typography>

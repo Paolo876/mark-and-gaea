@@ -30,7 +30,7 @@ const Details = React.forwardRef((props, ref) => {
           {/* header */}
           <Grid item xs={12} sx={{mb: {xs: 8, sm: 13, md: 14, lg: 16}, pt: {xs: 8, sm: 12, md: 14, lg: 15}}} ref={ref}>
             {/* <VaraText text="details"/> */}
-            <Typography variant="h4" sx={{fontSize: {xs: 40, sm: 45, md: 55, lg: 60}}}>details</Typography>
+            <Typography variant="h4" sx={{fontSize: {xs: 48, sm: 60, md: 68, lg: 70}}}>details</Typography>
           </Grid>
 
           <Grid item xs={12} sx={{display: {xs: "initial", sm: "none"}, mb: 10}}>

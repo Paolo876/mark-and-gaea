@@ -12,7 +12,7 @@ const BeOurGuest = React.forwardRef(( props, ref ) => {
   
   return (
     <Container>
-      <Box sx={{position: 'relative', mb: {xs: 20,sm: 36, md: 38, lg: 40}, mt: {xs: 10, sm: 18, md: 23, lg:25}}}>
+      <Box sx={{position: 'relative', mb: {xs: 28, sm: 36, md: 38, lg: 40}, mt: {xs: 14, sm: 18, md: 23, lg:25}}}>
         <Grid container>
           <Grid item xs={12} sx={{mb: {xs: 10, sm: 13, md: 14, lg: 16}, pt: {xs: 8, sm: 12, md: 14, lg: 15}}} ref={ref}>
             <Typography variant="h4" sx={{fontSize: {xs: 36, sm: 52, md: 58, lg: 58}}}>be our guest</Typography>

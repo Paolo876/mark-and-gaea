@@ -14,7 +14,14 @@ const IamYou = () => {
 
 
   return (
-    <Box sx={{height: {xs: 600, sm: 700, md: 900, lg:1000}, background: "rgba(255,255,255,.1)", pt: {xs: 1.5, sm: 2, md: 3, lg: 3}}}>
+    <Box 
+      sx={{
+        // height: {xs: 600, sm: 700, md: 900, lg:1000}, 
+        height: {xs: "90vh", md:"100vh"},
+        background: "rgba(255,255,255,.1)", 
+        pt: {xs: 1.5, sm: 2, md: 3, lg: 3}
+      }}
+    >
       <Grid container sx={{height: "100%"}}>
         <Grid item xs={12} sx={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}} >
           <Typography sx={{textAlign: "center", fontSize: {xs: 16, sm: 18, md: 19, lg: 20}, letterSpacing: 2, transform: "skewX(-12deg)", opacity: .9, lineHeight: 1.65}} ref={ref}>

@@ -24,7 +24,7 @@ const descriptionStyles = {
 const Map = React.forwardRef((props, ref) => {
   return (
     <Container>
-      <Box sx={{position: 'relative', mt: {xs: 10, sm: 18, md: 23, lg:25}}}>
+      <Box sx={{position: 'relative', mt: {xs: 14, sm: 18, md: 23, lg:25}}}>
         <Grid container>
           <Grid item xs={12} sx={{mb: {xs: 8, sm: 13, md: 14, lg: 16}, pt: {xs: 8, sm: 12, md: 14, lg: 15}}} ref={ref}>
             <Typography variant="h4" sx={{fontSize: {xs: 48, sm: 60, md: 70, lg: 70}}}>map</Typography>

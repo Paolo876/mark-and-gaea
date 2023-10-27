@@ -38,7 +38,7 @@ const IamYou = () => {
               <Fade
                 in={inView}
                 style={{ transitionDelay: "1000ms"  }}
-                timeout={800}
+                timeout={600}
               >
                 <Box component="span" sx={{display: "inline"}}>
                   I am you 
@@ -57,16 +57,25 @@ const IamYou = () => {
             <Fade
               in={inView}
               style={{ transitionDelay: "2600ms"  }}
+              timeout={600}
+            >
+              <Box component="span" sx={{display: "inline"}}>
+                We are.
+              </Box>
+            </Fade>
+            <Fade
+              in={inView}
+              style={{ transitionDelay: "3400ms"  }}
               timeout={800}
             >
-              <Box component="span" sx={{display: "block"}}>
-                We are. Hereafter.
+              <Box component="span" sx={{display: "inline", ml: 1}}>
+                Hereafter.
               </Box>
             </Fade>
           </Typography>
           <Fade
                 in={inView}
-                style={{ transitionDelay: "3600ms"  }}
+                style={{ transitionDelay: "3800ms"  }}
                 timeout={1100}
               >
               <Box>

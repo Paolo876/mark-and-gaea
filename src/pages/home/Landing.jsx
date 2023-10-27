@@ -10,7 +10,7 @@ const Landing = () => {
   return (
     <Fade
       in={true}
-      style={{ transitionDelay: "1400ms"  }}
+      style={{ transitionDelay: "1600ms"  }}
       timeout={900}
     >
       <Box sx={{width: "100%", background: "rgba(25,25,25,.05)", px: "auto", minHeight: {xs: 220, sm: 400, md: 420, lg: 450}}}>

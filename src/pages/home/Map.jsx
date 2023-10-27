@@ -3,6 +3,8 @@ import { Box, Typography, Container, Grid, Button } from '@mui/material';
 import Image from 'mui-image';
 import roadMap from "../../assets/images/bambanROADmap.svg"
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import MapHeader from '../../components/headers/MapHeader';
+import { useInView } from 'react-intersection-observer';
 
 
 const headerStyles = {
@@ -22,12 +24,23 @@ const descriptionStyles = {
 
 
 const Map = React.forwardRef((props, ref) => {
+    
+  const { ref: viewRef, inView } = useInView({
+    threshold: 0,
+    rootMargin: "0% 0px -35% 0px",
+    triggerOnce: true
+  });
+
+
   return (
     <Container>
       <Box sx={{position: 'relative', mt: {xs: 14, sm: 18, md: 23, lg:25}}}>
         <Grid container>
           <Grid item xs={12} sx={{mb: {xs: 8, sm: 13, md: 14, lg: 16}, pt: {xs: 8, sm: 12, md: 14, lg: 15}}} ref={ref}>
-            <Typography variant="h4" sx={{fontSize: {xs: 48, sm: 60, md: 70, lg: 70}}}>map</Typography>
+            {/* <Typography variant="h4" sx={{fontSize: {xs: 48, sm: 60, md: 70, lg: 70}}}>map</Typography> */}
+            <Box sx={{height: {xs: 80, sm: 100, md:120}}} ref={viewRef}>
+              {inView  && <MapHeader/> }
+            </Box>
           </Grid>
 
           <Grid item xs={12} sx={{mx: "auto"}}>

@@ -1,10 +1,11 @@
 import React from 'react'
 import { Box, Typography, Container, Grid, Fade } from '@mui/material';
+import DetailsHeader from '../../components/headers/DetailsHeader';
+
 import Image from 'mui-image';
 import palette from "../../assets/images/palette.svg"
 import shedImage from "../../assets/images/shed_sketch.png"
 import { useInView } from 'react-intersection-observer';
-import DetailsHeader from '../../components/headers/DetailsHeader';
 
 const headerStyles = {
   fontFamily: "Bodoni-Bold",
@@ -22,16 +23,14 @@ const descriptionStyles = {
 }
 
 
-const Details = React.forwardRef((props, r) => {
+const Details = React.forwardRef((props, ref) => {
   
-  const { ref, inView } = useInView({
+  const { ref: viewRef, inView } = useInView({
     threshold: 0,
     rootMargin: "0% 0px -35% 0px",
-    // delay: 100,
     triggerOnce: true
   });
   
-  console.log(inView)
   return (
     <Container>
       <Box sx={{position: 'relative'}}>
@@ -39,7 +38,7 @@ const Details = React.forwardRef((props, r) => {
           {/* header */}
           <Grid item xs={12} sx={{mb: {xs: 8, sm: 13, md: 14, lg: 16}, pt: {xs: 8, sm: 12, md: 14, lg: 15}}} ref={ref} >
             {/* <Typography variant="h4" sx={{fontSize: {xs: 48, sm: 60, md: 68, lg: 70}}} ref={viewRef}>details</Typography> */}
-            <Box sx={{height: {xs: 80, sm: 100, md:120}}}>
+            <Box sx={{height: {xs: 80, sm: 100, md:120}}} ref={viewRef}>
               {inView  && <DetailsHeader/> }
             </Box>
           </Grid>

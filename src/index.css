@@ -35,8 +35,21 @@ html {
 body {
   margin: 0;
   font-family: Bodoni;
-  background-image: url("./assets/images/bg-pattern.png");
+  position: relative;
+  /* background-image: url("./assets/images/bg-pattern.png"); */
 
+}
+
+body::before {
+  position: fixed;
+  content: '';
+  top:0;
+  left:0;
+  height: 100%;
+  width: 100%;
+  background-image: url("./assets/images/bg-pattern.png");
+  opacity: .8;
+  z-index: -1;
 }
 
 

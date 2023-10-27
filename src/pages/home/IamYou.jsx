@@ -18,7 +18,12 @@ const IamYou = () => {
       sx={{
         // height: {xs: 600, sm: 700, md: 900, lg:1000}, 
         height: {xs: "90vh", md:"100vh"},
-        background: "rgba(255,255,255,.1)", 
+        // background: "rgba(255,255,255,.1)", 
+        background: 'rgb(241,233,231)',
+        background: '-moz-linear-gradient(0deg, rgba(241,233,231,0) 0%, rgba(241,233,231,0.6) 15%)',
+        background: '-webkit-linear-gradient(0deg, rgba(241,233,231,0) 0%, rgba(241,233,231,0.6) 15%)',
+        background: 'linear-gradient(0deg, rgba(241,233,231,0) 0%, rgba(241,233,231,0.6) 15%)',
+        filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr="#f1e9e7",endColorstr="#ffffff",GradientType=1)',
         pt: {xs: 1.5, sm: 2, md: 3, lg: 3}
       }}
     >

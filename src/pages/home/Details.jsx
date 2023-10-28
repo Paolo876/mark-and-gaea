@@ -90,7 +90,7 @@ const Details = React.forwardRef((props, ref) => {
               <Box sx={{opacity: .75}}>
                 <Fade
                   in={mobileContentInView}
-                  style={{ transitionDelay: "1500ms" }}
+                  style={{ transitionDelay: "1400ms" }}
                   timeout={800}
                 >    
                   <Typography sx={{fontSize: 16, letterSpacing: .75, lineHeight: 1}}>Dec</Typography>
@@ -98,7 +98,7 @@ const Details = React.forwardRef((props, ref) => {
               </Box>
               <Fade
                 in={mobileContentInView}
-                style={{ transitionDelay: "1200ms" }}
+                style={{ transitionDelay: "1100ms" }}
                 timeout={800}
               > 
                 <Box sx={{borderRadius: "50%", border: 2, borderColor: "success.main", width: 45, height: 45, display: "flex", alignItems: "center", justifyContent: "center"}} >
@@ -108,7 +108,7 @@ const Details = React.forwardRef((props, ref) => {
               <Box sx={{opacity: .75}}>
                 <Fade
                   in={mobileContentInView}
-                  style={{ transitionDelay: "1500ms" }}
+                  style={{ transitionDelay: "1400ms" }}
                   timeout={800}
                 > 
                   <Typography sx={{fontSize: 13, letterSpacing: .5, lineHeight: 1}}>2023</Typography>
@@ -121,19 +121,25 @@ const Details = React.forwardRef((props, ref) => {
           </Grid>
 
           {/* mobile ceremony & reception */}
-          <Grid item xs={11} sx={{mb: .25, display: {xs: "initial", sm: "none"}, mx: "auto"}}>
-            <Typography sx={headerStyles}>CEREMONY & RECEPTION</Typography>
-            <Box sx={{height: 8, width: "1px", backgroundColor: "success.main", mx: "auto", my: 1.25}}></Box>          
-            <Typography sx={{...descriptionStyles, fontSize: 12.5}}>
-              <Box component="span" sx={{display: "block"}}>Celebration starts at four o'clock in the afternoon</Box>
-              <Box component="span" sx={{display: "block"}}>at the garden.</Box>
-            </Typography>
-            <Typography sx={{...descriptionStyles, fontSize: 12.5}} mt={2}>
-              <Box component="span" sx={{display: "inline"}}>Reception follows </Box>
-              <Box component="span" sx={{display: "inline"}}>at <Box component="span" sx={{display:"inline", letterSpacing: 1.5, mx: .25}}>The Shed by The V Farm</Box></Box>
-              <Box component="span" sx={{display: "block"}}>Bamban, Tarlac</Box>
-            </Typography>
-          </Grid>
+          <Fade
+            in={mobileContentInView}
+            style={{ transitionDelay: "2500ms" }}
+            timeout={800}
+          > 
+            <Grid item xs={11} sx={{mb: .25, display: {xs: "initial", sm: "none"}, mx: "auto"}}>
+              <Typography sx={headerStyles}>CEREMONY & RECEPTION</Typography>
+              <Box sx={{height: 8, width: "1px", backgroundColor: "success.main", mx: "auto", my: 1.25}}></Box>          
+              <Typography sx={{...descriptionStyles, fontSize: 12.5}}>
+                <Box component="span" sx={{display: "block"}}>Celebration starts at four o'clock in the afternoon</Box>
+                <Box component="span" sx={{display: "block"}}>at the garden.</Box>
+              </Typography>
+              <Typography sx={{...descriptionStyles, fontSize: 12.5}} mt={2}>
+                <Box component="span" sx={{display: "inline"}}>Reception follows </Box>
+                <Box component="span" sx={{display: "inline"}}>at <Box component="span" sx={{display:"inline", letterSpacing: 1.5, mx: .25}}>The Shed by The V Farm</Box></Box>
+                <Box component="span" sx={{display: "block"}}>Bamban, Tarlac</Box>
+              </Typography>
+            </Grid>
+          </Fade>
           
           {/* CENTER DATE TOP LINE */}
           <Grid item xs={12} sx={{display: {xs: "none", sm: "initial"}}}>
@@ -206,9 +212,9 @@ const Details = React.forwardRef((props, ref) => {
           {/* SHED IMG */}
           <Grid item xs={7} sm={4.5} mx="auto" sx={{opacity: .8, transition: "all 500ms ease", pointerEvents: "none", my: {xs: 1, sm: 4, md: 5, lg: 5}}}>
             <Fade
-              in={contentInView}
-              style={{ transitionDelay: "3500ms"  }}
-              timeout={800}
+              in={contentInView || mobileContentInView}
+              style={{ transitionDelay: "3400ms"  }}
+              timeout={900}
             > 
               <Box>
                 <Image src={shedImage} sx={{filter: "grayscale(25%)"}} fit="scale-down"/>

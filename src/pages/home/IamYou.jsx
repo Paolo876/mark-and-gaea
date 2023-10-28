@@ -20,16 +20,16 @@ const IamYou = () => {
         height: {xs: "90vh", md:"100vh"},
         // background: "rgba(255,255,255,.1)", 
         background: 'rgb(241,233,231)',
-        background: '-moz-linear-gradient(0deg, rgba(241,233,231,0) 0%, rgba(241,233,231,0.6) 15%)',
-        background: '-webkit-linear-gradient(0deg, rgba(241,233,231,0) 0%, rgba(241,233,231,0.6) 15%)',
-        background: 'linear-gradient(0deg, rgba(241,233,231,0) 0%, rgba(241,233,231,0.6) 15%)',
-        filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr="#f1e9e7",endColorstr="#ffffff",GradientType=1)',
+        background: '-moz-linear-gradient(0deg, rgba(241,233,231,0) 0%, rgba(241,233,231,1) 8%, rgba(241,233,231,1) 80%, rgba(241,233,231,0) 100%)',
+        background: '-webkit-linear-gradient(0deg, rgba(241,233,231,0) 0%, rgba(241,233,231,1) 8%, rgba(241,233,231,1) 80%, rgba(241,233,231,0) 100%)',
+        background: 'linear-gradient(0deg, rgba(241,233,231,0) 0%, rgba(241,233,231,1) 8%, rgba(241,233,231,1) 80%, rgba(241,233,231,0) 100%)',
+        filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr="#f1e9e7",endColorstr="#f1e9e7",GradientType=1)',
         pt: {xs: 1.5, sm: 2, md: 3, lg: 3}
       }}
     >
       <Grid container sx={{height: "100%"}}>
         <Grid item xs={12} sx={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", userSelect: "none"}} >
-          <Typography sx={{textAlign: "center", fontSize: {xs: 17, sm: 18, md: 20, lg: 21}, letterSpacing: 2, transform: "skewX(-12deg)", opacity: .85, lineHeight: 1.65}} ref={ref}>
+          <Typography sx={{textAlign: "center", fontSize: {xs: 14, sm: 16, md: 18, lg: 20}, letterSpacing: 2, transform: "skewX(-12deg)", opacity: .85, lineHeight: 1.65}} ref={ref}>
             <Fade
               in={inView}
               style={{ transitionDelay: "0ms"  }}

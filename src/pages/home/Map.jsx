@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Box, Typography, Container, Grid, Button, Fade, ButtonBase } from '@mui/material';
 import Image from 'mui-image';
 import roadMap from "../../assets/images/bambanROADmap.svg"
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import MapHeader from '../../components/headers/MapHeader';
 import { useInView } from 'react-intersection-observer';
+import ImageModal from '../../components/ImageModal';
 
 
 const headerStyles = {
@@ -25,6 +26,9 @@ const descriptionStyles = {
 
 const Map = React.forwardRef((props, ref) => {
     
+  const [ showModal, setShowModal ] = useState(false);
+
+
   const { ref: viewRef, inView } = useInView({
     threshold: 0,
     rootMargin: "0% 0px -23% 0px",
@@ -96,6 +100,7 @@ const Map = React.forwardRef((props, ref) => {
               > 
                 <Grid item xs={6} sm={7} md={7.5}>
                   <ButtonBase 
+                    onClick={() => setShowModal(true)}
                     sx={{
                       display: "initial",
                       width: "100%", 
@@ -130,6 +135,7 @@ const Map = React.forwardRef((props, ref) => {
                       fontSize: {xs: 11, sm: 13, md: 15, lg: 15, xl:16},
                       letterSpacing: 1.2,
                       transition: "all 450ms ease",
+                      
                       "&:hover": {
                         transform: "scale(1.015)"
                       }
@@ -146,6 +152,7 @@ const Map = React.forwardRef((props, ref) => {
           </Grid>
         </Grid>
       </Box>
+      <ImageModal showModal={showModal} handleClose={() => setShowModal(false)} img={roadMap}/>
     </Container>
   )
 })

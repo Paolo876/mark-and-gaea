@@ -7,7 +7,7 @@ const IamYou = () => {
 
   const { ref, inView } = useInView({
     threshold: 0,
-    rootMargin: "0% 0px -35% 0px",
+    rootMargin: "0% 0px -30% 0px",
     // delay: 100,
     triggerOnce: true
   });

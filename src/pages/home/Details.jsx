@@ -27,7 +27,13 @@ const Details = React.forwardRef((props, ref) => {
   
   const { ref: viewRef, inView } = useInView({
     threshold: 0,
-    rootMargin: "0% 0px -35% 0px",
+    rootMargin: "0% 0px -25% 0px",
+    triggerOnce: true
+  });
+  
+  const { ref: contentRef, inView: contentInView } = useInView({
+    threshold: 0,
+    rootMargin: "0% 0px -25% 0px",
     triggerOnce: true
   });
   
@@ -72,33 +78,41 @@ const Details = React.forwardRef((props, ref) => {
             </Typography>
           </Grid>
           
+          {/* CENTER DATE TOP LINE */}
           <Grid item xs={12} sx={{display: {xs: "none", sm: "initial"}}}>
             <Fade
-              in={inView}
-              style={{ transitionDelay: "2100ms"  }}
+              in={contentInView}
+              style={{ transitionDelay: "1600ms"  }}
               timeout={800}
             > 
               <Box sx={{height: 35, width: "2px", backgroundColor: "success.main", mx: "auto", my: 2}}></Box>          
             </Fade>
           </Grid>
+
+          {/* CEREMONY */}
+          <Fade
+            in={contentInView}
+            style={{ transitionDelay: "2600ms"  }}
+            timeout={800}
+          > 
+            <Grid item xs={12} sm={5.25} md={5} sx={{mb: {xs: 13, sm: 0}, display: {xs: "none", sm: "initial"}}} align="center">
+              <Typography sx={headerStyles}>CEREMONY</Typography>
+              <Box sx={{height: {xs: 8, sm: 13, md:15}, width: "1px", backgroundColor: "success.main", mx: "auto", my: {xs: .15, sm: 1.5, md: 2, lg:2.5}}}></Box>          
+              <Typography sx={descriptionStyles}>
+                <Box component="span" sx={{display: "block"}}>Celebration starts <Box component="br" sx={{display: {md: "none"}}}></Box>at four o'clock in the afternoon</Box>
+                <Box component="span" sx={{display: "block"}}>at the garden.</Box>
+              </Typography>
+            </Grid>
+          </Fade>
           
-          <Grid item xs={12} sm={5.25} md={5} sx={{mb: {xs: 13, sm: 0}, display: {xs: "none", sm: "initial"}}} align="center">
-            <Typography sx={headerStyles}>CEREMONY</Typography>
-            <Box sx={{height: {xs: 8, sm: 13, md:15}, width: "1px", backgroundColor: "success.main", mx: "auto", my: {xs: .15, sm: 1.5, md: 2, lg:2.5}}}></Box>          
-            <Typography sx={descriptionStyles}>
-              <Box component="span" sx={{display: "block"}}>Celebration starts <Box component="br" sx={{display: {md: "none"}}}></Box>at four o'clock in the afternoon</Box>
-              <Box component="span" sx={{display: "block"}}>at the garden.</Box>
-            </Typography>
-          </Grid>
-          
-          
+          {/* CENTER DATE */}
           <Grid item sm={1.5} md={2} sx={{display: {xs: "none", sm: "initial"}}}>
             <Fade
-              in={inView}
-              style={{ transitionDelay: "1800ms"  }}
+              in={contentInView}
+              style={{ transitionDelay: "1200ms"  }}
               timeout={800}
             > 
-              <Box sx={{display: "flex", alignItems: "center", flexDirection: "column", gap: .75}}>
+              <Box sx={{display: "flex", alignItems: "center", flexDirection: "column", gap: .75}} ref={contentRef}>
                 <Typography sx={{fontSize: {sm: 18, md: 19, lg: 20}, letterSpacing: 2, opacity: .75}}>Dec</Typography>
                 <Box sx={{borderRadius: "50%", border: 1, borderColor: "success.main", width: {sm: 60, md: 70, lg: 75}, height: {sm: 60, md: 70, lg: 75}, display: "flex", alignItems: "center", justifyContent: "center"}}>
                   <Typography sx={{lineHeight: 1, fontSize: {sm: 27, md: 29, lg: 30}, fontFamily: "Bodoni-Bold"}}>22</Typography>
@@ -107,26 +121,42 @@ const Details = React.forwardRef((props, ref) => {
               </Box>
             </Fade>
             <Fade
-              in={inView}
-              style={{ transitionDelay: "2100ms"  }}
+              in={contentInView}
+              style={{ transitionDelay: "1600ms"  }}
               timeout={800}
             > 
               <Box sx={{height: 80, width: "2px", backgroundColor: "success.main", mx: "auto", my: 2}}></Box>    
             </Fade>      
           </Grid>
-          
-          <Grid item  xs={12} sm={5.25} md={5} sx={{mb: {xs: 3.5, sm: 0}, display: {xs: "none", sm: "initial"}}} align="center">
-            <Typography sx={headerStyles}>RECEPTION</Typography>
-            <Box sx={{height: {xs: 8, sm: 13, md:15}, width: "1px", backgroundColor: "success.main", mx: "auto", my: {xs: .15, sm: 1.5, md: 2, lg:2.5}}}></Box>          
-            <Typography sx={descriptionStyles}>
-              <Box component="span" sx={{display: "block"}}>Reception follows </Box>
-              <Box component="span" sx={{display: "block"}}>at <Box component="span" sx={{display:"inline-block", letterSpacing: 2.5, mx: .5}}>The Shed by The V Farm</Box></Box>
-              <Box component="span" sx={{display: "block"}}>Bamban, Tarlac</Box>
-            </Typography>
-          </Grid>
 
-          <Grid item xs={7} sm={4.5} mx="auto" sx={{opacity: .75, transition: "all 500ms ease", pointerEvents: "none", my: {xs: 1, sm: 4, md: 5, lg: 5}}}>
-            <Image src={shedImage} sx={{filter: "grayscale(25%)"}} fit="scale-down"/>
+          {/* RECEPTION */}
+          <Fade
+            in={contentInView}
+            style={{ transitionDelay: "3000ms"  }}
+            timeout={800}
+          > 
+            <Grid item  xs={12} sm={5.25} md={5} sx={{mb: {xs: 3.5, sm: 0}, display: {xs: "none", sm: "initial"}}} align="center">
+              <Typography sx={headerStyles}>RECEPTION</Typography>
+              <Box sx={{height: {xs: 8, sm: 13, md:15}, width: "1px", backgroundColor: "success.main", mx: "auto", my: {xs: .15, sm: 1.5, md: 2, lg:2.5}}}></Box>          
+              <Typography sx={descriptionStyles}>
+                <Box component="span" sx={{display: "block"}}>Reception follows </Box>
+                <Box component="span" sx={{display: "block"}}>at <Box component="span" sx={{display:"inline-block", letterSpacing: 2.5, mx: .5}}>The Shed by The V Farm</Box></Box>
+                <Box component="span" sx={{display: "block"}}>Bamban, Tarlac</Box>
+              </Typography>
+            </Grid>
+          </Fade>
+
+          {/* SHED IMG */}
+          <Grid item xs={7} sm={4.5} mx="auto" sx={{opacity: .8, transition: "all 500ms ease", pointerEvents: "none", my: {xs: 1, sm: 4, md: 5, lg: 5}}}>
+            <Fade
+              in={contentInView}
+              style={{ transitionDelay: "3500ms"  }}
+              timeout={800}
+            > 
+              <Box>
+                <Image src={shedImage} sx={{filter: "grayscale(25%)"}} fit="scale-down"/>
+              </Box>
+            </Fade>
           </Grid>
           
           <Grid item xs={12} mt={{xs: 5, sm:5}}>

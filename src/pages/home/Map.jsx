@@ -114,6 +114,7 @@ const Map = React.forwardRef((props, ref) => {
                   >
                   <Box sx={{pointerEvents: "none"}}>
                     <Image src={roadMap} fit="cover"/>
+                    <Typography sx={{opacity: .75, fontSize: {xs: 10, sm: 12, md: 14, lg: 16}, letterSpacing: .15, color: "primary.main"}}>Click the image to display full size</Typography>
                   </Box>
                   </ButtonBase>
                 </Grid>

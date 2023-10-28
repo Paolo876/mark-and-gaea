@@ -1,39 +1,45 @@
-import { useState } from 'react'
-import { Modal, Box } from '@mui/material'
+import { Modal, Box, IconButton } from '@mui/material'
 import Image from 'mui-image';
+import CloseIcon from '@mui/icons-material/Close';
 
-const style = {
-  // position: 'absolute',
-  // top: '50%',
-  // left: '50%',
-  // transform: 'translate(-50%, -50%)',
-  // // width: 400,
-  // bgcolor: 'background.paper',
-  // border: '2px solid #000',
-  // boxShadow: 24,
-  // p: 4,
-  position: "fixed",
-  top: 0,
-  left: 0,
-  backgroundColor: "background.default",
-  height: "100%",
-  width: "100%",
-  // maxHeight: "95vh",
-  // maxWidth: "95vw",
+
+const containerStyle = {
+  zIndex:5, 
+  height: "100vh", 
+  width: "100vw", 
+  position: "relative", 
+  display: "flex", 
+  alignItems: "center", 
+  flexDirection: "column",
+  justifyContent: "center",
+  backdropFilter: "blur(2px) contrast(80%) brightness(50%)",
 };
 
 
 const ImageModal = ({ handleClose, showModal, img}) => {
 
   return (
-    <Modal
-      open={showModal}
-      onClose={handleClose}
-    >
-      <Box sx={style}>
-        <Box sx={{height: "100%", width: "100%",   }}>
-          <Image src={img} duration={0} fit="cover" sx={{maxHeight: "95vh",
-  maxWidth: "95vw",}}/>
+    <Modal open={showModal} onClose={handleClose}>
+      <Box sx={containerStyle}>
+        <Box sx={{zIndex: 2, height: "100vh", width: "100vw", position: "absolute"}} onClick={handleClose} ></Box>
+        <Box sx={{zIndex: 5, backgroundColor: "background.default", height: {xs: "auto", lg:"100%"}, width:{xs: "100%", lg:"auto"}, maxHeight:"90vh", maxWidth: {xs: "95vw", sm:"90vw"}, position:"relative"}}>
+          <Box
+            sx={{
+              position:"absolute",
+              right:0,
+              top:0,
+              zIndex: 10
+            }}
+          >
+            <IconButton
+              onClick={handleClose}
+              sx={{
+                // backgroundColor: "rgba(0,0,0,0.75)",
+                color: "warning.main"
+              }}
+            ><CloseIcon/></IconButton>
+          </Box>
+          <Image src={img} duration={0} fit="contain"/>
         </Box>
       </Box>
     </Modal>

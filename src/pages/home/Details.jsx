@@ -6,6 +6,30 @@ import Image from 'mui-image';
 import palette from "../../assets/images/palette.svg"
 import shedImage from "../../assets/images/shed_sketch.png"
 import { useInView } from 'react-intersection-observer';
+import { keyframes } from '@mui/system';
+
+
+const slideRight = keyframes`
+  0% {
+    transform: translateX(-3em);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
+const slideLeft = keyframes`
+  0% {
+    transform: translateX(3em);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
 
 const headerStyles = {
   fontFamily: "Bodoni-Bold",
@@ -37,6 +61,13 @@ const Details = React.forwardRef((props, ref) => {
     triggerOnce: true
   });
   
+  const { ref: mobileContentRef, inView: mobileContentInView } = useInView({
+    threshold: 0,
+    rootMargin: "0% 0px -25% 0px",
+    triggerOnce: true
+  });
+  
+
   return (
     <Container>
       <Box sx={{position: 'relative'}}>
@@ -51,15 +82,41 @@ const Details = React.forwardRef((props, ref) => {
           </Grid>
 
           {/* mobile date header */}
-          <Grid item xs={12} sx={{display: {xs: "initial", sm: "none"}, mb: 8}}>
+          <Grid item xs={12} sx={{display: {xs: "initial", sm: "none"}, mb: 8}} ref={mobileContentRef}>
             <Box sx={{display: "flex", alignItems: "center", flexDirection: "row", gap: 1, justifyContent: "center"}}>
-              <Box sx={{height: "1px", width: 16, backgroundColor: "success.main", my: 2, mx: 1, opacity: .4}}></Box>          
-              <Typography sx={{fontSize: 16, letterSpacing: .75, opacity: .75, lineHeight: 1}}>Dec</Typography>
-              <Box sx={{borderRadius: "50%", border: 2, borderColor: "success.main", width: 45, height: 45, display: "flex", alignItems: "center", justifyContent: "center"}}>
-                <Typography sx={{lineHeight: 1, fontSize: 18, fontFamily: "Bodoni-Bold"}}>22</Typography>
+              <Box sx={{opacity: .4}}>
+                <Box sx={{height: "1px", width: 16, backgroundColor: "success.main", my: 2, mx: 1, opacity: 0, animation: mobileContentInView ? `${slideLeft} 900ms ease forwards 1800ms` : ''}}></Box>       
               </Box>
-              <Typography sx={{fontSize: 13, letterSpacing: .5, opacity: .75, lineHeight: 1}}>2023</Typography>
-              <Box sx={{height: "1px", width: 16, backgroundColor: "success.main", my: 2, mx: 1, opacity: .4}}></Box>          
+              <Box sx={{opacity: .75}}>
+                <Fade
+                  in={mobileContentInView}
+                  style={{ transitionDelay: "1500ms" }}
+                  timeout={800}
+                >    
+                  <Typography sx={{fontSize: 16, letterSpacing: .75, lineHeight: 1}}>Dec</Typography>
+                </Fade>
+              </Box>
+              <Fade
+                in={mobileContentInView}
+                style={{ transitionDelay: "1200ms" }}
+                timeout={800}
+              > 
+                <Box sx={{borderRadius: "50%", border: 2, borderColor: "success.main", width: 45, height: 45, display: "flex", alignItems: "center", justifyContent: "center"}} >
+                  <Typography sx={{lineHeight: 1, fontSize: 18, fontFamily: "Bodoni-Bold"}}>22</Typography>
+                </Box>
+              </Fade>
+              <Box sx={{opacity: .75}}>
+                <Fade
+                  in={mobileContentInView}
+                  style={{ transitionDelay: "1500ms" }}
+                  timeout={800}
+                > 
+                  <Typography sx={{fontSize: 13, letterSpacing: .5, lineHeight: 1}}>2023</Typography>
+                </Fade>
+              </Box>
+              <Box sx={{opacity: .4}}>
+                <Box sx={{height: "1px", width: 16, backgroundColor: "success.main", my: 2, mx: 1, opacity: 0, animation: mobileContentInView ? `${slideRight} 900ms ease forwards 1800ms` : ''}}></Box>       
+              </Box>
             </Box>
           </Grid>
 

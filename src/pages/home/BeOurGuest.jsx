@@ -13,7 +13,7 @@ const BeOurGuest = React.forwardRef(( props, ref ) => {
     
   const { ref: viewRef, inView } = useInView({
     threshold: 0,
-    rootMargin: "0% 0px -35% 0px",
+    rootMargin: "0% 0px -23% 0px",
     triggerOnce: true
   });
 
@@ -23,8 +23,10 @@ const BeOurGuest = React.forwardRef(( props, ref ) => {
       <Box sx={{position: 'relative', mb: {xs: 28, sm: 36, md: 38, lg: 40}, mt: {xs: 14, sm: 18, md: 23, lg:25}}}>
         <Grid container>
           <Grid item xs={12} sx={{mb: {xs: 10, sm: 13, md: 14, lg: 16}, pt: {xs: 8, sm: 12, md: 14, lg: 15}}} ref={ref}>
+            <Box ref={viewRef}></Box>
+
             {/* <Typography variant="h4" sx={{fontSize: {xs: 36, sm: 52, md: 58, lg: 58}}}>be our guest</Typography> */}
-            <Box sx={{height: {xs: 80, sm: 100, md:120}}} ref={viewRef}>
+            <Box sx={{height: {xs: 80, sm: 100, md:120}}}>
               {inView  && <BeOurGuestHeader/> }
             </Box>
           </Grid>

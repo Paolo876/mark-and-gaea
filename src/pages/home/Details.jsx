@@ -76,7 +76,7 @@ const Details = React.forwardRef((props, ref) => {
 
   return (
     <Container>
-      <Box sx={{position: 'relative'}}>
+      <Box sx={{position: 'relative', userSelect: "none"}}>
         <Grid container>
           {/* header */}
           <Grid item xs={12} sx={{mb: {xs: 8, sm: 13, md: 14, lg: 16}, pt: {xs: 8, sm: 12, md: 14, lg: 15}}} ref={ref} >
@@ -273,7 +273,7 @@ const Details = React.forwardRef((props, ref) => {
               <Grid item xs={10} sm={5.5} mx="auto" mt={{xs: 4, sm:18}}>
                 <Typography sx={{fontSize: {xs: 16, sm: 26, md: 28, lg:30}, letterSpacing: 2, color: "primary.main", opacity: .85, transform: "skewX(-8deg)"}}>Be guided with our color palette</Typography>
                 <Box sx={{height: "1px", width: {xs: 20, sm:35}, backgroundColor: "success.main", mx: "auto", my: {xs: 1.5, sm:2}}}></Box>          
-                <Box mt={{xs:3, sm:6}} mx={{xs: 3, sm: 0}}>
+                <Box mt={{xs:3, sm:6}} mx={{xs: 3, sm: 0}} sx={{pointerEvents: "none"}}>
                   <Image src={palette} alt="palette" duration={0} sx={{filter: "drop-shadow(2px 2px 3px rgb(0 0 0 / 0.1))"}}/>
                 </Box>
               </Grid>

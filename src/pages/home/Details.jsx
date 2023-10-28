@@ -51,19 +51,25 @@ const Details = React.forwardRef((props, ref) => {
   
   const { ref: viewRef, inView } = useInView({
     threshold: 0,
-    rootMargin: "0% 0px -25% 0px",
+    rootMargin: "0% 0px -23% 0px",
     triggerOnce: true
   });
   
   const { ref: contentRef, inView: contentInView } = useInView({
     threshold: 0,
-    rootMargin: "0% 0px -25% 0px",
+    rootMargin: "0% 0px -23% 0px",
     triggerOnce: true
   });
   
   const { ref: mobileContentRef, inView: mobileContentInView } = useInView({
     threshold: 0,
-    rootMargin: "0% 0px -25% 0px",
+    rootMargin: "0% 0px -23% 0px",
+    triggerOnce: true
+  });
+  
+  const { ref: dressCodeRef, inView: dressCodeInView } = useInView({
+    threshold: 0,
+    rootMargin: "0% 0px -23% 0px",
     triggerOnce: true
   });
   
@@ -222,38 +228,56 @@ const Details = React.forwardRef((props, ref) => {
             </Fade>
           </Grid>
           
-          <Grid item xs={12} mt={{xs: 5, sm:5}}>
+          <Grid item xs={12} mt={{xs: 5, sm:5}} ref={dressCodeRef}>
             <Grid container>
-              <Grid item xs={11} sm={5.5} sx={{mx: {xs:"auto", sm: "initial"}}} align="center">
-                <Typography sx={headerStyles}>DRESS CODE</Typography>
-                <Box sx={{height: {xs: 8, sm: 13, md:15}, width: "1px", backgroundColor: "success.main", mx: "auto", my: {xs: .15, sm: 1.5, md: 2, lg:2.5}}}></Box>          
-                <Typography sx={{fontFamily: "Bodoni", fontSize: {xs: 14, sm: 20, md: 22, lg: 24}, letterSpacing: {xs: .2, sm: .5}, opacity: .75}}>
-                  We would love to see our guests in formal attire
-                </Typography>
-              </Grid>
+              <Fade
+                in={dressCodeInView}
+                style={{ transitionDelay: "250ms"  }}
+                timeout={800}
+              > 
+                <Grid item xs={11} sm={5.5} sx={{mx: {xs:"auto", sm: "initial"}}} align="center">
+                  <Typography sx={headerStyles}>DRESS CODE</Typography>
+                  <Box sx={{height: {xs: 8, sm: 13, md:15}, width: "1px", backgroundColor: "success.main", mx: "auto", my: {xs: .15, sm: 1.5, md: 2, lg:2.5}}}></Box>          
+                  <Typography sx={{fontFamily: "Bodoni", fontSize: {xs: 14, sm: 20, md: 22, lg: 24}, letterSpacing: {xs: .2, sm: .5}, opacity: .75}}>
+                    We would love to see our guests in formal attire
+                  </Typography>
+                </Grid>
+              </Fade>
               <Grid item sm={1.25}></Grid>
-              <Grid item xs={10} sm={5.25} sx={{display: "flex", flexDirection: "column", justifyContent: "center", pl: {sm:2}, mt: {xs: 5, sm:3}, mx: {xs:"auto", sm: "initial"}}}>
-                <Box sx={{mx: "auto", display: "flex", flexDirection: "column", gap: {xs: .5, sm:2}, mb: 5, justifyContent: "center"}}>
-                  <Box sx={{display: "flex", alignItems: "center", gap: 2}}>
-                    <Typography sx={{fontSize: { xs: 15,sm: 19, md: 21, lg:22 }, fontFamily: "Bodoni-Bold", letterSpacing: 1, color: "secondary.main"}}>Ladies</Typography>
-                    <Box sx={{width: 15, height: "1px", backgroundColor: "success.main", my: 2}}></Box>
-                    <Typography sx={{fontSize: {xs: 13, sm: 17, md: 18, lg: 20}, letterSpacing: .75, color: "primary.main", opacity: .8}}>Long Dress</Typography>
+              <Fade
+                in={dressCodeInView}
+                style={{ transitionDelay: "700ms"  }}
+                timeout={800}
+              > 
+                <Grid item xs={10} sm={5.25} sx={{display: "flex", flexDirection: "column", justifyContent: "center", pl: {sm:2}, mt: {xs: 5, sm:3}, mx: {xs:"auto", sm: "initial"}}}>
+                  <Box sx={{mx: "auto", display: "flex", flexDirection: "column", gap: {xs: .5, sm:2}, mb: 5, justifyContent: "center"}}>
+                    <Box sx={{display: "flex", alignItems: "center", gap: 2}}>
+                      <Typography sx={{fontSize: { xs: 15,sm: 19, md: 21, lg:22 }, fontFamily: "Bodoni-Bold", letterSpacing: 1, color: "secondary.main"}}>Ladies</Typography>
+                      <Box sx={{width: 15, height: "1px", backgroundColor: "success.main", my: 2}}></Box>
+                      <Typography sx={{fontSize: {xs: 13, sm: 17, md: 18, lg: 20}, letterSpacing: .75, color: "primary.main", opacity: .8}}>Long Dress</Typography>
+                    </Box>
+                    <Box sx={{display: "flex", alignItems: "center", gap: 2}}>
+                      <Typography sx={{fontSize: { xs: 15,sm: 19, md: 21, lg:22 }, fontFamily: "Bodoni-Bold", letterSpacing: 1, color: "secondary.main"}}>Men</Typography>
+                      <Box sx={{width: 15, height: "1px", backgroundColor: "success.main", my: 2}}></Box>
+                      <Typography sx={{fontSize: {xs: 13, sm: 17, md: 18, lg: 20}, letterSpacing: .75, color: "primary.main", opacity: .8}}>Long sleeves and black slacks</Typography>
+                    </Box>
                   </Box>
-                  <Box sx={{display: "flex", alignItems: "center", gap: 2}}>
-                    <Typography sx={{fontSize: { xs: 15,sm: 19, md: 21, lg:22 }, fontFamily: "Bodoni-Bold", letterSpacing: 1, color: "secondary.main"}}>Men</Typography>
-                    <Box sx={{width: 15, height: "1px", backgroundColor: "success.main", my: 2}}></Box>
-                    <Typography sx={{fontSize: {xs: 13, sm: 17, md: 18, lg: 20}, letterSpacing: .75, color: "primary.main", opacity: .8}}>Long sleeves and black slacks</Typography>
-                  </Box>
+                </Grid>
+              </Fade>
+            </Grid>
+            <Fade
+              in={dressCodeInView}
+              style={{ transitionDelay: "1100ms"  }}
+              timeout={800}
+            > 
+              <Grid item xs={10} sm={5.5} mx="auto" mt={{xs: 4, sm:18}}>
+                <Typography sx={{fontSize: {xs: 16, sm: 26, md: 28, lg:30}, letterSpacing: 2, color: "primary.main", opacity: .85, transform: "skewX(-8deg)"}}>Be guided with our color palette</Typography>
+                <Box sx={{height: "1px", width: {xs: 20, sm:35}, backgroundColor: "success.main", mx: "auto", my: {xs: 1.5, sm:2}}}></Box>          
+                <Box mt={{xs:3, sm:6}} mx={{xs: 3, sm: 0}}>
+                  <Image src={palette} alt="palette" duration={0} sx={{filter: "drop-shadow(2px 2px 3px rgb(0 0 0 / 0.1))"}}/>
                 </Box>
               </Grid>
-            </Grid>
-            <Grid item xs={10} sm={5.5} mx="auto" mt={{xs: 4, sm:18}}>
-              <Typography sx={{fontSize: {xs: 16, sm: 26, md: 28, lg:30}, letterSpacing: 2, color: "primary.main", opacity: .85, transform: "skewX(-8deg)"}}>Be guided with our color palette</Typography>
-              <Box sx={{height: "1px", width: {xs: 20, sm:35}, backgroundColor: "success.main", mx: "auto", my: {xs: 1.5, sm:2}}}></Box>          
-              <Box mt={{xs:3, sm:6}} mx={{xs: 3, sm: 0}}>
-                <Image src={palette} alt="palette" duration={0} sx={{filter: "drop-shadow(2px 2px 3px rgb(0 0 0 / 0.1))"}}/>
-              </Box>
-            </Grid>
+            </Fade>
           </Grid>
         </Grid>
       </Box>

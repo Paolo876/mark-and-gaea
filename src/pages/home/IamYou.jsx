@@ -29,7 +29,7 @@ const IamYou = () => {
     >
       <Grid container sx={{height: "100%"}}>
         <Grid item xs={12} sx={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}} >
-          <Typography sx={{textAlign: "center", fontSize: {xs: 16, sm: 18, md: 19, lg: 20}, letterSpacing: 2, transform: "skewX(-12deg)", opacity: .9, lineHeight: 1.65}} ref={ref}>
+          <Typography sx={{textAlign: "center", fontSize: {xs: 17, sm: 18, md: 20, lg: 21}, letterSpacing: 2, transform: "skewX(-12deg)", opacity: .85, lineHeight: 1.65}} ref={ref}>
             <Fade
               in={inView}
               style={{ transitionDelay: "0ms"  }}

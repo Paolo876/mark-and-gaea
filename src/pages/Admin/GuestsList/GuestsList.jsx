@@ -43,14 +43,17 @@ const GuestsList = () => {
       </Box>
 
       {/* body */}
-      <Grid container sx={{mt: 10}}>
+      <Grid container sx={{mt: {xs: 4, sm: 6, md:10}}}>
         <Grid item xs={12}>
-          <Typography sx={{fontFamily: "Bodoni-Bold", fontSize: 30, letterSpacing: 4}}>GUESTS LIST</Typography>
+          <Typography sx={{fontFamily: "Bodoni-Bold", fontSize: {xs: 25, sm: 26, md: 30}, letterSpacing: 4}}>GUESTS LIST</Typography>
         </Grid>
         <Grid item xs={12} mt={3}>
           {error && <Alert severity="warning" sx={{letterSpacing: 1, fontFamily: "bodoni-bold", fontSize: {xs: 12, sm: 15.5, md: 16, lg:17}}}>Failed to retrieve data: User not authorized.</Alert>}
           {isLoading && <CircularProgress />}
           {!error && !isLoading && document && <GuestsListTable guestsList={document.guestsList}/>}
+        </Grid>
+        <Grid item xs={12} mt={3}>
+          
         </Grid>
       </Grid>
     </Container>

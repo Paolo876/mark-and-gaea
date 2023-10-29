@@ -1,31 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 296.27 51.3">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 91.4">
   <defs>
     <style>
       .cls-1 {
-        fill: #575857;
+        font-size: 14px;
       }
 
       .cls-2 {
-        fill: #d8cfc3;
+        fill: #abcbbf;
       }
 
       .cls-3 {
-        fill: #465f59;
+        fill: #d2c9c0;
       }
 
       .cls-4 {
-        fill: #cad9d2;
+        font-size: 11px;
       }
 
       .cls-5 {
-        fill: #88a48c;
+        fill: #465f59;
+      }
+
+      .cls-6 {
+        font-size: 16px;
+      }
+
+      .cls-6, .cls-7, .cls-8 {
+        fill: #565957;
+      }
+
+      .cls-6, .cls-8 {
+        font-family: AmalfiCoast, 'Amalfi Coast';
+      }
+
+      .cls-9 {
+        fill: #87a38c;
       }
     </style>
   </defs>
-  <circle class="cls-3" cx="25.75" cy="25.62" r="25.41"/>
-  <circle class="cls-5" cx="86.94" cy="25.62" r="25.41"/>
-  <circle class="cls-4" cx="148.13" cy="25.62" r="25.41"/>
-  <circle class="cls-2" cx="209.33" cy="25.62" r="25.41"/>
-  <circle class="cls-1" cx="270.52" cy="25.62" r="25.41"/>
+  <g>
+    <circle class="cls-5" cx="31.17" cy="26.6" r="24.67"/>
+    <circle class="cls-9" cx="90.59" cy="26.6" r="24.67"/>
+    <circle class="cls-2" cx="150" cy="26.6" r="24.67"/>
+    <circle class="cls-3" cx="209.41" cy="26.6" r="24.67"/>
+    <circle class="cls-7" cx="268.83" cy="26.6" r="24.67"/>
+  </g>
+  <text class="cls-6" transform="translate(55.39 87.59)"><tspan x="0" y="0"> </tspan></text>
+  <text class="cls-8" transform="translate(79.48 79.2)"><tspan class="cls-1" x="0" y="0">greens </tspan><tspan class="cls-4" x="56.78" y="0" xml:space="preserve">+  </tspan><tspan class="cls-1" x="76.58" y="0">neutrals</tspan></text>
 </svg>

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react'
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Box, Paper, IconButton, Button } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
@@ -6,7 +6,6 @@ import MessageIcon from '@mui/icons-material/Message';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SearchAndFilterBar from './SearchAndFilterBar';
-import { timestamp } from '../../../firebase/config';
 
 const headerStyles = {
 	fontFamily: "Bodoni-bold",
@@ -30,19 +29,27 @@ function createData(name, isAttending, phone, message, createdAt) {
 }
 
 
-const mockDate = new Date().toLocaleDateString('en-US', {year: 'numeric', month: '2-digit', day: '2-digit'})
-
 
 export default function BasicTable({ guestsList }) {
-	const rows = guestsList.map(item => createData(item.name, item.isAttending, item.phone, item.message, item.createdAt.toDate().toLocaleDateString('en-US', {year: 'numeric', month: '2-digit', day: '2-digit'})))
-	// const rows = [
-	// 	createData('Paolo', true, "09053122966", "Hello", mockDate),
-	// 	createData('Paolo2', false, "09053122966", "", mockDate),
-	// 	createData('Paolo Paolo Paolo Paolo Paolo', false, "09053122966", "", mockDate),	
-	// ];
+  const initialData = guestsList.map(item => createData(item.name, item.isAttending, item.phone, item.message, item.createdAt.toDate().toLocaleDateString('en-US', {year: 'numeric', month: '2-digit', day: '2-digit'})));
+  const [ updatedDocument, setUpdatedDocument ] = useState(initialData);
+
+  const handleSortFilterChange = (sort, filter) => {
+    // sort
+    if(sort === "name") {
+      setUpdatedDocument([...updatedDocument].sort((a, b) => a.name.localeCompare(b.name)))
+    } else if (sort === "date") {
+      setUpdatedDocument([...updatedDocument].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)))
+    } else if(sort === null){
+      setUpdatedDocument(initialData)
+    }
+    // filter
+  }
+
+
   return (
 		<Box sx={{display: "flex", flexDirection: "column"}}>
-			<SearchAndFilterBar/>
+			<SearchAndFilterBar handleSortFilterChange={handleSortFilterChange}/>
 			<TableContainer component={Paper}>
 				<Table sx={{ minWidth: "fit-content" }} aria-label="simple table" >
 					<TableHead>
@@ -56,7 +63,7 @@ export default function BasicTable({ guestsList }) {
 						</TableRow>
 					</TableHead>
 					<TableBody>
-						{rows.map((row) => (
+						{updatedDocument && updatedDocument.map((row) => (
 							<TableRow
 								key={row.name}
 								sx={{ '&:last-child td, &:last-child th': { border: 0 } }}

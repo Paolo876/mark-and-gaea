@@ -1,24 +1,37 @@
 import { useState } from 'react'
 import { Box, TextField, InputAdornment, IconButton, Button, Menu, MenuItem, Typography, Divider } from '@mui/material';
 
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import SearchIcon from '@mui/icons-material/Search';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import CancelIcon from '@mui/icons-material/Cancel';
 
 
 const headerStyles = {
-  fontFamily: "Bodoni-Bold"
+  fontFamily: "Bodoni-Bold",
+  pl: 1,
+  letterSpacing: .5,
+  my: .5,
 }
 
 const optionsStyles = {
-  fontSize: 15
+  display: "flex",
+  transition: "all 450ms ease",
+  alignItems: "center",
+  justifyContent: "space-between",
+  lineHeight: 1,
+  gap: 2,
+  fontSize: 15,
+  color: "primary.main",
+  letterSpacing: .25,
+  minWidth: 175,
 }
 
 
-const SearchAndFilterBar = () => {
+const SearchAndFilterBar = ({ handleSortFilterChange, }) => {
   const [ input, setInput ] = useState("");
   const [ sort, setSort ] = useState(null);
-  const [ filter, setFilter ] = useState(null);
+  const [ filter, setFilter ] = useState([]);
   const [ anchorEl, setAnchorEl ] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -26,17 +39,56 @@ const SearchAndFilterBar = () => {
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   const handleSort = (value) => {
     if( value === "date") {
-      
+      if(sort === "date") {
+        setSort(null)
+      } else {
+        setSort("date")
+      }
     }
     if( value === "name") {
-
+      if(sort === "name") {
+        setSort(null)
+      } else {
+        setSort("name")
+      }
     }
+  }
+
+  const handleFilter = (value) => {
+    // attending/not attending
+    if( value === "attending") {
+      if(filter.includes("attending")){
+        setFilter(prevState => prevState.filter(item => item !== "attending"))
+      } else {
+        setFilter(prevState => [...prevState.filter(item => item !== "notAttending"), "attending"])
+      }
+    }
+
+    if( value === "notAttending") {
+      if(filter.includes("notAttending")){
+        setFilter(prevState => prevState.filter(item => item !== "notAttending"))
+      } else {
+        setFilter(prevState => [...prevState.filter(item => item !== "attending"), "notAttending"])
+      }
+    }
+
+    // with message
+    if( value === "message") {
+      if(filter.includes("message")) {
+        setFilter(prevState => prevState.filter(item => item !== "message"))
+      } else {
+        setFilter(prevState => [...prevState, "message"])
+      }
+    }
+  }
+
+  const handleSortFilterSubmit = () => {
+    // if(sort !== null || filter.length !== 0) handleSortFilterChange(sort, filter)
+    handleSortFilterChange(sort, filter)
+    setAnchorEl(null);
   }
 
 
@@ -73,22 +125,79 @@ const SearchAndFilterBar = () => {
           id="basic-menu"
           anchorEl={anchorEl}
           open={open}
-          onClose={handleClose}
+          onClose={() => setAnchorEl(null)}
           MenuListProps={{
             'aria-labelledby': 'basic-button',
           }}
         >
           <Typography sx={headerStyles}>Sort:</Typography>
-          <MenuItem onClick={handleClose} sx={optionsStyles} dense>Date</MenuItem>
-          <MenuItem onClick={handleClose} sx={optionsStyles} dense>Name (A-Z)</MenuItem>
+          <MenuItem 
+            onClick={() => handleSort("date")} 
+            sx={{
+              ...optionsStyles, 
+              fontFamily: sort === "date" ? "Bodoni-Bold" : "Bodoni",
+              color: sort === "date" ? "secondary.main" : "primary.main",
+            }} 
+            dense
+          >
+            Date
+            {sort === "date" && <CheckCircleIcon sx={{color: "green", fontSize: "inherit"}}/>}
+          </MenuItem>
+          <MenuItem 
+            onClick={() => handleSort("name")} 
+            sx={{
+              ...optionsStyles, 
+              fontFamily: sort === "name" ? "Bodoni-Bold" : "Bodoni",
+              color: sort === "name" ? "secondary.main" : "primary.main",
+            }}
+            dense
+          >
+            Name (A-Z)
+            {sort === "name" && <CheckCircleIcon sx={{color: "green", fontSize: "inherit"}}/>}
+          </MenuItem>
           <Divider/>
 
           <Typography sx={headerStyles}>Filter:</Typography>
-          <MenuItem onClick={handleClose} sx={optionsStyles} dense>Attending</MenuItem>
-          <MenuItem onClick={handleClose} sx={optionsStyles} dense>Not Attending</MenuItem>
-          <MenuItem onClick={handleClose} sx={optionsStyles} dense>With Message</MenuItem>
+          <MenuItem 
+            onClick={() => handleFilter("attending")} 
+            sx={{
+              ...optionsStyles, 
+              fontFamily: filter.includes("attending") ? "Bodoni-Bold" : "Bodoni",
+              color: filter.includes("attending") ? "secondary.main" : "primary.main",
+            }}
+            dense
+          >
+            Attending
+            {filter.includes("attending") && <CheckCircleIcon sx={{color: "green", fontSize: "inherit"}}/>}
+          </MenuItem>
+          <MenuItem 
+            onClick={() => handleFilter("notAttending")} 
+            sx={{
+              ...optionsStyles, 
+              fontFamily: filter.includes("notAttending") ? "Bodoni-Bold" : "Bodoni",
+              color: filter.includes("notAttending") ? "secondary.main" : "primary.main",
+            }}
+            dense
+          >
+            Not Attending
+            {filter.includes("notAttending") && <CheckCircleIcon sx={{color: "green", fontSize: "inherit"}}/>}
+          </MenuItem>
+          <MenuItem 
+            onClick={() => handleFilter("message")} 
+            sx={{
+              ...optionsStyles, 
+              fontFamily: filter.includes("message") ? "Bodoni-Bold" : "Bodoni",
+              color: filter.includes("message") ? "secondary.main" : "primary.main",
+            }}
+            dense
+          >
+            With Message
+            {filter.includes("message") && <CheckCircleIcon sx={{color: "green", fontSize: "inherit"}}/>}
+          </MenuItem>
           <Divider/>
-          <Button>Apply Changes</Button>
+          <Box sx={{display: "flex", alignItems: "center", justifyContent: "center", mt: 3}}>
+            <Button variant="contained" color="secondary" size="small" onClick={handleSortFilterSubmit} sx={{letterSpacing: 1}}>Apply Changes</Button>
+          </Box>
         </Menu>
 
         <TextField 

@@ -6,6 +6,8 @@ import MessageIcon from '@mui/icons-material/Message';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SearchAndFilterBar from './SearchAndFilterBar';
+import MessageModal from '../../../components/MessageModal';
+
 
 const headerStyles = {
 	fontFamily: "Bodoni-bold",
@@ -33,6 +35,8 @@ function createData(name, isAttending, phone, message, createdAt) {
 export default function BasicTable({ guestsList }) {
   const initialData = guestsList.map(item => createData(item.name, item.isAttending, item.phone, item.message, item.createdAt.toDate().toLocaleDateString('en-US', {year: 'numeric', month: '2-digit', day: '2-digit'})));
   const [ updatedDocument, setUpdatedDocument ] = useState(initialData);
+  const [ showModal, setShowModal ] = useState({isShown: false, data: null});
+
 
   const handleSortFilterChange = ({sort, filter, clear}) => {
     // sort
@@ -75,10 +79,10 @@ export default function BasicTable({ guestsList }) {
     }
   }
 
-
   return (
 		<Box sx={{display: "flex", flexDirection: "column"}}>
 			<SearchAndFilterBar handleSortFilterChange={handleSortFilterChange} handleSearch={handleSearch}/>
+      <MessageModal showModal={showModal.isShown} handleClose={() => setShowModal({isShown: false, data:null})} data={showModal.data}/>
 			<TableContainer component={Paper}>
 				<Table sx={{ minWidth: "fit-content" }} aria-label="simple table" >
 					<TableHead>
@@ -106,10 +110,27 @@ export default function BasicTable({ guestsList }) {
 								<TableCell sx={bodyStyles} align="center">{row.phone}</TableCell>
 								<TableCell align="center">
 									<Box sx={{display:{xs: "none", sm: "initial"}}}>
-									  {row.message ? <Button startIcon={<MessageIcon/>} size="small" variant="contained" color="secondary" sx={{letterSpacing: {lg:1}, fontSize: {xs: 9, md: 10, lg:12}, fontFamily: "Bodoni"}}>Read</Button> : "-"}
+									  {row.message ? <Button 
+                      startIcon={<MessageIcon/>} 
+                      size="small" 
+                      variant="contained" 
+                      color="secondary" 
+                      sx={{letterSpacing: {lg:1}, fontSize: {xs: 9, md: 10, lg:12}, fontFamily: "Bodoni"}}
+                      onClick={() => setShowModal({isShown: true, data: row})}
+                      >
+                        Read
+                      </Button> : "-"}
                   </Box>
 									<Box sx={{display:{xs: "initial", sm: "none"}, width: "fit-content"}}>
-									  {row.message ? <Button size="small" variant="contained" color="secondary" sx={{fontSize: 12, width: "fit-content", minWidth: 0}}><MessageIcon sx={{fontSize: "inherit"}}/></Button> : "-"}
+									  {row.message ? <Button 
+                      size="small" 
+                      variant="contained" 
+                      color="secondary" 
+                      sx={{fontSize: 12, width: "fit-content", minWidth: 0}}
+                      onClick={() => setShowModal({isShown: true, data: row})}
+                      >
+                        <MessageIcon sx={{fontSize: "inherit"}}/>
+                      </Button> : "-"}
                   </Box>
 								</TableCell>
 								<TableCell sx={{...bodyStyles, display: {xs: "none", sm: "table-cell"}}} align="right">{row.createdAt}</TableCell>

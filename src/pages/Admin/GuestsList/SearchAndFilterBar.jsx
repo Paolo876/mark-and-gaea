@@ -109,7 +109,8 @@ const SearchAndFilterBar = ({ handleSortFilterChange, handleSearch }) => {
           startIcon={<FilterAltIcon/>} 
           size='small' 
           variant="outlined" 
-          sx={{fontFamily: "Bodoni-bold", boxShadow:1, display: {xs: "none", sm: "flex"}}} color="secondary"
+          sx={{fontFamily: "Bodoni-bold", boxShadow:1, display: {xs: "none", sm: "flex"}}} 
+          color="secondary"
           id="basic-button"
           aria-controls={open ? 'basic-menu' : undefined}
           aria-haspopup="true"
@@ -122,7 +123,8 @@ const SearchAndFilterBar = ({ handleSortFilterChange, handleSearch }) => {
         <Button 
           size='small' 
           variant="outlined" 
-          sx={{boxShadow:1, minWidth: 0, display:{sm:"none"}, px: 1.5}} color="secondary"
+          sx={{boxShadow:1, minWidth: 0, display:{sm:"none"}, px: 1.5}} 
+          color="secondary"
           id="basic-button"
           aria-controls={open ? 'basic-menu' : undefined}
           aria-haspopup="true"

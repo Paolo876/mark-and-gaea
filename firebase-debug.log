@@ -1,0 +1,14 @@
+[debug] [2023-10-30T02:10:09.916Z] ----------------------------------------------------------------------
+[debug] [2023-10-30T02:10:09.918Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\PAO\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --except functions
+[debug] [2023-10-30T02:10:09.919Z] CLI Version:   12.7.0
+[debug] [2023-10-30T02:10:09.919Z] Platform:      win32
+[debug] [2023-10-30T02:10:09.919Z] Node Version:  v18.12.1
+[debug] [2023-10-30T02:10:09.921Z] Time:          Sun Oct 29 2023 19:10:09 GMT-0700 (Pacific Daylight Time)
+[debug] [2023-10-30T02:10:09.921Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-10-30T02:10:10.022Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-10-30T02:10:10.022Z] > authorizing via signed-in user (paolopaolobugarin@gmail.com)
+[debug] [2023-10-30T02:10:10.022Z] [iam] checking project markandgaea for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-10-30T02:10:10.025Z] > refreshing access token with scopes: []
+[debug] [2023-10-30T02:10:10.027Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-10-30T02:10:10.027Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]

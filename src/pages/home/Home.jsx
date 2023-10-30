@@ -20,7 +20,7 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => setIsLoaded(true), 3500)
   }, [])
-  const { imagekitKeys, isLoading } = useAppContext();
+  const { isLoading } = useAppContext();
   
   return (
     <>

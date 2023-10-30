@@ -25,6 +25,6 @@ yarn-debug.log*
 yarn-error.log*
 
 /functions/node_modules
-
+/_backup
 firestore.rules
 firestore.rules

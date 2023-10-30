@@ -1,4 +1,3 @@
-import { useEffect} from 'react'
 import { Box, Typography, Fade } from '@mui/material'
 
 const textStyles = {

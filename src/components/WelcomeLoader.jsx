@@ -18,7 +18,7 @@ const dividerStyles = {
 const WelcomeLoader = () => {
   return (
     <Box sx={{position: "fixed", zIndex: 100, height: "100vh", width: "100%", backgroundColor: "background.default", top: 0, left: 0}}>
-        <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", height: "80%"}}>
+        <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", height: "85%"}}>
         <Box sx={{display: "flex", justifyContent: "center"}}>
           <Fade
             in={true}

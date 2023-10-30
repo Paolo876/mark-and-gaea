@@ -58,7 +58,7 @@ const Map = React.forwardRef((props, ref) => {
             <Grid container>
               <Fade
                 in={contentInView}
-                style={{ transitionDelay: "1100ms" }}
+                style={{ transitionDelay: "600ms" }}
                 timeout={800}
               > 
                 <Grid item xs={6} sm={5} md={4.5} sx={{textAlign: "left"}}>
@@ -95,7 +95,7 @@ const Map = React.forwardRef((props, ref) => {
               </Fade>
               <Fade
                 in={contentInView}
-                style={{ transitionDelay: "1500ms" }}
+                style={{ transitionDelay: "1100ms" }}
                 timeout={800}
               > 
                 <Grid item xs={6} sm={7} md={7.5}>

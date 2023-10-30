@@ -80,11 +80,11 @@ const IamYou = () => {
           </Typography>
           <Fade
                 in={inView}
-                style={{ transitionDelay: "3800ms"  }}
+                style={{ transitionDelay: "4400ms"  }}
                 timeout={1100}
               >
               <Box>
-                <Typography sx={{textAlign: "center", fontSize: {xs: 13, sm: 14, md: 15, lg: 16}, letterSpacing: 2, transform: "skewX(-12deg)", opacity: .75, lineHeight: 1.35, mt: 2 }}>
+                <Typography sx={{textAlign: "center", fontSize: {xs: 13, sm: 14, md: 15, lg: 16}, letterSpacing: 2, transform: "skewX(-12deg)", opacity: .7, lineHeight: 1.35, mt: 2 }}>
                   - Gaea
                 </Typography>
               </Box>

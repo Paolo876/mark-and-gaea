@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
 import { Box, Typography, Container, Grid, Fade } from '@mui/material';
-import Image from 'mui-image';
-import image from "../../assets/images/webp/image4.webp"
 import RsvpForm from '../../components/RsvpForm';
 import RsvpSubmissionMessage from '../../components/RsvpSubmissionMessage';
 import { useInView } from 'react-intersection-observer';
 import BeOurGuestHeader from '../../components/headers/BeOurGuestHeader';
 import { keyframes } from '@mui/system';
-
+import RsvpCarousel from '../../components/RsvpCarousel';
 
 
 const slideRight = keyframes`
@@ -53,7 +51,7 @@ const BeOurGuest = React.forwardRef(( props, ref ) => {
           </Grid>
           <Fade
             in={inView}
-            style={{ transitionDelay: "1200ms" }}
+            style={{ transitionDelay: "900ms" }}
             timeout={800}
           >    
             <Grid item xs={11.25} sm={12} sx={{textAlign: "left", mb: 1, mx: {xs: "auto", sm: 0}}}>
@@ -65,7 +63,7 @@ const BeOurGuest = React.forwardRef(( props, ref ) => {
               <Grid container>
                 <Fade
                   in={inView}
-                  style={{ transitionDelay: "1600ms" }}
+                  style={{ transitionDelay: "1350ms" }}
                   timeout={800}
                 >    
                   <Grid item xs={11} sm={7} sx={{textAlign: "left", mt: {mb: .5, sm: 1}, pr: {sm: 6, md: 8, lg: 10}, mx: {xs: "auto", sm: 0}}}>
@@ -74,20 +72,18 @@ const BeOurGuest = React.forwardRef(( props, ref ) => {
                   </Grid>
                 </Fade>
 
-                <Grid item xs={5} sx={{display: {xs: "none", sm:"flex"}, alignItems: "flex-start", flexDirection: "column", opacity: 0, animation: inView ? `${slideRight} 1000ms ease forwards 2100ms` : ''}}>
-                  <Box>
-                    <Image src={image} fit="scale-down" sx={{filter: "grayscale(50%)"}}/>
-                  </Box>
-                </Grid>
+                {inView && <Grid item xs={5} sx={{display: {xs: "none", sm:"initial"}, alignItems: "flex-start", flexDirection: "column", opacity: 0, animation: inView ? `${slideRight} 1000ms ease forwards 1800ms` : ''}}>
+                  <RsvpCarousel/>
+                </Grid>}
               </Grid>
             </Grid>
 
 
           <Grid item xs={12} sm={8} md={8} lg={6} sx={{mt: {xs: 18, sm: 25, md: 28, lg: 35}, mx: "auto",}} ref={footerRef}>
             <Fade
-              in={inView}
-              style={{ transitionDelay: "1100ms" }}
-              timeout={800}
+              in={footerInView}
+              style={{ transitionDelay: "450ms" }}
+              timeout={900}
             >   
               <Box>
                 <Typography variant="h4" sx={{fontSize: {xs: 24, sm: 32, md: 33, lg: 35}, mb: 9, letterSpacing: "initial"}}>a little note on gifts</Typography>
@@ -122,9 +118,7 @@ const BeOurGuest = React.forwardRef(( props, ref ) => {
                     </Typography>
                   </Grid>
                   <Grid item xs={5.5} sx={{display: {xs: "initial", sm: "none"}}}>
-                    <Box>
-                      <Image src={image} fit="scale-down" sx={{filter: "grayscale(50%)"}}/>
-                    </Box>
+                    <RsvpCarousel/>
                   </Grid>
                 </Grid>
               </Box> 

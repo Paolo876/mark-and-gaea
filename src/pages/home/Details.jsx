@@ -96,7 +96,7 @@ const Details = React.forwardRef((props, ref) => {
               <Box sx={{opacity: .75}}>
                 <Fade
                   in={mobileContentInView}
-                  style={{ transitionDelay: "1400ms" }}
+                  style={{ transitionDelay: "1200ms" }}
                   timeout={800}
                 >    
                   <Typography sx={{fontSize: 16, letterSpacing: .75, lineHeight: 1}}>Dec</Typography>
@@ -104,7 +104,7 @@ const Details = React.forwardRef((props, ref) => {
               </Box>
               <Fade
                 in={mobileContentInView}
-                style={{ transitionDelay: "1100ms" }}
+                style={{ transitionDelay: "600ms" }}
                 timeout={800}
               > 
                 <Box sx={{borderRadius: "50%", border: 2, borderColor: "success.main", width: 45, height: 45, display: "flex", alignItems: "center", justifyContent: "center"}} >
@@ -114,7 +114,7 @@ const Details = React.forwardRef((props, ref) => {
               <Box sx={{opacity: .75}}>
                 <Fade
                   in={mobileContentInView}
-                  style={{ transitionDelay: "1400ms" }}
+                  style={{ transitionDelay: "1200ms" }}
                   timeout={800}
                 > 
                   <Typography sx={{fontSize: 13, letterSpacing: .5, lineHeight: 1}}>2023</Typography>
@@ -129,7 +129,7 @@ const Details = React.forwardRef((props, ref) => {
           {/* mobile ceremony & reception */}
           <Fade
             in={mobileContentInView}
-            style={{ transitionDelay: "2500ms" }}
+            style={{ transitionDelay: "1800ms" }}
             timeout={800}
           > 
             <Grid item xs={11} sx={{mb: .25, display: {xs: "initial", sm: "none"}, mx: "auto"}}>
@@ -151,7 +151,7 @@ const Details = React.forwardRef((props, ref) => {
           <Grid item xs={12} sx={{display: {xs: "none", sm: "initial"}}}>
             <Fade
               in={contentInView}
-              style={{ transitionDelay: "1600ms"  }}
+              style={{ transitionDelay: "1000ms"  }}
               timeout={800}
             > 
               <Box sx={{height: 35, width: "2px", backgroundColor: "success.main", mx: "auto", my: 2}}></Box>          
@@ -161,7 +161,7 @@ const Details = React.forwardRef((props, ref) => {
           {/* CEREMONY */}
           <Fade
             in={contentInView}
-            style={{ transitionDelay: "2600ms"  }}
+            style={{ transitionDelay: "1500ms"  }}
             timeout={800}
           > 
             <Grid item xs={12} sm={5.25} md={5} sx={{mb: {xs: 13, sm: 0}, display: {xs: "none", sm: "initial"}}} align="center">
@@ -178,7 +178,7 @@ const Details = React.forwardRef((props, ref) => {
           <Grid item sm={1.5} md={2} sx={{display: {xs: "none", sm: "initial"}}}>
             <Fade
               in={contentInView}
-              style={{ transitionDelay: "1200ms"  }}
+              style={{ transitionDelay: "600ms"  }}
               timeout={800}
             > 
               <Box sx={{display: "flex", alignItems: "center", flexDirection: "column", gap: .75}} ref={contentRef}>
@@ -191,7 +191,7 @@ const Details = React.forwardRef((props, ref) => {
             </Fade>
             <Fade
               in={contentInView}
-              style={{ transitionDelay: "1600ms"  }}
+              style={{ transitionDelay: "1000ms"  }}
               timeout={800}
             > 
               <Box sx={{height: 80, width: "2px", backgroundColor: "success.main", mx: "auto", my: 2}}></Box>    
@@ -201,7 +201,7 @@ const Details = React.forwardRef((props, ref) => {
           {/* RECEPTION */}
           <Fade
             in={contentInView}
-            style={{ transitionDelay: "3000ms"  }}
+            style={{ transitionDelay: "2000ms"  }}
             timeout={800}
           > 
             <Grid item  xs={12} sm={5.25} md={5} sx={{mb: {xs: 3.5, sm: 0}, display: {xs: "none", sm: "initial"}}} align="center">
@@ -219,7 +219,7 @@ const Details = React.forwardRef((props, ref) => {
           <Grid item xs={7} sm={4.5} mx="auto" sx={{opacity: .8, transition: "all 500ms ease", pointerEvents: "none", my: {xs: 1, sm: 4, md: 5, lg: 5}}}>
             <Fade
               in={contentInView || mobileContentInView}
-              style={{ transitionDelay: "3400ms"  }}
+              style={{ transitionDelay: "2600ms"  }}
               timeout={900}
             > 
               <Box>
@@ -246,7 +246,7 @@ const Details = React.forwardRef((props, ref) => {
               <Grid item sm={1.25}></Grid>
               <Fade
                 in={dressCodeInView}
-                style={{ transitionDelay: "700ms"  }}
+                style={{ transitionDelay: "600ms"  }}
                 timeout={800}
               > 
                 <Grid item xs={10} sm={5.25} sx={{display: "flex", flexDirection: "column", justifyContent: "center", pl: {sm:2}, mt: {xs: 5, sm:3}, mx: {xs:"auto", sm: "initial"}}}>
@@ -267,7 +267,7 @@ const Details = React.forwardRef((props, ref) => {
             </Grid>
             <Fade
               in={dressCodeInView}
-              style={{ transitionDelay: "1100ms"  }}
+              style={{ transitionDelay: "1000ms"  }}
               timeout={800}
             > 
               <Grid item xs={10} sm={5.5} mx="auto" mt={{xs: 4, sm:18}}>

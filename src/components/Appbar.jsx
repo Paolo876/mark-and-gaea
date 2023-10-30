@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Box, Container, Link, Typography, Fade } from '@mui/material'
+import { Box, Container, Typography, Fade, Link } from '@mui/material'
+import { NavLink, Link as ReactLink } from 'react-router-dom';
 import Image from 'mui-image'
 import headerImg from "../assets/images/nav-header-png-350.png";
 import "./Appbar.scss"
@@ -108,7 +109,7 @@ const Appbar = ({ detailsRef, mapRef, rsvpRef }) => {
             timeout={1200}
           >
             <Box>
-              <Link sx={linkStyles} onClick={() => window.scrollTo({top:0, left:0, behavior: "smooth"})}>The Wedding</Link>
+              <Link sx={linkStyles} onClick={() => window.scrollTo({top:0, left:0, behavior: "smooth"})} component={ReactLink}>The Wedding</Link>
             </Box>
           </Fade>
           <Fade
@@ -117,7 +118,7 @@ const Appbar = ({ detailsRef, mapRef, rsvpRef }) => {
             timeout={1200}
           >
             <Box>
-              <Link sx={linkStyles} onClick={() => detailsRef.current.scrollIntoView({behavior:"smooth", block: "start", inline:"start"})}>Details</Link>
+              <Link sx={linkStyles} onClick={() => detailsRef.current.scrollIntoView({behavior:"smooth", block: "start", inline:"start"})} component={ReactLink}>Details</Link>
             </Box>
           </Fade>
           <Fade
@@ -126,7 +127,7 @@ const Appbar = ({ detailsRef, mapRef, rsvpRef }) => {
             timeout={1200}
           >
             <Box>
-              <Link sx={linkStyles} onClick={() => mapRef.current.scrollIntoView({behavior:"smooth", block: "start", inline:"start"})}>Map</Link>
+              <Link sx={linkStyles} onClick={() => mapRef.current.scrollIntoView({behavior:"smooth", block: "start", inline:"start"})} component={ReactLink}>Map</Link>
             </Box>
           </Fade>
           <Fade
@@ -135,7 +136,7 @@ const Appbar = ({ detailsRef, mapRef, rsvpRef }) => {
             timeout={1200}
           >
             <Box>
-              <Link sx={linkStyles} onClick={() => rsvpRef.current.scrollIntoView({behavior:"smooth", block: "start", inline:"start"})}>Rsvp</Link>
+              <Link sx={linkStyles} onClick={() => rsvpRef.current.scrollIntoView({behavior:"smooth", block: "start", inline:"start"})} component={ReactLink}>Rsvp</Link>
             </Box>
           </Fade>
           </Box>

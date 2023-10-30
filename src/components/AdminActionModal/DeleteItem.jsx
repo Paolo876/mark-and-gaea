@@ -9,6 +9,7 @@ const containerStyles = {
   px: 3, 
   zIndex: 2
 }
+
 const DeleteItem = ({ data, handleClose }) => {
   return (
     <Box sx={containerStyles}>
@@ -21,12 +22,12 @@ const DeleteItem = ({ data, handleClose }) => {
         <Box sx={{mt: 2, p: 2}}>
           <Typography sx={{fontSize: {xs: 12, sm: 14, md: 15, lg: 17}, letterSpacing: .5, mb: .25, fontFamily: "Bodoni-Bold"}}>- {data.name}</Typography>
           {data.isAttending ? 
-            <Box sx={{display: "flex", flexDirection: "row"}}>
+            <Box sx={{display: "flex", flexDirection: "row", alignItems: "center", gap: .75}}>
               <Typography sx={{fontSize: {xs: 12, sm: 14, md: 15, lg: 17}, letterSpacing: .5, mb: .25}}>- Attending</Typography>
               <CheckCircleIcon sx={{fontSize: "inherit"}} color="secondary"/>
             </Box>
             : 
-            <Box>
+            <Box sx={{display: "flex", flexDirection: "row", alignItems: "center", gap: .75}}>
               <Typography sx={{fontSize: {xs: 12, sm: 14, md: 15, lg: 17}, letterSpacing: .5, mb: .25}}>- Not Attending</Typography>
               <CancelIcon sx={{fontSize: "inherit"}} color="warning"/>
             </Box>

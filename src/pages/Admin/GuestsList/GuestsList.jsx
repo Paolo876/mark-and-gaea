@@ -1,10 +1,13 @@
 import { useAuthContext } from "../../../hooks/useAuthContext"
 import { Container, Box, Typography, Button, Paper, Grid, CircularProgress, Alert } from '@mui/material';
 import { useLogout } from "../../../hooks/useLogout"
+import { useDocument } from "../../../hooks/useDocuments"
 import LogoutIcon from '@mui/icons-material/Logout';
 import Image from 'mui-image';
+
+//components
 import GuestsListTable from './GuestsListTable';
-import { useDocument } from "../../../hooks/useDocuments"
+import GuestsSummary from "./GuestsSummary";
 
 
 const GuestsList = () => {
@@ -51,8 +54,8 @@ const GuestsList = () => {
           {isLoading && <CircularProgress />}
           {!error && !isLoading && document && <GuestsListTable guestsList={document.guestsList} />}
         </Grid>
-        <Grid item xs={12} mt={3}>
-
+        <Grid item xs={12} mt={{xs: 6, sm: 7, md: 8, lg:10}} mb={6}>
+          {!error && !isLoading && document && <GuestsSummary guestsList={document.guestsList} />}
         </Grid>
       </Grid>
     </Container>

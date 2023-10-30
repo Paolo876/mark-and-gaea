@@ -17,7 +17,7 @@ const IamYou = () => {
     <Box 
       sx={{
         // height: {xs: 600, sm: 700, md: 900, lg:1000}, 
-        height: {xs: "90vh", md:"100vh"},
+        height: {xs: "90vh", md:"95vh"},
         // background: "rgba(255,255,255,.1)", 
         background: 'rgb(241,233,231)',
         background: '-moz-linear-gradient(0deg, rgba(241,233,231,0) 0%, rgba(241,233,231,1) 8%, rgba(241,233,231,1) 80%, rgba(241,233,231,0) 100%)',

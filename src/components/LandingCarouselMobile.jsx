@@ -38,7 +38,7 @@ const LandingCarouselMobile = () => {
     <Carousel
       indicators={false}
       duration={800}
-      interval={4500}
+      interval={4800}
       swipe={false}
       stopAutoPlayOnHover={false}
       animation="fade"

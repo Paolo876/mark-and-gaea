@@ -18,7 +18,7 @@ const Home = () => {
   const [ isLoaded, setIsLoaded ] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setIsLoaded(true), 3500)
+    setTimeout(() => setIsLoaded(true), 3200)
   }, [])
   const { isLoading } = useAppContext();
   

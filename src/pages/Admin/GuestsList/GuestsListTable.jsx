@@ -1,13 +1,15 @@
 import { useState } from 'react'
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Box, Paper, IconButton, Button } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Box, Paper, IconButton, Button, Tooltip } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import MessageIcon from '@mui/icons-material/Message';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+
+//components
 import SearchAndFilterBar from './SearchAndFilterBar';
 import MessageModal from '../../../components/MessageModal';
-
+import AdminActionModal from '../../../components/AdminActionModal/AdminActionModal';
 
 const headerStyles = {
 	fontFamily: "Bodoni-bold",
@@ -36,6 +38,7 @@ export default function BasicTable({ guestsList }) {
   const initialData = guestsList.map(item => createData(item.name, item.isAttending, item.phone, item.message, item.createdAt.toDate().toLocaleDateString('en-US', {year: 'numeric', month: '2-digit', day: '2-digit'})));
   const [ updatedDocument, setUpdatedDocument ] = useState(initialData);
   const [ showModal, setShowModal ] = useState({isShown: false, data: null});
+  const [ showActionModal, setShowActionModal ] = useState({isShown: false, data: null, action: null});
 
 
   const handleSortFilterChange = ({sort, filter, clear}) => {
@@ -82,7 +85,18 @@ export default function BasicTable({ guestsList }) {
   return (
 		<Box sx={{display: "flex", flexDirection: "column"}}>
 			<SearchAndFilterBar handleSortFilterChange={handleSortFilterChange} handleSearch={handleSearch}/>
-      <MessageModal showModal={showModal.isShown} handleClose={() => setShowModal({isShown: false, data:null})} data={showModal.data}/>
+      <MessageModal 
+        showModal={showModal.isShown} 
+        handleClose={() => setShowModal({isShown: false, data:null})} 
+        data={showModal.data}
+      />
+      <AdminActionModal 
+        showModal={showActionModal.isShown} 
+        handleClose={() => setShowActionModal({isShown: false, data:null, action : null})} 
+        data={showActionModal.data} 
+        action={showActionModal.action}
+      />
+
 			<TableContainer component={Paper}>
 				<Table sx={{ minWidth: "fit-content" }} aria-label="simple table" >
 					<TableHead>
@@ -137,8 +151,16 @@ export default function BasicTable({ guestsList }) {
 								{/* actions */}
 								<TableCell sx={{...bodyStyles, display: {xs: "none", sm: "table-cell"}}} align="right">
 									<Box ml={{xs: 1, md:2}} sx={{display: "flex", flexDirection: "row", gap: 1, justifyContent: "right"}}>
-										<IconButton color="primary"><EditIcon fontSize='small'/></IconButton>
-										<IconButton color="error"><DeleteIcon fontSize='small'/></IconButton>
+                    <Tooltip title="Edit" arrow>
+                      <IconButton color="primary" onClick={() => setShowActionModal({isShown: true, data: row, action: "edit"})}>
+                      <EditIcon fontSize='small'/>
+                    </IconButton>
+                    </Tooltip>
+                    <Tooltip title="Delete" arrow>
+                      <IconButton color="warning" onClick={() => setShowActionModal({isShown: true, data: row, action: "delete"})}>
+                        <DeleteIcon fontSize='small'/>
+                      </IconButton>
+                    </Tooltip>
 									</Box>
 								</TableCell>
 

@@ -22,7 +22,7 @@ const WelcomeLoader = () => {
         <Box sx={{display: "flex", justifyContent: "center"}}>
           <Fade
             in={true}
-            style={{ transitionDelay: "200ms"  }}
+            style={{ transitionDelay: "150ms"  }}
             timeout={900}
           >
             <Box>
@@ -33,7 +33,7 @@ const WelcomeLoader = () => {
           <Fade
             in={true}
             style={{ transitionDelay: "1300ms"  }}
-            timeout={900}
+            timeout={1100}
           >
             <Box>
             <Typography sx={dividerStyles}>.</Typography>
@@ -53,7 +53,7 @@ const WelcomeLoader = () => {
           <Fade
             in={true}
             style={{ transitionDelay: "1300ms"  }}
-            timeout={900}
+            timeout={1100}
           >
             <Box>
             <Typography sx={dividerStyles}>.</Typography>

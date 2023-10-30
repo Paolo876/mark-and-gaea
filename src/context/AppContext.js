@@ -8,6 +8,7 @@ export const AppContext = createContext()
 const initialState = {
     landingImages: [],
     rsvpImages: [],
+    mobileLandingImages: [],
     imagekitKeys: null,
     isLoading: true,
     error: null,

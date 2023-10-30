@@ -12,7 +12,7 @@ firestore.rules
 
 # production
 /build
-
+/src/firebase
 # misc
 .DS_Store
 .env.local

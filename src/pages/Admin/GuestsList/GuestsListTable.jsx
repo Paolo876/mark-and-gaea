@@ -95,6 +95,7 @@ export default function BasicTable({ guestsList }) {
         handleClose={() => setShowActionModal({isShown: false, data:null, action : null})} 
         data={showActionModal.data} 
         action={showActionModal.action}
+        guestsList={guestsList}
       />
 
 			<TableContainer component={Paper}>

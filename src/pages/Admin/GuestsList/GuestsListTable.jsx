@@ -78,7 +78,7 @@ export default function BasicTable({ guestsList }) {
     if(input === ""){
       setUpdatedDocument(initialData)
     } else {
-      setUpdatedDocument([...initialData.filter(item => item.name.toLowerCase().includes(input)), ...initialData.filter(item => item.phone.includes(input))])
+      setUpdatedDocument([...initialData.filter(item => item.name.toLowerCase().includes(input.toLowerCase())), ...initialData.filter(item => item.phone.includes(input))])
     }
   }
 

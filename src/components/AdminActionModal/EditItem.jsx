@@ -5,7 +5,7 @@ import { useFirestore } from "../../hooks/useFirestore"
 
 const containerStyles = {
   backgroundColor: "background.default",
-  py: 2,
+  py: 3,
   px: 5, 
   zIndex: 2
 }
@@ -15,7 +15,7 @@ const boxStyles = {
 }
 
 const inputContainerStyles = {
-  minWidth: {lg: 350},
+  minWidth: {xs: 260, sm: 350},
   letterSpacing: 1,
 }
 

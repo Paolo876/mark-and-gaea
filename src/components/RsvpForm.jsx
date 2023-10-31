@@ -233,7 +233,7 @@ const RsvpForm = ({ setIsSubmitted }) => {
           color="success" 
           onClick={handleSubmit}
           loading={isLoading}
-          disabled={name === "" || isAttending === null || phoneError === true || phone === "" }
+          disabled={name === "" || name.trim().length === 0 || isAttending === null || phoneError === true || phone === "" }
           loadingPosition="end"
           variant="contained"
           sx={{color: "white", fontSize: {xs: 15, sm: 17, md: 18, lg:19}, letterSpacing: 4, fontFamily: "Bodoni-Bold", px: {xs: 2.5, sm: 3, md: 4}}} 

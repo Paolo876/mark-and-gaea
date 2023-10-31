@@ -16,7 +16,7 @@ const boxStyles = {
 
 const inputContainerStyles = {
   minWidth: {lg: 350},
-  letterSpacing: 1
+  letterSpacing: 1,
 }
 
 
@@ -26,9 +26,19 @@ const EditItem = ({ data, handleClose, guestsList }) => {
   const [ isAttending, setIsAttending ] = useState(data.isAttending)
   const [ phone, setPhone ] = useState(data.phone)
 
+  const handleIsAttendingChange = (value) => {
+    if(value === "true") {
+      setIsAttending(true)
+    } else {
+      setIsAttending(false)
+
+    }
+  }
+
   
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(data, name, isAttending, phone)
   }
 
 
@@ -38,7 +48,7 @@ const EditItem = ({ data, handleClose, guestsList }) => {
         <Typography sx={{textTransform: "uppercase", fontSize: {xs: 19, sm: 21, md: 23, lg:25}, letterSpacing: 2, fontFamily: "Bodoni-Bold"}}>Edit</Typography>
       </Box>
       <Divider/>
-      <Box mt={{xs: 2.5, sm: 3, md:4}}>
+      <Box mt={{xs: 4, sm: 5, md:6}}>
         <Box component="form" onSubmit={handleSubmit}>
           <Box sx={boxStyles}>
             <TextField
@@ -48,6 +58,7 @@ const EditItem = ({ data, handleClose, guestsList }) => {
               value={name}
               onChange={e => setName(e.target.value)}
               sx={inputContainerStyles}
+              inputProps={{sx: {fontFamily: "Bodoni-Bold"}}}
             />
           </Box>
           <Box sx={boxStyles}>
@@ -58,6 +69,8 @@ const EditItem = ({ data, handleClose, guestsList }) => {
               value={phone}
               onChange={e => setPhone(e.target.value)}
               sx={inputContainerStyles}
+              inputProps={{sx: {fontFamily: "Bodoni-Bold"}}}
+
             />
           </Box>
           <Box sx={boxStyles}>
@@ -65,15 +78,23 @@ const EditItem = ({ data, handleClose, guestsList }) => {
               <RadioGroup
                 value={isAttending}
                 name="isAttending"
+                onChange={e => handleIsAttendingChange(e.target.value)}
               >
-                <FormControlLabel value={true} control={<Radio />} label="Attending" />
-                <FormControlLabel value={false} control={<Radio />} label="Not Attending" />
+                <FormControlLabel value={true} control={<Radio />} label="Attending" sx={{letterSpacing: 1}}/>
+                <FormControlLabel value={false} control={<Radio />} label="Not Attending" sx={{letterSpacing: 1}}/>
               </RadioGroup>
             </FormControl>
           </Box>
 
           <Box mt={{xs: 5, sm: 6, md:8}} sx={{display: "flex", justifyContent: "right", gap: 2}}>
-            <Button variant="contained" color='secondary'>Save Changes</Button>
+            <Button 
+              variant="contained" 
+              color='secondary'
+              disabled={data.name === name && data.phone === phone && data.isAttending === isAttending}
+              onClick={handleSubmit}
+            >
+              Save Changes
+            </Button>
             <Button onClick={handleClose}>Cancel</Button>
           </Box>
         </Box>

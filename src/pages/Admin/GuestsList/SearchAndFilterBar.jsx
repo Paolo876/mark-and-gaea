@@ -40,22 +40,22 @@ const SearchAndFilterBar = ({ handleSortFilterChange, handleSearch }) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleSort = (value) => {
-    if( value === "date") {
-      if(sort === "date") {
-        setSort(null)
-      } else {
-        setSort("date")
-      }
-    }
-    if( value === "name") {
-      if(sort === "name") {
-        setSort(null)
-      } else {
-        setSort("name")
-      }
-    }
-  }
+  // const handleSort = (value) => {
+  //   if( value === "date") {
+  //     if(sort === "date") {
+  //       setSort(null)
+  //     } else {
+  //       setSort("date")
+  //     }
+  //   }
+  //   if( value === "name") {
+  //     if(sort === "name") {
+  //       setSort(null)
+  //     } else {
+  //       setSort("name")
+  //     }
+  //   }
+  // }
 
   const handleFilter = (value) => {
     // attending/not attending
@@ -104,130 +104,130 @@ const SearchAndFilterBar = ({ handleSortFilterChange, handleSearch }) => {
 
 
   return (
-      <Box sx={{mb:3, mt: 1, display: "flex", flexDirection: "row", gap: 2}}>
-        <Button 
-          startIcon={<FilterAltIcon/>} 
-          size='small' 
-          variant="outlined" 
-          sx={{fontFamily: "Bodoni-bold", boxShadow:1, display: {xs: "none", sm: "flex"}}} 
-          color="secondary"
-          id="basic-button"
-          aria-controls={open ? 'basic-menu' : undefined}
-          aria-haspopup="true"
-          aria-expanded={open ? 'true' : undefined}
-          onClick={handleClick}
-          disabled={open}
+    <Box sx={{mb:3, mt: 1, display: "flex", flexDirection: "row", gap: 2}}>
+      <Button 
+        startIcon={<FilterAltIcon/>} 
+        size='small' 
+        variant="outlined" 
+        sx={{fontFamily: "Bodoni-bold", boxShadow:1, display: {xs: "none", sm: "flex"}}} 
+        color="secondary"
+        id="basic-button"
+        aria-controls={open ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+        disabled={open}
+      >
+        Filter
+      </Button>
+      <Button 
+        size='small' 
+        variant="outlined" 
+        sx={{boxShadow:1, minWidth: 0, display:{sm:"none"}, px: 1.5}} 
+        color="secondary"
+        id="basic-button"
+        aria-controls={open ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+        disabled={open}
+      >
+        <FilterAltIcon sx={{fontSize: 22}}/>
+      </Button>
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={() => setAnchorEl(null)}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        {/* <Typography sx={headerStyles}>Sort:</Typography>
+        <MenuItem 
+          onClick={() => handleSort("date")} 
+          sx={{
+            ...optionsStyles, 
+            fontFamily: sort === "date" ? "Bodoni-Bold" : "Bodoni",
+            color: sort === "date" ? "secondary.main" : "primary.main",
+          }} 
+          dense
         >
-          Sort & Filter
-        </Button>
-        <Button 
-          size='small' 
-          variant="outlined" 
-          sx={{boxShadow:1, minWidth: 0, display:{sm:"none"}, px: 1.5}} 
-          color="secondary"
-          id="basic-button"
-          aria-controls={open ? 'basic-menu' : undefined}
-          aria-haspopup="true"
-          aria-expanded={open ? 'true' : undefined}
-          onClick={handleClick}
-          disabled={open}
-        >
-          <FilterAltIcon sx={{fontSize: 22}}/>
-        </Button>
-        <Menu
-          id="basic-menu"
-          anchorEl={anchorEl}
-          open={open}
-          onClose={() => setAnchorEl(null)}
-          MenuListProps={{
-            'aria-labelledby': 'basic-button',
+          Date
+          {sort === "date" && <CheckCircleIcon sx={{color: "green", fontSize: "inherit"}}/>}
+        </MenuItem>
+        <MenuItem 
+          onClick={() => handleSort("name")} 
+          sx={{
+            ...optionsStyles, 
+            fontFamily: sort === "name" ? "Bodoni-Bold" : "Bodoni",
+            color: sort === "name" ? "secondary.main" : "primary.main",
           }}
+          dense
         >
-          <Typography sx={headerStyles}>Sort:</Typography>
-          <MenuItem 
-            onClick={() => handleSort("date")} 
-            sx={{
-              ...optionsStyles, 
-              fontFamily: sort === "date" ? "Bodoni-Bold" : "Bodoni",
-              color: sort === "date" ? "secondary.main" : "primary.main",
-            }} 
-            dense
-          >
-            Date
-            {sort === "date" && <CheckCircleIcon sx={{color: "green", fontSize: "inherit"}}/>}
-          </MenuItem>
-          <MenuItem 
-            onClick={() => handleSort("name")} 
-            sx={{
-              ...optionsStyles, 
-              fontFamily: sort === "name" ? "Bodoni-Bold" : "Bodoni",
-              color: sort === "name" ? "secondary.main" : "primary.main",
-            }}
-            dense
-          >
-            Name (A-Z)
-            {sort === "name" && <CheckCircleIcon sx={{color: "green", fontSize: "inherit"}}/>}
-          </MenuItem>
-          <Divider/>
+          Name (A-Z)
+          {sort === "name" && <CheckCircleIcon sx={{color: "green", fontSize: "inherit"}}/>}
+        </MenuItem> */}
+        {/* <Divider/> */}
 
-          <Typography sx={headerStyles}>Filter:</Typography>
-          <MenuItem 
-            onClick={() => handleFilter("attending")} 
-            sx={{
-              ...optionsStyles, 
-              fontFamily: filter.includes("attending") ? "Bodoni-Bold" : "Bodoni",
-              color: filter.includes("attending") ? "secondary.main" : "primary.main",
-            }}
-            dense
-          >
-            Attending
-            {filter.includes("attending") && <CheckCircleIcon sx={{color: "green", fontSize: "inherit"}}/>}
-          </MenuItem>
-          <MenuItem 
-            onClick={() => handleFilter("notAttending")} 
-            sx={{
-              ...optionsStyles, 
-              fontFamily: filter.includes("notAttending") ? "Bodoni-Bold" : "Bodoni",
-              color: filter.includes("notAttending") ? "secondary.main" : "primary.main",
-            }}
-            dense
-          >
-            Not Attending
-            {filter.includes("notAttending") && <CheckCircleIcon sx={{color: "green", fontSize: "inherit"}}/>}
-          </MenuItem>
-          <MenuItem 
-            onClick={() => handleFilter("message")} 
-            sx={{
-              ...optionsStyles, 
-              fontFamily: filter.includes("message") ? "Bodoni-Bold" : "Bodoni",
-              color: filter.includes("message") ? "secondary.main" : "primary.main",
-            }}
-            dense
-          >
-            With Message
-            {filter.includes("message") && <CheckCircleIcon sx={{color: "green", fontSize: "inherit"}}/>}
-          </MenuItem>
-          <Divider/>
-          <Box sx={{display: "flex", alignItems: "center", justifyContent: "center", mt: 3, flexDirection: "column", gap: 4}}>
-            <Button variant="contained" color="secondary" size="small" onClick={() => handleSortFilterSubmit(false)} sx={{letterSpacing: 1}}>Apply Changes</Button>
-            {<Button variant="contained" color="warning" size="small" onClick={() => handleSortFilterSubmit(true)} sx={{letterSpacing: 1}}>Reset</Button>}
-          </Box>
-        </Menu>
+        <Typography sx={headerStyles}>Filter:</Typography>
+        <MenuItem 
+          onClick={() => handleFilter("attending")} 
+          sx={{
+            ...optionsStyles, 
+            fontFamily: filter.includes("attending") ? "Bodoni-Bold" : "Bodoni",
+            color: filter.includes("attending") ? "secondary.main" : "primary.main",
+          }}
+          dense
+        >
+          Attending
+          {filter.includes("attending") && <CheckCircleIcon sx={{color: "green", fontSize: "inherit"}}/>}
+        </MenuItem>
+        <MenuItem 
+          onClick={() => handleFilter("notAttending")} 
+          sx={{
+            ...optionsStyles, 
+            fontFamily: filter.includes("notAttending") ? "Bodoni-Bold" : "Bodoni",
+            color: filter.includes("notAttending") ? "secondary.main" : "primary.main",
+          }}
+          dense
+        >
+          Not Attending
+          {filter.includes("notAttending") && <CheckCircleIcon sx={{color: "green", fontSize: "inherit"}}/>}
+        </MenuItem>
+        <MenuItem 
+          onClick={() => handleFilter("message")} 
+          sx={{
+            ...optionsStyles, 
+            fontFamily: filter.includes("message") ? "Bodoni-Bold" : "Bodoni",
+            color: filter.includes("message") ? "secondary.main" : "primary.main",
+          }}
+          dense
+        >
+          With Message
+          {filter.includes("message") && <CheckCircleIcon sx={{color: "green", fontSize: "inherit"}}/>}
+        </MenuItem>
+        <Divider/>
+        <Box sx={{display: "flex", alignItems: "center", justifyContent: "center", mt: 3, flexDirection: "column", gap: 4}}>
+          <Button variant="contained" color="secondary" size="small" onClick={() => handleSortFilterSubmit(false)} sx={{letterSpacing: 1}}>Apply Changes</Button>
+          {<Button variant="contained" color="warning" size="small" onClick={() => handleSortFilterSubmit(true)} sx={{letterSpacing: 1}} disabled={filter.length === 0}>Reset</Button>}
+        </Box>
+      </Menu>
 
-        <TextField 
-          color='secondary'
-          size='small' 
-          value={input}
-          onChange={e => setInput(e.target.value)}
-          sx={{boxShadow: 1, minWidth: {xs: "82%", sm: 300}, opacity: open ? .5 : 1, fontSize: 12}}
-          disabled={open}
-          InputProps={{startAdornment: (
-            <InputAdornment position="start">
-              {input === "" ? <SearchIcon /> : <IconButton size="small" color="warning" onClick={() => setInput("")}><CancelIcon/></IconButton>}
-            </InputAdornment>
-          )}}
-        />
-      </Box>
+      <TextField 
+        color='secondary'
+        size='small' 
+        value={input}
+        onChange={e => setInput(e.target.value)}
+        sx={{boxShadow: 1, minWidth: {xs: "82%", sm: 300}, opacity: open ? .5 : 1, fontSize: 12}}
+        disabled={open}
+        InputProps={{startAdornment: (
+          <InputAdornment position="start">
+            {input === "" ? <SearchIcon /> : <IconButton size="small" color="warning" onClick={() => setInput("")}><CancelIcon/></IconButton>}
+          </InputAdornment>
+        )}}
+      />
+    </Box>
 
   )
 }

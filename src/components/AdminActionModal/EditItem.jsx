@@ -21,7 +21,7 @@ const inputContainerStyles = {
 
 
 const EditItem = ({ data, handleClose, guestsList }) => {
-  const { updateDocument } = useFirestore("admin")
+  const { updateDocument, response: { document, error, isLoading, success } } = useFirestore("admin")
   const [ name, setName ] = useState(data.name)
   const [ isAttending, setIsAttending ] = useState(data.isAttending)
   const [ phone, setPhone ] = useState(data.phone)
@@ -35,9 +35,13 @@ const EditItem = ({ data, handleClose, guestsList }) => {
     }
   }
 
-  
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // get data item from guestsList
+    // update changes
+    // updateDocument
+    //closeModal
     console.log(data, name, isAttending, phone)
   }
 

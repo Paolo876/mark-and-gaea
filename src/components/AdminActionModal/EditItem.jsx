@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Box, Typography, TextField, Divider, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel, Button } from '@mui/material'
 import { useFirestore } from "../../hooks/useFirestore"
+import LoadingButton from '@mui/lab/LoadingButton';
 
 
 const containerStyles = {
@@ -21,7 +22,8 @@ const inputContainerStyles = {
 
 
 const EditItem = ({ data, handleClose, guestsList }) => {
-  const { updateDocument, response: { document, error, isLoading, success } } = useFirestore("admin")
+  const { updateDocument, response: { document, error, success } } = useFirestore("admin")
+  const [ isLoading, setIsLoading ] = useState(false);
   const [ name, setName ] = useState(data.name)
   const [ isAttending, setIsAttending ] = useState(data.isAttending)
   const [ phone, setPhone ] = useState(data.phone)
@@ -35,9 +37,9 @@ const EditItem = ({ data, handleClose, guestsList }) => {
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setIsLoading(true)
     // update changes
     const updatedGuestsList = guestsList.map(item => {
       if(item.name === data.name && item.phone === data.phone){
@@ -48,14 +50,23 @@ const EditItem = ({ data, handleClose, guestsList }) => {
     })
 
     // updateDocument
-    
-    //closeModal
-    // console.log(data, name, isAttending, phone)
+    try {
+      await updateDocument({guestsList: updatedGuestsList}, "backup")
+      setIsLoading(false)
+      //close Modal
+
+    } catch(err) {
+      setIsLoading(false)
+
+    }
   }
 
 
   return (
     <Box sx={containerStyles}>
+      {/* backdrop */}
+      <Box sx={{zIndex: 2, height: "100vh", width: "100vw", position: "absolute"}} onClick={isLoading ? null : handleClose} ></Box>
+
       <Box>
         <Typography sx={{textTransform: "uppercase", fontSize: {xs: 19, sm: 21, md: 23, lg:25}, letterSpacing: 2, fontFamily: "Bodoni-Bold"}}>Edit</Typography>
       </Box>
@@ -99,15 +110,18 @@ const EditItem = ({ data, handleClose, guestsList }) => {
           </Box>
 
           <Box mt={{xs: 5, sm: 6, md:8}} sx={{display: "flex", justifyContent: "right", gap: 2}}>
-            <Button 
-              variant="contained" 
-              color='secondary'
-              disabled={data.name === name && data.phone === phone && data.isAttending === isAttending}
+            <LoadingButton
+              color="secondary" 
               onClick={handleSubmit}
+              loading={isLoading}
+              disabled={data.name === name && data.phone === phone && data.isAttending === isAttending}
+              loadingPosition="end"
+              variant="contained"
+              endIcon={<></>}
             >
-              Save Changes
-            </Button>
-            <Button onClick={handleClose}>Cancel</Button>
+              <span>{isLoading ? "Updating..." : "Save Changes"}</span>
+            </LoadingButton>
+            <Button onClick={handleClose} disabled={isLoading}>Cancel</Button>
           </Box>
         </Box>
       </Box>

@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 import { Box, Typography, Button, Divider,  } from '@mui/material'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
@@ -11,8 +11,12 @@ const containerStyles = {
 }
 
 const DeleteItem = ({ data, handleClose }) => {
+  const [ isLoading, setIsLoading ] = useState(false)
   return (
     <Box sx={containerStyles}>
+      {/* backdrop */}
+      <Box sx={{zIndex: 2, height: "100vh", width: "100vw", position: "absolute"}} onClick={isLoading ? null : handleClose} ></Box>
+
       <Box>
         <Typography sx={{textTransform: "uppercase", fontSize: {xs: 19, sm: 21, md: 23, lg:25}, letterSpacing: 2, fontFamily: "Bodoni-Bold"}}>Delete</Typography>
       </Box>

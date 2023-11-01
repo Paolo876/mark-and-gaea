@@ -22,7 +22,6 @@ const AdminActionModal = ({showModal, handleClose, data, action, guestsList}) =>
   return (
     <Modal open={showModal} onClose={handleClose}>
       <Box sx={containerStyle}>
-        <Box sx={{zIndex: 2, height: "100vh", width: "100vw", position: "absolute"}} onClick={handleClose} ></Box>
         {action === "edit" && <EditItem data={data} handleClose={handleClose} guestsList={guestsList} />}
         {action === "delete" && <DeleteItem data={data} handleClose={handleClose} guestsList={guestsList} />}
       </Box>

@@ -38,11 +38,19 @@ const EditItem = ({ data, handleClose, guestsList }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // get data item from guestsList
     // update changes
+    const updatedGuestsList = guestsList.map(item => {
+      if(item.name === data.name && item.phone === data.phone){
+        return {...item, name, isAttending, phone}
+      } else {
+        return item
+      }
+    })
+
     // updateDocument
+    
     //closeModal
-    console.log(data, name, isAttending, phone)
+    // console.log(data, name, isAttending, phone)
   }
 
 

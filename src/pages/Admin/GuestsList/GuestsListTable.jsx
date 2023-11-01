@@ -35,7 +35,7 @@ function createData(name, isAttending, phone, message, createdAt) {
 
 
 export default function BasicTable({ guestsList }) {
-  const initialData = guestsList.map(item => createData(item.name, item.isAttending, item.phone, item.message, item.createdAt.toDate().toLocaleDateString('en-US', {year: 'numeric', month: '2-digit', day: '2-digit'})));
+  const initialData = guestsList.map(item => createData(item.name, item.isAttending, item.phone, item.message, item.createdAt.toDate().toLocaleDateString('en-US', {year: '2-digit', month: '2-digit', day: '2-digit'})));
   const [ updatedDocument, setUpdatedDocument ] = useState(initialData);
   const [ showModal, setShowModal ] = useState({isShown: false, data: null});
   const [ showActionModal, setShowActionModal ] = useState({isShown: false, data: null, action: null});

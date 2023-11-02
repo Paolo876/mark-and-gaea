@@ -22,8 +22,8 @@ const AdminActionModal = ({showModal, handleClose, data, action, guestsList}) =>
   return (
     <Modal open={showModal} onClose={handleClose}>
       <Box sx={containerStyle}>
-        {action === "edit" && <EditItem data={data} handleClose={handleClose} guestsList={guestsList} />}
-        {action === "delete" && <DeleteItem data={data} handleClose={handleClose} guestsList={guestsList} />}
+        {action === "edit" && <EditItem data={data} handleClose={handleClose} guestsList={guestsList}/>}
+        {action === "delete" && <DeleteItem data={data} handleClose={handleClose} guestsList={guestsList}/>}
       </Box>
     </Modal>
   )

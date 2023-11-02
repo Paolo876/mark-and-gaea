@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Box, Paper, IconButton, Button, Tooltip } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
@@ -39,7 +39,10 @@ export default function BasicTable({ guestsList }) {
   const [ updatedDocument, setUpdatedDocument ] = useState(initialData);
   const [ showModal, setShowModal ] = useState({isShown: false, data: null});
   const [ showActionModal, setShowActionModal ] = useState({isShown: false, data: null, action: null});
-
+  
+  useEffect(() => {
+    setUpdatedDocument(guestsList.map(item => createData(item.name, item.isAttending, item.phone, item.message, item.createdAt.toDate().toLocaleDateString('en-US', {year: '2-digit', month: '2-digit', day: '2-digit'}))))
+  }, [guestsList])
 
   const handleSortFilterChange = ({sort, filter, clear}) => {
     // sort

@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useAuthContext } from "../../../hooks/useAuthContext"
 import { Container, Box, Typography, Button, Paper, Grid, CircularProgress, Alert } from '@mui/material';
 import { useLogout } from "../../../hooks/useLogout"
@@ -11,10 +12,16 @@ import GuestsSummary from "./GuestsSummary";
 
 
 const GuestsList = () => {
+  const [ guestsList, setGuestsList ] = useState(null);
   const { logout } = useLogout();
   const { user: { email, photoURL } } = useAuthContext();
   const { document, error, isLoading } = useDocument("admin", "guests");
 
+  useEffect(() => {
+    if(document) {
+      setGuestsList(document.guestsList)
+    }
+  }, [document])
   return (
     <Container>
       {/* header */}
@@ -52,10 +59,10 @@ const GuestsList = () => {
         <Grid item xs={12} mt={3}>
           {error && <Alert severity="warning" sx={{letterSpacing: 1, fontFamily: "bodoni-bold", fontSize: {xs: 12, sm: 15.5, md: 16, lg:17}}}>Failed to retrieve data: User not authorized.</Alert>}
           {isLoading && <CircularProgress />}
-          {!error && !isLoading && document && <GuestsListTable guestsList={document.guestsList} />}
+          {!error && !isLoading && document && guestsList && <GuestsListTable guestsList={guestsList} setGuestsList={setGuestsList}/>}
         </Grid>
         <Grid item xs={12} mt={{xs: 6, sm: 7, md: 8, lg:10}} mb={6}>
-          {!error && !isLoading && document && <GuestsSummary guestsList={document.guestsList} />}
+          {!error && !isLoading && document && guestsList && <GuestsSummary guestsList={guestsList} />}
         </Grid>
       </Grid>
     </Container>

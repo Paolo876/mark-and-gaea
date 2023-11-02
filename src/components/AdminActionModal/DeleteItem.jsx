@@ -12,10 +12,11 @@ const containerStyles = {
 
 const DeleteItem = ({ data, handleClose }) => {
   const [ isLoading, setIsLoading ] = useState(false)
+  
   return (
     <Box sx={containerStyles}>
       {/* backdrop */}
-      <Box sx={{zIndex: 2, height: "100vh", width: "100vw", position: "absolute"}} onClick={isLoading ? null : handleClose} ></Box>
+      <Box sx={{zIndex: -1, height: "100vh", width: "100vw", position: "absolute", top: 0, left: 0}} onClick={isLoading ? null : handleClose} ></Box>
 
       <Box>
         <Typography sx={{textTransform: "uppercase", fontSize: {xs: 19, sm: 21, md: 23, lg:25}, letterSpacing: 2, fontFamily: "Bodoni-Bold"}}>Delete</Typography>

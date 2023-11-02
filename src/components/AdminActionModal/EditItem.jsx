@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, Typography, TextField, Divider, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel, Button } from '@mui/material'
+import { Box, Typography, TextField, Divider, Radio, RadioGroup, FormControlLabel, FormControl, Alert, Button } from '@mui/material'
 import { useFirestore } from "../../hooks/useFirestore"
 import LoadingButton from '@mui/lab/LoadingButton';
 
@@ -22,7 +22,7 @@ const inputContainerStyles = {
 
 
 const EditItem = ({ data, handleClose, guestsList }) => {
-  const { updateDocument, response: { document, error, success } } = useFirestore("admin")
+  const { updateDocument, response: { error } } = useFirestore("admin")
   const [ isLoading, setIsLoading ] = useState(false);
   const [ name, setName ] = useState(data.name)
   const [ isAttending, setIsAttending ] = useState(data.isAttending)
@@ -51,14 +51,9 @@ const EditItem = ({ data, handleClose, guestsList }) => {
 
     // updateDocument
     try {
-      await updateDocument({guestsList: updatedGuestsList}, "backup")
+      await updateDocument({guestsList: updatedGuestsList}, "guests")
       setIsLoading(false)
-
-      // update guestsList
-      // update input states to changed values
-
-      // success alert
-
+      handleClose()
     } catch(err) {
       setIsLoading(false)
       // error alert
@@ -69,13 +64,16 @@ const EditItem = ({ data, handleClose, guestsList }) => {
   return (
     <Box sx={containerStyles}>
       {/* backdrop */}
-      <Box sx={{zIndex: 2, height: "100vh", width: "100vw", position: "absolute"}} onClick={isLoading ? null : handleClose} ></Box>
+      <Box sx={{zIndex: -1, height: "100vh", width: "100vw", position: "absolute", top: 0, left: 0}} onClick={isLoading ? null : handleClose} ></Box>
 
       <Box>
         <Typography sx={{textTransform: "uppercase", fontSize: {xs: 19, sm: 21, md: 23, lg:25}, letterSpacing: 2, fontFamily: "Bodoni-Bold"}}>Edit</Typography>
       </Box>
       <Divider/>
       <Box mt={{xs: 4, sm: 5, md:6}}>
+        <Box mb={2}>
+          {error && <Alert severity="error" size="small">{error}</Alert>}
+        </Box>
         <Box component="form" onSubmit={handleSubmit}>
           <Box sx={boxStyles}>
             <TextField
@@ -128,6 +126,7 @@ const EditItem = ({ data, handleClose, guestsList }) => {
             <Button onClick={handleClose} disabled={isLoading}>Cancel</Button>
           </Box>
         </Box>
+
       </Box>
     </Box>
   )

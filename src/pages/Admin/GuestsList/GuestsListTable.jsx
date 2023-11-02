@@ -87,7 +87,7 @@ export default function BasicTable({ guestsList }) {
 
   return (
 		<Box sx={{display: "flex", flexDirection: "column"}}>
-			<SearchAndFilterBar handleSortFilterChange={handleSortFilterChange} handleSearch={handleSearch}/>
+			<SearchAndFilterBar handleSortFilterChange={handleSortFilterChange} handleSearch={handleSearch} guestsList={guestsList}/>
       <MessageModal 
         showModal={showModal.isShown} 
         handleClose={() => setShowModal({isShown: false, data:null})} 

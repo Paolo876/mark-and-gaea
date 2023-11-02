@@ -28,12 +28,17 @@ const optionsStyles = {
 }
 
 
-const SearchAndFilterBar = ({ handleSortFilterChange, handleSearch }) => {
+const SearchAndFilterBar = ({ handleSortFilterChange, handleSearch, guestsList }) => {
   const [ input, setInput ] = useState("");
   const [ sort, setSort ] = useState(null);
   const [ filter, setFilter ] = useState([]);
   const [ anchorEl, setAnchorEl ] = useState(null);
   const open = Boolean(anchorEl);
+
+  //reset filter on guestsList update
+  useEffect(() => {
+    setFilter([])
+  }, [guestsList])
 
 
   const handleClick = (event) => {

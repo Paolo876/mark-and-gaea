@@ -56,6 +56,19 @@ const BeOurGuest = React.forwardRef(( props, ref ) => {
           >    
             <Grid item xs={11.25} sm={12} sx={{textAlign: "left", mb: 1, mx: {xs: "auto", sm: 0}}}>
               <Typography sx={{fontSize: {xs: 26, sm: 27, md: 30, lg: 35}, letterSpacing: 8, fontFamily: "Bodoni-Bold", opacity: .85}}>RSVP</Typography>
+              <Typography 
+                sx={{
+                  fontSize: {xs: 17, sm: 18, md: 19, lg:20}, 
+                  letterSpacing: .85, 
+                  color: "primary.main", 
+                  opacity: .7, 
+                  transform: "skewX(-8deg)", 
+                  my: {xs: .5,sm: .75, md:1},
+                  pl: .15,
+                }}
+              >
+              We reserved one seat for you
+              </Typography>
             </Grid>
           </Fade>
 

@@ -53,11 +53,15 @@ const EditItem = ({ data, handleClose, guestsList }) => {
     try {
       await updateDocument({guestsList: updatedGuestsList}, "backup")
       setIsLoading(false)
-      //close Modal
+
+      // update guestsList
+      // update input states to changed values
+
+      // success alert
 
     } catch(err) {
       setIsLoading(false)
-
+      // error alert
     }
   }
 

@@ -141,8 +141,9 @@ const Details = React.forwardRef((props, ref) => {
                 <Box component="span" sx={{display: "block"}}>at the garden.</Box>
               </Typography>
               <Typography sx={{...descriptionStyles, fontSize: 12.5}} mt={2}>
-                <Box component="span" sx={{display: "inline"}}>Reception follows at four o'clock in the afternoon</Box>
-                <Box component="span" sx={{display: "inline"}}>at <Box component="span" sx={{display:"inline", letterSpacing: 1.5, mx: .25}}>The Shed by The V Farm</Box></Box>
+                <Box component="span" sx={{display: "inline"}}>Reception follows</Box>
+                {/* <Box component="span" sx={{display: "inline"}}>Reception follows at four o'clock in the afternoon</Box> */}
+                <Box component="span" sx={{display: "inline"}}> at <Box component="span" sx={{display:"inline", letterSpacing: 1, mx: .25}}>The Shed by The V Farm</Box></Box>
                 <Box component="span" sx={{display: "block"}}>Bamban, Tarlac</Box>
               </Typography>
             </Grid>
@@ -210,7 +211,8 @@ const Details = React.forwardRef((props, ref) => {
               <Typography sx={headerStyles}>RECEPTION</Typography>
               <Box sx={{height: {xs: 8, sm: 13, md:15}, width: "1px", backgroundColor: "success.main", mx: "auto", my: {xs: .15, sm: 1.5, md: 2, lg:2.5}}}></Box>          
               <Typography sx={descriptionStyles}>
-                <Box component="span" sx={{display: "block"}}>Reception follows <Box component="br" sx={{display: {md: "none"}}}></Box>at four o'clock in the afternoon</Box>
+                <Box component="span" sx={{display: "block"}}>Reception follows </Box>
+                {/* <Box component="span" sx={{display: "block"}}>Reception follows <Box component="br" sx={{display: {md: "none"}}}></Box>at four o'clock in the afternoon</Box> */}
                 <Box component="span" sx={{display: "block"}}>at <Box component="span" sx={{display:"inline-block", letterSpacing: 2.5, mx: .5}}>The Shed by The V Farm</Box></Box>
                 <Box component="span" sx={{display: "block"}}>Bamban, Tarlac</Box>
               </Typography>

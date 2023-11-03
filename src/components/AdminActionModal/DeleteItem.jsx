@@ -1,5 +1,7 @@
 import { useState } from 'react'
-import { Box, Typography, Button, Divider,  } from '@mui/material'
+import { Box, Typography, TextField, Divider, Radio, RadioGroup, FormControlLabel, FormControl, Alert, Button } from '@mui/material'
+import { useFirestore } from "../../hooks/useFirestore"
+import LoadingButton from '@mui/lab/LoadingButton';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 
@@ -10,9 +12,28 @@ const containerStyles = {
   zIndex: 2
 }
 
-const DeleteItem = ({ data, handleClose }) => {
+const DeleteItem = ({ data, handleClose, guestsList }) => {
   const [ isLoading, setIsLoading ] = useState(false)
-  
+  const { updateDocument, response: { error } } = useFirestore("admin")
+
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    setIsLoading(true)
+    // update changes
+    const updatedGuestsList = guestsList.filter(item => (item.name !== data.name || item.phone !== data.phone))
+    
+    // updateDocument
+    try {
+      await updateDocument({guestsList: updatedGuestsList}, "guests")
+      setIsLoading(false)
+      handleClose()
+    } catch(err) {
+      setIsLoading(false)
+      // error alert
+    }
+  }
+
+  console.log(guestsList)
   return (
     <Box sx={containerStyles}>
       {/* backdrop */}
@@ -23,6 +44,9 @@ const DeleteItem = ({ data, handleClose }) => {
       </Box>
       <Divider/>
       <Box mt={{xs: 2.5, sm: 3, md:4}}>
+        <Box mb={2}>
+          {error && <Alert severity="error" size="small">{error}</Alert>}
+        </Box>
         <Typography sx={{fontSize: {xs: 15, sm: 16, md: 17, lg: 18}, letterSpacing: .5, mb: .25, fontFamily: "Bodoni-Bold"}}>Are you sure you want to delete this item?</Typography>
         <Box sx={{mt: 2, p: 2}}>
           <Typography sx={{fontSize: {xs: 12, sm: 14, md: 15, lg: 17}, letterSpacing: .5, mb: .25, fontFamily: "Bodoni-Bold"}}>- {data.name}</Typography>
@@ -41,8 +65,18 @@ const DeleteItem = ({ data, handleClose }) => {
         </Box>
       </Box>
       <Box mt={{xs: 5, sm: 6, md:8}} sx={{display: "flex", justifyContent: "right", gap: 2}}>
-        <Button variant="contained" color='error'>Confirm</Button>
-        <Button onClick={handleClose}>Cancel</Button>
+        <LoadingButton
+          color="error" 
+          onClick={handleDelete}
+          loading={isLoading}
+          disabled={isLoading}
+          loadingPosition="end"
+          variant="contained"
+          endIcon={<></>}
+        >
+          <span>{isLoading ? "Updating..." : "Delete"}</span>
+        </LoadingButton>        
+          <Button onClick={handleClose}>Cancel</Button>
       </Box>
     </Box>
   )

@@ -98,7 +98,9 @@ const BeOurGuest = React.forwardRef(( props, ref ) => {
               style={{ transitionDelay: "450ms" }}
               timeout={900}
             >   
-              <Box>
+              <Box sx={{position: "relative"}}>
+                {/* bg */}
+                {/* <Box sx={{backgroundColor: "red", position: "absolute", top: 0, left: 0, height: "100%", width: "100vw", zIndex: -1}}></Box> */}
                 <Typography variant="h4" sx={{fontSize: {xs: 24, sm: 32, md: 33, lg: 35}, mb: 9, letterSpacing: "initial"}}>a little note on gifts</Typography>
                 <Grid container>
                   <Grid item xs={6.5} sm={12} sx={{height: "100%", my: "auto"}}>

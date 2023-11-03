@@ -93,7 +93,7 @@ const SearchAndFilterBar = ({ handleSortFilterChange, handleSearch, guestsList }
   const handleSortFilterSubmit = (value=null) => {
     handleSortFilterChange({sort, filter, clear:value})
     if(value){
-      setSort(null)
+      // setSort(null)
       setFilter([])
     }
     setAnchorEl(null);

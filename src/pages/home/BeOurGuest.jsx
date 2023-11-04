@@ -92,7 +92,7 @@ const BeOurGuest = React.forwardRef(( props, ref ) => {
             </Grid>
 
 
-          <Grid item xs={12} sm={8} md={8} lg={6} sx={{mt: {xs: 18, sm: 25, md: 28, lg: 35}, mx: "auto",}} ref={footerRef}>
+          <Grid item xs={12} sm={9} md={8} lg={7} sx={{mt: {xs: 18, sm: 25, md: 28, lg: 35}, mx: "auto",}} ref={footerRef}>
             <Fade
               in={footerInView}
               style={{ transitionDelay: "450ms" }}
@@ -108,7 +108,7 @@ const BeOurGuest = React.forwardRef(( props, ref ) => {
                       sx={{
                         fontFamily: "Bodoni", 
                         fontSize: {xs: 15, sm: 22, md: 23, lg: 25}, 
-                        letterSpacing: {xs: .2, sm: .25, md:.5}, 
+                        letterSpacing: {xs: .15, sm: .25, md:.5}, 
                         textAlign: {xs: "left", sm:"center"}, 
                         lineHeight: {xs: 1.6, sm: 1.4}, 
                         color: "secondary.main",
@@ -128,7 +128,7 @@ const BeOurGuest = React.forwardRef(( props, ref ) => {
                         }}
                       ></Box>
                       <Box component="span" sx={{transform: "skewX(-8deg)", display: "inline"}}>
-                        Your love, laughter, and company is all we wish for on our special day. However, if you wish to delight us with a gift, just surprise us in your own way.
+                        Your love, laughter, and company is all we wish for on our special day but if you wish to delight us with a gift, a contribution to our “funds for the future” would be a sweet surprise however little or grand it is!
                       </Box>
                     </Typography>
                   </Grid>

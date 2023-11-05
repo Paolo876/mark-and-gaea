@@ -119,7 +119,7 @@ const BeOurGuest = React.forwardRef(( props, ref ) => {
                         component="span" 
                         sx={{
                           height: "1px", 
-                          width: {xs: 14, sm: 17, md: 18, lg: 20}, 
+                          width: {xs: 13, sm: 17, md: 18, lg: 20}, 
                           backgroundColor: "primary.main", 
                           display: "inline-block", 
                           transform: {xs:"translateY(-4px)", sm:"translateY(-5px)", md:"translateY(-6px)", lg:"translateY(-8px)"}, 

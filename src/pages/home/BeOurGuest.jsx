@@ -127,8 +127,11 @@ const BeOurGuest = React.forwardRef(( props, ref ) => {
                           opacity: .35
                         }}
                       ></Box>
-                      <Box component="span" sx={{transform: "skewX(-8deg)", display: "inline"}}>
+                      {/* <Box component="span" sx={{transform: "skewX(-8deg)", display: "inline"}}>
                         Your love, laughter, and company is all we wish for on our special day but if you wish to delight us with a gift, a contribution to our “funds for the future” would be a sweet surprise however little or grand it is!
+                      </Box> */}
+                      <Box component="span" sx={{transform: "skewX(-8deg)", display: "inline"}}>
+                      Your love, laughter, and company is all we wish for on our special day. However, if you wish to delight us with a gift, just surprise us in your own way.
                       </Box>
                     </Typography>
                   </Grid>

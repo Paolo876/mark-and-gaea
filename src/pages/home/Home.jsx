@@ -1,5 +1,5 @@
 import { useState, useEffect, createRef } from "react";
-import { Box, Fade } from '@mui/material'
+import { Box, Fade, Typography } from '@mui/material'
 import { useAppContext } from '../../hooks/useAppContext'
 import WelcomeLoader from '../../components/WelcomeLoader'
 
@@ -37,6 +37,9 @@ const Home = () => {
           <Details ref={detailsRef}/>
           <Map ref={mapRef}/>
           <BeOurGuest ref={rsvpRef}/>
+          <Box align="right" sx={{p: .25}}>
+            <Typography sx={{fontFamily: "Arial", fontWeight: 200, fontSize: {xs: 9, sm: 10, md: 11, lg: 12, xl: 13}, opacity: .75 }}>Paolo Bugarin | © 2024 All rights reserved. </Typography>
+          </Box>
         </Box>
       </Fade>
     </>

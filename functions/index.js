@@ -1,6 +1,6 @@
 const functions = require("firebase-functions");
 // const request = require("request-promise");
-const cors = require("cors")({origin: true});
+const cors = require("cors")({origin: "*"});
 
 
 exports.getImagekitKeys = functions.https.onRequest((req, res) => {

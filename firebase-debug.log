@@ -1,0 +1,836 @@
+[debug] [2024-01-22T08:02:29.130Z] ----------------------------------------------------------------------
+[debug] [2024-01-22T08:02:29.133Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\PAO\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2024-01-22T08:02:29.134Z] CLI Version:   13.0.3
+[debug] [2024-01-22T08:02:29.134Z] Platform:      win32
+[debug] [2024-01-22T08:02:29.134Z] Node Version:  v18.12.1
+[debug] [2024-01-22T08:02:29.135Z] Time:          Mon Jan 22 2024 00:02:29 GMT-0800 (Pacific Standard Time)
+[debug] [2024-01-22T08:02:29.135Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-22T08:02:29.221Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-22T08:02:29.221Z] > authorizing via signed-in user (paolopaolobugarin@gmail.com)
+[debug] [2024-01-22T08:02:29.222Z] [iam] checking project markandgaea for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-01-22T08:02:29.225Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/markandgaea:testIamPermissions [none]
+[debug] [2024-01-22T08:02:29.225Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/markandgaea:testIamPermissions x-goog-quota-user=projects/markandgaea
+[debug] [2024-01-22T08:02:29.225Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/markandgaea:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-01-22T08:02:29.543Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/markandgaea:testIamPermissions 200
+[debug] [2024-01-22T08:02:29.543Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/markandgaea:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-01-22T08:02:29.544Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/markandgaea/serviceAccounts/markandgaea@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-01-22T08:02:29.544Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/markandgaea/serviceAccounts/markandgaea@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-01-22T08:02:29.879Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/markandgaea/serviceAccounts/markandgaea@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-01-22T08:02:29.880Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/markandgaea/serviceAccounts/markandgaea@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'markandgaea'...
+[info] 
+[info] i  deploying functions 
+[info] +  functions: Finished running predeploy script. 
+[debug] [2024-01-22T08:02:29.886Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea [none]
+[debug] [2024-01-22T08:02:30.206Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea 200
+[debug] [2024-01-22T08:02:30.206Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea {"projectId":"markandgaea","projectNumber":"592245000498","displayName":"markandgaea","name":"projects/markandgaea","resources":{"hostingSite":"markandgaea"},"state":"ACTIVE","etag":"1_cedc0cf0-5ce8-431b-b195-76b1adc841c8"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-01-22T08:02:30.209Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-01-22T08:02:30.209Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/markandgaea
+[debug] [2024-01-22T08:02:30.210Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-01-22T08:02:30.210Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/markandgaea
+[debug] [2024-01-22T08:02:30.211Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudbuild.googleapis.com [none]
+[debug] [2024-01-22T08:02:30.211Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudbuild.googleapis.com x-goog-quota-user=projects/markandgaea
+[debug] [2024-01-22T08:02:30.212Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/artifactregistry.googleapis.com [none]
+[debug] [2024-01-22T08:02:30.212Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/artifactregistry.googleapis.com x-goog-quota-user=projects/markandgaea
+[debug] [2024-01-22T08:02:30.455Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudbuild.googleapis.com 200
+[debug] [2024-01-22T08:02:30.455Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-01-22T08:02:30.662Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/artifactregistry.googleapis.com 200
+[debug] [2024-01-22T08:02:30.662Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-01-22T08:02:30.664Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/runtimeconfig.googleapis.com 200
+[debug] [2024-01-22T08:02:30.665Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-01-22T08:02:30.665Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudfunctions.googleapis.com 200
+[debug] [2024-01-22T08:02:30.666Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-01-22T08:02:30.666Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea/adminSdkConfig [none]
+[debug] [2024-01-22T08:02:30.965Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea/adminSdkConfig 200
+[debug] [2024-01-22T08:02:30.965Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea/adminSdkConfig {"projectId":"markandgaea","storageBucket":"markandgaea.appspot.com"}
+[debug] [2024-01-22T08:02:30.966Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/markandgaea/configs [none]
+[debug] [2024-01-22T08:02:31.148Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/markandgaea/configs 200
+[debug] [2024-01-22T08:02:31.148Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/markandgaea/configs {}
+[debug] [2024-01-22T08:02:31.150Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2024-01-22T08:02:32.785Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-01-22T08:02:32.785Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-01-22T08:02:32.786Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-01-22T08:02:32.803Z] Found firebase-functions binary at 'C:\Users\PAO\Desktop\MY PROJ\mark-and-gaea\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8472
+
+[debug] [2024-01-22T08:02:33.428Z] Got response from /__/functions.yaml {"endpoints":{"getImagekitKeys":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"getImagekitKeys"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] shutdown requested via /__/quitquitquit
+
+[info] i  functions: Loaded environment variables from .env. 
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged C:\Users\PAO\Desktop\MY PROJ\mark-and-gaea\functions (66.65 KB) for uploading 
+[debug] [2024-01-22T08:02:33.499Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/-/functions [none]
+[debug] [2024-01-22T08:02:33.935Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/-/functions 200
+[debug] [2024-01-22T08:02:33.935Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/-/functions {"functions":[{"name":"projects/markandgaea/locations/us-central1/functions/getImagekitKeys","httpsTrigger":{"url":"https://us-central1-markandgaea.cloudfunctions.net/getImagekitKeys","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"getImagekitKeys","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"markandgaea@appspot.gserviceaccount.com","updateTime":"2023-10-26T04:36:14.147Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"0194442b4b563cb05eae7a888cd88a1d7a712fd6"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/3dc650c4-72fb-46ec-a9dc-d7413cd0207a.zip","environmentVariables":{"IMAGEKIT_URL_ENDPOINT":"https://ik.imagekit.io/q5892cimh","IMAGEKIT_PUBLIC_KEY":"public_U+84wSvy4KOD2CrjW8tmPOtIoaY=","FIREBASE_CONFIG":"{\"projectId\":\"markandgaea\",\"storageBucket\":\"markandgaea.appspot.com\"}","GCLOUD_PROJECT":"markandgaea","EVENTARC_CLOUD_EVENT_SOURCE":"projects/markandgaea/locations/us-central1/functions/getImagekitKeys"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"64313904-cd9c-45ed-9ff2-2dc9688a91fb","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"buildName":"projects/592245000498/locations/us-central1/builds/64313904-cd9c-45ed-9ff2-2dc9688a91fb","dockerRegistry":"ARTIFACT_REGISTRY","automaticUpdatePolicy":{}}]}
+[debug] [2024-01-22T08:02:33.936Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/markandgaea/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2024-01-22T08:02:34.450Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/markandgaea/locations/-/functions 200
+[debug] [2024-01-22T08:02:34.450Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/markandgaea/locations/-/functions {}
+[debug] [2024-01-22T08:02:34.453Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea [none]
+[debug] [2024-01-22T08:02:34.763Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea 200
+[debug] [2024-01-22T08:02:34.764Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea {"projectId":"markandgaea","projectNumber":"592245000498","displayName":"markandgaea","name":"projects/markandgaea","resources":{"hostingSite":"markandgaea"},"state":"ACTIVE","etag":"1_cedc0cf0-5ce8-431b-b195-76b1adc841c8"}
+[debug] [2024-01-22T08:02:34.765Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2024-01-22T08:02:34.765Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2024-01-22T08:02:35.270Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2024-01-22T08:02:35.270Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/965d94d5-c2ab-43bc-a99f-2ad6462ea913.zip?GoogleAccessId=service-592245000498@gcf-admin-robot.iam.gserviceaccount.com&Expires=1705912354&Signature=wh9sqnqt8%2FClWiM1RDOfemcQAhRlggnMp8ySotn%2BN4AzKC8yrr05M1WdDpcx9Ron0B%2Fq4jndvQAITUjl9ydx5FadFEBYWCUKzKoPby9tb%2BayVKblJRY18pNKrkIKBz0ha0igsNB%2B7RIpKbmc1qen4PEL4UArvWR89LwIqeZaBhLBZ0Z1OOUlGiH%2F9y2XPy9hF5cJuP2oQ6MwY3CCvELm3oueoJrw%2BMRTwmuI%2BU%2BqJPgYN2ZzvihOFqNBNDvfEs0Lw8TB9zIXnTz86zNy7IboTC%2BaqYDYRS3o0I%2Ba7WlUXRlP%2FAwAh3JBGdvz7Oq6WL6j9zKLbx2n9pYDjh5sEoAX%2BQ%3D%3D"}
+[debug] [2024-01-22T08:02:35.271Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/965d94d5-c2ab-43bc-a99f-2ad6462ea913.zip GoogleAccessId=service-592245000498%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1705912354&Signature=wh9sqnqt8%2FClWiM1RDOfemcQAhRlggnMp8ySotn%2BN4AzKC8yrr05M1WdDpcx9Ron0B%2Fq4jndvQAITUjl9ydx5FadFEBYWCUKzKoPby9tb%2BayVKblJRY18pNKrkIKBz0ha0igsNB%2B7RIpKbmc1qen4PEL4UArvWR89LwIqeZaBhLBZ0Z1OOUlGiH%2F9y2XPy9hF5cJuP2oQ6MwY3CCvELm3oueoJrw%2BMRTwmuI%2BU%2BqJPgYN2ZzvihOFqNBNDvfEs0Lw8TB9zIXnTz86zNy7IboTC%2BaqYDYRS3o0I%2Ba7WlUXRlP%2FAwAh3JBGdvz7Oq6WL6j9zKLbx2n9pYDjh5sEoAX%2BQ%3D%3D
+[debug] [2024-01-22T08:02:35.271Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/965d94d5-c2ab-43bc-a99f-2ad6462ea913.zip [stream]
+[debug] [2024-01-22T08:02:35.635Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/965d94d5-c2ab-43bc-a99f-2ad6462ea913.zip 200
+[debug] [2024-01-22T08:02:35.635Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/965d94d5-c2ab-43bc-a99f-2ad6462ea913.zip [omitted]
+[info] +  functions: functions folder uploaded successfully 
+[info] i  functions: updating Node.js 18 (1st Gen) function getImagekitKeys(us-central1)... 
+[debug] [2024-01-22T08:02:35.645Z] >>> [apiv2][query] PATCH https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions/getImagekitKeys updateMask=name%2CsourceUploadUrl%2CentryPoint%2Cruntime%2CdockerRegistry%2Clabels%2ChttpsTrigger.securityLevel%2CminInstances%2CmaxInstances%2CingressSettings%2CenvironmentVariables%2CserviceAccountEmail%2CavailableMemoryMb%2Ctimeout%2CvpcConnector%2CvpcConnectorEgressSettings%2CsourceToken%2CbuildEnvironmentVariables
+[debug] [2024-01-22T08:02:35.645Z] >>> [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions/getImagekitKeys {"name":"projects/markandgaea/locations/us-central1/functions/getImagekitKeys","sourceUploadUrl":"https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/965d94d5-c2ab-43bc-a99f-2ad6462ea913.zip?GoogleAccessId=service-592245000498@gcf-admin-robot.iam.gserviceaccount.com&Expires=1705912354&Signature=wh9sqnqt8%2FClWiM1RDOfemcQAhRlggnMp8ySotn%2BN4AzKC8yrr05M1WdDpcx9Ron0B%2Fq4jndvQAITUjl9ydx5FadFEBYWCUKzKoPby9tb%2BayVKblJRY18pNKrkIKBz0ha0igsNB%2B7RIpKbmc1qen4PEL4UArvWR89LwIqeZaBhLBZ0Z1OOUlGiH%2F9y2XPy9hF5cJuP2oQ6MwY3CCvELm3oueoJrw%2BMRTwmuI%2BU%2BqJPgYN2ZzvihOFqNBNDvfEs0Lw8TB9zIXnTz86zNy7IboTC%2BaqYDYRS3o0I%2Ba7WlUXRlP%2FAwAh3JBGdvz7Oq6WL6j9zKLbx2n9pYDjh5sEoAX%2BQ%3D%3D","entryPoint":"getImagekitKeys","runtime":"nodejs18","dockerRegistry":"ARTIFACT_REGISTRY","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"f53f6f3316065670783a81dcfaf51ef2d37e9892"},"httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"minInstances":null,"maxInstances":null,"ingressSettings":null,"environmentVariables":{"IMAGEKIT_URL_ENDPOINT":"https://ik.imagekit.io/q5892cimh","IMAGEKIT_PUBLIC_KEY":"public_U+84wSvy4KOD2CrjW8tmPOtIoaY=","FIREBASE_CONFIG":"{\"projectId\":\"markandgaea\",\"storageBucket\":\"markandgaea.appspot.com\"}","GCLOUD_PROJECT":"markandgaea","EVENTARC_CLOUD_EVENT_SOURCE":"projects/markandgaea/locations/us-central1/functions/getImagekitKeys"},"serviceAccountEmail":null,"availableMemoryMb":null,"timeout":null,"vpcConnector":null,"vpcConnectorEgressSettings":null,"buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}}
+[debug] [2024-01-22T08:02:35.959Z] <<< [apiv2][status] PATCH https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions/getImagekitKeys 403
+[debug] [2024-01-22T08:02:35.960Z] <<< [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions/getImagekitKeys {"error":{"code":403,"message":"Unable to retrieve the repository metadata for projects/markandgaea/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.","status":"PERMISSION_DENIED"}}
+[warn] !  functions: failed to update function projects/markandgaea/locations/us-central1/functions/getImagekitKeys 
+[error] Failed to update function projects/markandgaea/locations/us-central1/functions/getImagekitKeys
+[debug] [2024-01-22T08:02:35.965Z] Total Function Deployment time: 321
+[debug] [2024-01-22T08:02:35.966Z] 1 Functions Deployed
+[debug] [2024-01-22T08:02:35.966Z] 1 Functions Errored
+[debug] [2024-01-22T08:02:35.966Z] 0 Function Deployments Aborted
+[debug] [2024-01-22T08:02:35.966Z] Average Function Deployment time: 320
+[info] 
+[info] Functions deploy had errors with the following functions:
+	getImagekitKeys(us-central1)
+[debug] [2024-01-22T08:02:36.064Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2024-01-22T08:02:36.066Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/markandgaea/locations/us-central1/repositories/gcf-artifacts/packages/get_imagekit_keys [none]
+[debug] [2024-01-22T08:02:36.067Z] >>> [apiv2][query] GET https://us.gcr.io/v2/markandgaea/gcf/us-central1/tags/list [none]
+[debug] [2024-01-22T08:02:36.276Z] <<< [apiv2][status] GET https://us.gcr.io/v2/markandgaea/gcf/us-central1/tags/list 200
+[debug] [2024-01-22T08:02:36.276Z] <<< [apiv2][body] GET https://us.gcr.io/v2/markandgaea/gcf/us-central1/tags/list {"child":[],"manifest":{},"name":"markandgaea/gcf/us-central1","tags":[]}
+[debug] [2024-01-22T08:02:36.276Z] Could not find image for function projects/markandgaea/locations/us-central1/functions/getImagekitKeys
+[debug] [2024-01-22T08:02:36.422Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/markandgaea/locations/us-central1/repositories/gcf-artifacts/packages/get_imagekit_keys 403
+[debug] [2024-01-22T08:02:36.422Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/markandgaea/locations/us-central1/repositories/gcf-artifacts/packages/get_imagekit_keys {"error":{"code":403,"message":"This API method requires billing to be enabled. Please enable billing on project #markandgaea by visiting https://console.developers.google.com/billing/enable?project=markandgaea then retry. If you enabled billing for this project recently, wait a few minutes for the action to propagate to our systems and retry.","status":"PERMISSION_DENIED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Google developers console billing","url":"https://console.developers.google.com/billing/enable?project=markandgaea"}]},{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"BILLING_DISABLED","domain":"googleapis.com","metadata":{"consumer":"projects/markandgaea","service":"artifactregistry.googleapis.com"}}]}}
+[warn] !  functions: Unhandled error cleaning up build images. This could result in a small monthly bill if not corrected. You can attempt to delete these images by redeploying or you can delete them manually at https://console.cloud.google.com/artifacts/docker/markandgaea/us-central1/gcf-artifacts 
+[debug] [2024-01-22T08:02:36.423Z] Functions deploy failed.
+[debug] [2024-01-22T08:02:36.423Z] {
+  "endpoint": {
+    "id": "getImagekitKeys",
+    "project": "markandgaea",
+    "region": "us-central1",
+    "entryPoint": "getImagekitKeys",
+    "platform": "gcfv1",
+    "runtime": "nodejs18",
+    "httpsTrigger": {},
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "serviceAccount": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "vpc": null,
+    "environmentVariables": {
+      "IMAGEKIT_URL_ENDPOINT": "https://ik.imagekit.io/q5892cimh",
+      "IMAGEKIT_PUBLIC_KEY": "public_U+84wSvy4KOD2CrjW8tmPOtIoaY=",
+      "FIREBASE_CONFIG": "{\"projectId\":\"markandgaea\",\"storageBucket\":\"markandgaea.appspot.com\"}",
+      "GCLOUD_PROJECT": "markandgaea",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/markandgaea/locations/us-central1/functions/getImagekitKeys"
+    },
+    "codebase": "default",
+    "securityLevel": "SECURE_ALWAYS",
+    "targetedByOnly": false,
+    "hash": "f53f6f3316065670783a81dcfaf51ef2d37e9892",
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    }
+  },
+  "op": "update",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "context": {
+      "function": "projects/markandgaea/locations/us-central1/functions/getImagekitKeys"
+    },
+    "exit": 1,
+    "message": "Failed to update function projects/markandgaea/locations/us-central1/functions/getImagekitKeys",
+    "original": {
+      "name": "FirebaseError",
+      "children": [],
+      "context": {
+        "body": {
+          "error": {
+            "code": 403,
+            "message": "Unable to retrieve the repository metadata for projects/markandgaea/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.",
+            "status": "PERMISSION_DENIED"
+          }
+        },
+        "response": {
+          "statusCode": 403
+        }
+      },
+      "exit": 1,
+      "message": "HTTP Error: 403, Unable to retrieve the repository metadata for projects/markandgaea/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.",
+      "status": 403
+    },
+    "status": 403,
+    "code": 403
+  }
+}
+[debug] [2024-01-22T08:02:36.509Z] Error: Failed to update function getImagekitKeys in region us-central1
+    at C:\Users\PAO\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:51:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Fabricator.updateV1Function (C:\Users\PAO\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:347:32)
+    at async Fabricator.updateEndpoint (C:\Users\PAO\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:151:13)
+    at async handle (C:\Users\PAO\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:88:17)
+[error] 
+[error] Error: There was an error deploying functions
+[debug] [2024-01-22T08:02:50.774Z] ----------------------------------------------------------------------
+[debug] [2024-01-22T08:02:50.776Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\PAO\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2024-01-22T08:02:50.777Z] CLI Version:   13.0.3
+[debug] [2024-01-22T08:02:50.777Z] Platform:      win32
+[debug] [2024-01-22T08:02:50.777Z] Node Version:  v18.12.1
+[debug] [2024-01-22T08:02:50.778Z] Time:          Mon Jan 22 2024 00:02:50 GMT-0800 (Pacific Standard Time)
+[debug] [2024-01-22T08:02:50.778Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-22T08:02:50.858Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-22T08:02:50.859Z] > authorizing via signed-in user (paolopaolobugarin@gmail.com)
+[debug] [2024-01-22T08:02:50.859Z] [iam] checking project markandgaea for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-01-22T08:02:50.861Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/markandgaea:testIamPermissions [none]
+[debug] [2024-01-22T08:02:50.862Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/markandgaea:testIamPermissions x-goog-quota-user=projects/markandgaea
+[debug] [2024-01-22T08:02:50.862Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/markandgaea:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-01-22T08:02:51.173Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/markandgaea:testIamPermissions 200
+[debug] [2024-01-22T08:02:51.173Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/markandgaea:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-01-22T08:02:51.174Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/markandgaea/serviceAccounts/markandgaea@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-01-22T08:02:51.174Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/markandgaea/serviceAccounts/markandgaea@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-01-22T08:02:51.500Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/markandgaea/serviceAccounts/markandgaea@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-01-22T08:02:51.500Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/markandgaea/serviceAccounts/markandgaea@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'markandgaea'...
+[info] 
+[info] i  deploying functions 
+[info] +  functions: Finished running predeploy script. 
+[debug] [2024-01-22T08:02:51.505Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea [none]
+[debug] [2024-01-22T08:02:51.847Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea 200
+[debug] [2024-01-22T08:02:51.847Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea {"projectId":"markandgaea","projectNumber":"592245000498","displayName":"markandgaea","name":"projects/markandgaea","resources":{"hostingSite":"markandgaea"},"state":"ACTIVE","etag":"1_cedc0cf0-5ce8-431b-b195-76b1adc841c8"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-01-22T08:02:51.852Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-01-22T08:02:51.852Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/markandgaea
+[debug] [2024-01-22T08:02:51.855Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-01-22T08:02:51.855Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/markandgaea
+[debug] [2024-01-22T08:02:51.857Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudbuild.googleapis.com [none]
+[debug] [2024-01-22T08:02:51.857Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudbuild.googleapis.com x-goog-quota-user=projects/markandgaea
+[debug] [2024-01-22T08:02:51.859Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/artifactregistry.googleapis.com [none]
+[debug] [2024-01-22T08:02:51.859Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/artifactregistry.googleapis.com x-goog-quota-user=projects/markandgaea
+[debug] [2024-01-22T08:02:52.282Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/runtimeconfig.googleapis.com 200
+[debug] [2024-01-22T08:02:52.282Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-01-22T08:02:52.283Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/artifactregistry.googleapis.com 200
+[debug] [2024-01-22T08:02:52.283Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-01-22T08:02:52.284Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudfunctions.googleapis.com 200
+[debug] [2024-01-22T08:02:52.284Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-01-22T08:02:52.284Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudbuild.googleapis.com 200
+[debug] [2024-01-22T08:02:52.285Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-01-22T08:02:52.285Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea/adminSdkConfig [none]
+[debug] [2024-01-22T08:02:52.506Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea/adminSdkConfig 200
+[debug] [2024-01-22T08:02:52.506Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea/adminSdkConfig {"projectId":"markandgaea","storageBucket":"markandgaea.appspot.com"}
+[debug] [2024-01-22T08:02:52.506Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/markandgaea/configs [none]
+[debug] [2024-01-22T08:02:52.740Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/markandgaea/configs 200
+[debug] [2024-01-22T08:02:52.740Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/markandgaea/configs {}
+[debug] [2024-01-22T08:02:52.741Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2024-01-22T08:02:54.462Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-01-22T08:02:54.462Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-01-22T08:02:54.463Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-01-22T08:02:54.477Z] Found firebase-functions binary at 'C:\Users\PAO\Desktop\MY PROJ\mark-and-gaea\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8791
+
+[debug] [2024-01-22T08:02:55.119Z] Got response from /__/functions.yaml {"endpoints":{"getImagekitKeys":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"getImagekitKeys"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] shutdown requested via /__/quitquitquit
+
+[info] i  functions: Loaded environment variables from .env. 
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged C:\Users\PAO\Desktop\MY PROJ\mark-and-gaea\functions (66.64 KB) for uploading 
+[debug] [2024-01-22T08:02:55.188Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/-/functions [none]
+[debug] [2024-01-22T08:02:55.579Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/-/functions 200
+[debug] [2024-01-22T08:02:55.579Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/-/functions {"functions":[{"name":"projects/markandgaea/locations/us-central1/functions/getImagekitKeys","httpsTrigger":{"url":"https://us-central1-markandgaea.cloudfunctions.net/getImagekitKeys","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"getImagekitKeys","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"markandgaea@appspot.gserviceaccount.com","updateTime":"2023-10-26T04:36:14.147Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"0194442b4b563cb05eae7a888cd88a1d7a712fd6"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/3dc650c4-72fb-46ec-a9dc-d7413cd0207a.zip","environmentVariables":{"IMAGEKIT_URL_ENDPOINT":"https://ik.imagekit.io/q5892cimh","IMAGEKIT_PUBLIC_KEY":"public_U+84wSvy4KOD2CrjW8tmPOtIoaY=","FIREBASE_CONFIG":"{\"projectId\":\"markandgaea\",\"storageBucket\":\"markandgaea.appspot.com\"}","GCLOUD_PROJECT":"markandgaea","EVENTARC_CLOUD_EVENT_SOURCE":"projects/markandgaea/locations/us-central1/functions/getImagekitKeys"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"64313904-cd9c-45ed-9ff2-2dc9688a91fb","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"buildName":"projects/592245000498/locations/us-central1/builds/64313904-cd9c-45ed-9ff2-2dc9688a91fb","dockerRegistry":"ARTIFACT_REGISTRY","automaticUpdatePolicy":{}}]}
+[debug] [2024-01-22T08:02:55.580Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/markandgaea/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2024-01-22T08:02:56.223Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/markandgaea/locations/-/functions 200
+[debug] [2024-01-22T08:02:56.223Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/markandgaea/locations/-/functions {}
+[debug] [2024-01-22T08:02:56.227Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea [none]
+[debug] [2024-01-22T08:02:56.521Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea 200
+[debug] [2024-01-22T08:02:56.521Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea {"projectId":"markandgaea","projectNumber":"592245000498","displayName":"markandgaea","name":"projects/markandgaea","resources":{"hostingSite":"markandgaea"},"state":"ACTIVE","etag":"1_cedc0cf0-5ce8-431b-b195-76b1adc841c8"}
+[debug] [2024-01-22T08:02:56.524Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2024-01-22T08:02:56.524Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2024-01-22T08:02:56.971Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2024-01-22T08:02:56.971Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/efff3ebb-6721-40a0-94ac-9d215d691697.zip?GoogleAccessId=service-592245000498@gcf-admin-robot.iam.gserviceaccount.com&Expires=1705912376&Signature=rUPMEt0k%2F9XkcsKOT8dmAzR%2F3i3OSdm54XXhaMHfMLe0bgSb37suF0XCFbi%2FRBDKikRNdLWo6S7j2vakn0XyyzSQjVwAnCoqLNknyXS9LgBdVq%2FP2AJTNKpU9%2F7jjRPbIIxc08zY8aStBhjbEL4fTD8mAdfUFxmx7dgTgI9LxRPtrg8KyxbeWocljvHCE1Ep6qXNkjQc65IwFi4Zi8flUsiZip676A860cM1Hp1IYEGAPy0tQe7vuCzFHdCaCSFjSJSas29c2jfjIN5UF2qxyMyp9GHIhcgjpecnuU8riWhm3i7k4zi8wU1pIElNKAany33Nd8qIODrtl1i4dI0X0w%3D%3D"}
+[debug] [2024-01-22T08:02:56.973Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/efff3ebb-6721-40a0-94ac-9d215d691697.zip GoogleAccessId=service-592245000498%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1705912376&Signature=rUPMEt0k%2F9XkcsKOT8dmAzR%2F3i3OSdm54XXhaMHfMLe0bgSb37suF0XCFbi%2FRBDKikRNdLWo6S7j2vakn0XyyzSQjVwAnCoqLNknyXS9LgBdVq%2FP2AJTNKpU9%2F7jjRPbIIxc08zY8aStBhjbEL4fTD8mAdfUFxmx7dgTgI9LxRPtrg8KyxbeWocljvHCE1Ep6qXNkjQc65IwFi4Zi8flUsiZip676A860cM1Hp1IYEGAPy0tQe7vuCzFHdCaCSFjSJSas29c2jfjIN5UF2qxyMyp9GHIhcgjpecnuU8riWhm3i7k4zi8wU1pIElNKAany33Nd8qIODrtl1i4dI0X0w%3D%3D
+[debug] [2024-01-22T08:02:56.973Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/efff3ebb-6721-40a0-94ac-9d215d691697.zip [stream]
+[debug] [2024-01-22T08:02:57.237Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/efff3ebb-6721-40a0-94ac-9d215d691697.zip 200
+[debug] [2024-01-22T08:02:57.237Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/efff3ebb-6721-40a0-94ac-9d215d691697.zip [omitted]
+[info] +  functions: functions folder uploaded successfully 
+[info] i  functions: updating Node.js 18 (1st Gen) function getImagekitKeys(us-central1)... 
+[debug] [2024-01-22T08:02:57.241Z] >>> [apiv2][query] PATCH https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions/getImagekitKeys updateMask=name%2CsourceUploadUrl%2CentryPoint%2Cruntime%2CdockerRegistry%2Clabels%2ChttpsTrigger.securityLevel%2CminInstances%2CmaxInstances%2CingressSettings%2CenvironmentVariables%2CserviceAccountEmail%2CavailableMemoryMb%2Ctimeout%2CvpcConnector%2CvpcConnectorEgressSettings%2CsourceToken%2CbuildEnvironmentVariables
+[debug] [2024-01-22T08:02:57.241Z] >>> [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions/getImagekitKeys {"name":"projects/markandgaea/locations/us-central1/functions/getImagekitKeys","sourceUploadUrl":"https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/efff3ebb-6721-40a0-94ac-9d215d691697.zip?GoogleAccessId=service-592245000498@gcf-admin-robot.iam.gserviceaccount.com&Expires=1705912376&Signature=rUPMEt0k%2F9XkcsKOT8dmAzR%2F3i3OSdm54XXhaMHfMLe0bgSb37suF0XCFbi%2FRBDKikRNdLWo6S7j2vakn0XyyzSQjVwAnCoqLNknyXS9LgBdVq%2FP2AJTNKpU9%2F7jjRPbIIxc08zY8aStBhjbEL4fTD8mAdfUFxmx7dgTgI9LxRPtrg8KyxbeWocljvHCE1Ep6qXNkjQc65IwFi4Zi8flUsiZip676A860cM1Hp1IYEGAPy0tQe7vuCzFHdCaCSFjSJSas29c2jfjIN5UF2qxyMyp9GHIhcgjpecnuU8riWhm3i7k4zi8wU1pIElNKAany33Nd8qIODrtl1i4dI0X0w%3D%3D","entryPoint":"getImagekitKeys","runtime":"nodejs18","dockerRegistry":"ARTIFACT_REGISTRY","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"0be61a9e03ee81b0112c6199249fe05ab1f1b927"},"httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"minInstances":null,"maxInstances":null,"ingressSettings":null,"environmentVariables":{"IMAGEKIT_URL_ENDPOINT":"https://ik.imagekit.io/q5892cimh","IMAGEKIT_PUBLIC_KEY":"public_U+84wSvy4KOD2CrjW8tmPOtIoaY=","FIREBASE_CONFIG":"{\"projectId\":\"markandgaea\",\"storageBucket\":\"markandgaea.appspot.com\"}","GCLOUD_PROJECT":"markandgaea","EVENTARC_CLOUD_EVENT_SOURCE":"projects/markandgaea/locations/us-central1/functions/getImagekitKeys"},"serviceAccountEmail":null,"availableMemoryMb":null,"timeout":null,"vpcConnector":null,"vpcConnectorEgressSettings":null,"buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}}
+[debug] [2024-01-22T08:02:57.504Z] <<< [apiv2][status] PATCH https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions/getImagekitKeys 403
+[debug] [2024-01-22T08:02:57.504Z] <<< [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions/getImagekitKeys {"error":{"code":403,"message":"Unable to retrieve the repository metadata for projects/markandgaea/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.","status":"PERMISSION_DENIED"}}
+[warn] !  functions: failed to update function projects/markandgaea/locations/us-central1/functions/getImagekitKeys 
+[error] Failed to update function projects/markandgaea/locations/us-central1/functions/getImagekitKeys
+[debug] [2024-01-22T08:02:57.509Z] Total Function Deployment time: 266
+[debug] [2024-01-22T08:02:57.509Z] 1 Functions Deployed
+[debug] [2024-01-22T08:02:57.509Z] 1 Functions Errored
+[debug] [2024-01-22T08:02:57.509Z] 0 Function Deployments Aborted
+[debug] [2024-01-22T08:02:57.509Z] Average Function Deployment time: 265
+[info] 
+[info] Functions deploy had errors with the following functions:
+	getImagekitKeys(us-central1)
+[debug] [2024-01-22T08:02:57.604Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2024-01-22T08:02:57.608Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/markandgaea/locations/us-central1/repositories/gcf-artifacts/packages/get_imagekit_keys [none]
+[debug] [2024-01-22T08:02:57.610Z] >>> [apiv2][query] GET https://us.gcr.io/v2/markandgaea/gcf/us-central1/tags/list [none]
+[debug] [2024-01-22T08:02:57.904Z] <<< [apiv2][status] GET https://us.gcr.io/v2/markandgaea/gcf/us-central1/tags/list 200
+[debug] [2024-01-22T08:02:57.904Z] <<< [apiv2][body] GET https://us.gcr.io/v2/markandgaea/gcf/us-central1/tags/list {"child":[],"manifest":{},"name":"markandgaea/gcf/us-central1","tags":[]}
+[debug] [2024-01-22T08:02:57.905Z] Could not find image for function projects/markandgaea/locations/us-central1/functions/getImagekitKeys
+[debug] [2024-01-22T08:02:57.955Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/markandgaea/locations/us-central1/repositories/gcf-artifacts/packages/get_imagekit_keys 403
+[debug] [2024-01-22T08:02:57.955Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/markandgaea/locations/us-central1/repositories/gcf-artifacts/packages/get_imagekit_keys {"error":{"code":403,"message":"This API method requires billing to be enabled. Please enable billing on project #markandgaea by visiting https://console.developers.google.com/billing/enable?project=markandgaea then retry. If you enabled billing for this project recently, wait a few minutes for the action to propagate to our systems and retry.","status":"PERMISSION_DENIED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Google developers console billing","url":"https://console.developers.google.com/billing/enable?project=markandgaea"}]},{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"BILLING_DISABLED","domain":"googleapis.com","metadata":{"service":"artifactregistry.googleapis.com","consumer":"projects/markandgaea"}}]}}
+[warn] !  functions: Unhandled error cleaning up build images. This could result in a small monthly bill if not corrected. You can attempt to delete these images by redeploying or you can delete them manually at https://console.cloud.google.com/artifacts/docker/markandgaea/us-central1/gcf-artifacts 
+[debug] [2024-01-22T08:02:57.956Z] Functions deploy failed.
+[debug] [2024-01-22T08:02:57.956Z] {
+  "endpoint": {
+    "id": "getImagekitKeys",
+    "project": "markandgaea",
+    "region": "us-central1",
+    "entryPoint": "getImagekitKeys",
+    "platform": "gcfv1",
+    "runtime": "nodejs18",
+    "httpsTrigger": {},
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "serviceAccount": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "vpc": null,
+    "environmentVariables": {
+      "IMAGEKIT_URL_ENDPOINT": "https://ik.imagekit.io/q5892cimh",
+      "IMAGEKIT_PUBLIC_KEY": "public_U+84wSvy4KOD2CrjW8tmPOtIoaY=",
+      "FIREBASE_CONFIG": "{\"projectId\":\"markandgaea\",\"storageBucket\":\"markandgaea.appspot.com\"}",
+      "GCLOUD_PROJECT": "markandgaea",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/markandgaea/locations/us-central1/functions/getImagekitKeys"
+    },
+    "codebase": "default",
+    "securityLevel": "SECURE_ALWAYS",
+    "targetedByOnly": false,
+    "hash": "0be61a9e03ee81b0112c6199249fe05ab1f1b927",
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    }
+  },
+  "op": "update",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "context": {
+      "function": "projects/markandgaea/locations/us-central1/functions/getImagekitKeys"
+    },
+    "exit": 1,
+    "message": "Failed to update function projects/markandgaea/locations/us-central1/functions/getImagekitKeys",
+    "original": {
+      "name": "FirebaseError",
+      "children": [],
+      "context": {
+        "body": {
+          "error": {
+            "code": 403,
+            "message": "Unable to retrieve the repository metadata for projects/markandgaea/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.",
+            "status": "PERMISSION_DENIED"
+          }
+        },
+        "response": {
+          "statusCode": 403
+        }
+      },
+      "exit": 1,
+      "message": "HTTP Error: 403, Unable to retrieve the repository metadata for projects/markandgaea/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.",
+      "status": 403
+    },
+    "status": 403,
+    "code": 403
+  }
+}
+[debug] [2024-01-22T08:02:58.034Z] Error: Failed to update function getImagekitKeys in region us-central1
+    at C:\Users\PAO\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:51:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Fabricator.updateV1Function (C:\Users\PAO\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:347:32)
+    at async Fabricator.updateEndpoint (C:\Users\PAO\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:151:13)
+    at async handle (C:\Users\PAO\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:88:17)
+[error] 
+[error] Error: There was an error deploying functions
+[debug] [2024-01-22T08:03:38.366Z] ----------------------------------------------------------------------
+[debug] [2024-01-22T08:03:38.369Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\PAO\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions --debug
+[debug] [2024-01-22T08:03:38.370Z] CLI Version:   13.0.3
+[debug] [2024-01-22T08:03:38.370Z] Platform:      win32
+[debug] [2024-01-22T08:03:38.370Z] Node Version:  v18.12.1
+[debug] [2024-01-22T08:03:38.371Z] Time:          Mon Jan 22 2024 00:03:38 GMT-0800 (Pacific Standard Time)
+[debug] [2024-01-22T08:03:38.372Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-22T08:03:38.457Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-22T08:03:38.459Z] > authorizing via signed-in user (paolopaolobugarin@gmail.com)
+[debug] [2024-01-22T08:03:38.460Z] [iam] checking project markandgaea for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-01-22T08:03:38.463Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/markandgaea:testIamPermissions [none]
+[debug] [2024-01-22T08:03:38.463Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/markandgaea:testIamPermissions x-goog-quota-user=projects/markandgaea
+[debug] [2024-01-22T08:03:38.464Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/markandgaea:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-01-22T08:03:38.789Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/markandgaea:testIamPermissions 200
+[debug] [2024-01-22T08:03:38.790Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/markandgaea:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-01-22T08:03:38.791Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/markandgaea/serviceAccounts/markandgaea@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-01-22T08:03:38.791Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/markandgaea/serviceAccounts/markandgaea@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-01-22T08:03:39.123Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/markandgaea/serviceAccounts/markandgaea@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-01-22T08:03:39.124Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/markandgaea/serviceAccounts/markandgaea@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'markandgaea'...
+[info] 
+[info] i  deploying functions 
+[info] +  functions: Finished running predeploy script. 
+[debug] [2024-01-22T08:03:39.130Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea [none]
+[debug] [2024-01-22T08:03:39.323Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea 200
+[debug] [2024-01-22T08:03:39.324Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea {"projectId":"markandgaea","projectNumber":"592245000498","displayName":"markandgaea","name":"projects/markandgaea","resources":{"hostingSite":"markandgaea"},"state":"ACTIVE","etag":"1_cedc0cf0-5ce8-431b-b195-76b1adc841c8"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-01-22T08:03:39.326Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-01-22T08:03:39.327Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/markandgaea
+[debug] [2024-01-22T08:03:39.328Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-01-22T08:03:39.328Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/markandgaea
+[debug] [2024-01-22T08:03:39.330Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudbuild.googleapis.com [none]
+[debug] [2024-01-22T08:03:39.330Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudbuild.googleapis.com x-goog-quota-user=projects/markandgaea
+[debug] [2024-01-22T08:03:39.333Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/artifactregistry.googleapis.com [none]
+[debug] [2024-01-22T08:03:39.333Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/artifactregistry.googleapis.com x-goog-quota-user=projects/markandgaea
+[debug] [2024-01-22T08:03:39.776Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/runtimeconfig.googleapis.com 200
+[debug] [2024-01-22T08:03:39.777Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-01-22T08:03:39.777Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/artifactregistry.googleapis.com 200
+[debug] [2024-01-22T08:03:39.778Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-01-22T08:03:39.779Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudbuild.googleapis.com 200
+[debug] [2024-01-22T08:03:39.779Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-01-22T08:03:39.780Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudfunctions.googleapis.com 200
+[debug] [2024-01-22T08:03:39.780Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-01-22T08:03:39.781Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea/adminSdkConfig [none]
+[debug] [2024-01-22T08:03:40.120Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea/adminSdkConfig 200
+[debug] [2024-01-22T08:03:40.120Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea/adminSdkConfig {"projectId":"markandgaea","storageBucket":"markandgaea.appspot.com"}
+[debug] [2024-01-22T08:03:40.121Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/markandgaea/configs [none]
+[debug] [2024-01-22T08:03:40.342Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/markandgaea/configs 200
+[debug] [2024-01-22T08:03:40.343Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/markandgaea/configs {}
+[debug] [2024-01-22T08:03:40.345Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2024-01-22T08:03:42.203Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-01-22T08:03:42.206Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-01-22T08:03:42.207Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-01-22T08:03:42.222Z] Found firebase-functions binary at 'C:\Users\PAO\Desktop\MY PROJ\mark-and-gaea\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8594
+
+[debug] [2024-01-22T08:03:42.865Z] Got response from /__/functions.yaml {"endpoints":{"getImagekitKeys":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"getImagekitKeys"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] shutdown requested via /__/quitquitquit
+
+[info] i  functions: Loaded environment variables from .env. 
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged C:\Users\PAO\Desktop\MY PROJ\mark-and-gaea\functions (66.64 KB) for uploading 
+[debug] [2024-01-22T08:03:42.940Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/-/functions [none]
+[debug] [2024-01-22T08:03:43.356Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/-/functions 200
+[debug] [2024-01-22T08:03:43.357Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/-/functions {"functions":[{"name":"projects/markandgaea/locations/us-central1/functions/getImagekitKeys","httpsTrigger":{"url":"https://us-central1-markandgaea.cloudfunctions.net/getImagekitKeys","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"getImagekitKeys","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"markandgaea@appspot.gserviceaccount.com","updateTime":"2023-10-26T04:36:14.147Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"0194442b4b563cb05eae7a888cd88a1d7a712fd6"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/3dc650c4-72fb-46ec-a9dc-d7413cd0207a.zip","environmentVariables":{"IMAGEKIT_URL_ENDPOINT":"https://ik.imagekit.io/q5892cimh","IMAGEKIT_PUBLIC_KEY":"public_U+84wSvy4KOD2CrjW8tmPOtIoaY=","FIREBASE_CONFIG":"{\"projectId\":\"markandgaea\",\"storageBucket\":\"markandgaea.appspot.com\"}","GCLOUD_PROJECT":"markandgaea","EVENTARC_CLOUD_EVENT_SOURCE":"projects/markandgaea/locations/us-central1/functions/getImagekitKeys"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"64313904-cd9c-45ed-9ff2-2dc9688a91fb","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"buildName":"projects/592245000498/locations/us-central1/builds/64313904-cd9c-45ed-9ff2-2dc9688a91fb","dockerRegistry":"ARTIFACT_REGISTRY","automaticUpdatePolicy":{}}]}
+[debug] [2024-01-22T08:03:43.359Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/markandgaea/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2024-01-22T08:03:44.008Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/markandgaea/locations/-/functions 200
+[debug] [2024-01-22T08:03:44.008Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/markandgaea/locations/-/functions {}
+[debug] [2024-01-22T08:03:44.012Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea [none]
+[debug] [2024-01-22T08:03:44.307Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea 200
+[debug] [2024-01-22T08:03:44.308Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea {"projectId":"markandgaea","projectNumber":"592245000498","displayName":"markandgaea","name":"projects/markandgaea","resources":{"hostingSite":"markandgaea"},"state":"ACTIVE","etag":"1_cedc0cf0-5ce8-431b-b195-76b1adc841c8"}
+[debug] [2024-01-22T08:03:44.310Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2024-01-22T08:03:44.310Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2024-01-22T08:03:44.795Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2024-01-22T08:03:44.795Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/3b9999b6-799e-470c-9bfe-d629269041ea.zip?GoogleAccessId=service-592245000498@gcf-admin-robot.iam.gserviceaccount.com&Expires=1705912424&Signature=erZXP0wpvONe2nGrm4lAh88TYvevd2ILOaz5gLH4Itt%2BjDaWt%2FvxLtAS9CpG3RHQ2EW9q0rd44zuExNBBm2L1jGxNXTHiwiMQJXlO7Guw%2BDCPRUimRHr%2BohVWJI624FmfFFJ2ox2KX70G5yI5mhPMhHjrki8DfV3B%2F66qXYcPvBtK6U8l%2FSignAPRyKAbR%2B8WuheAAFCZONcmG6V9i%2BM%2F2Xs%2BTM%2Ff3CI6WGbZya42uERKMFBOvLsBxvn9NnqJAJBJUyZ0MQzR2XNyLe2kpvdoKfTPHqEm0U1SoBnJNt8ArPT3gKhSDlKM4Ryn8%2BCXrkVFEvsBbOWneUSv6Lezygo0A%3D%3D"}
+[debug] [2024-01-22T08:03:44.797Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/3b9999b6-799e-470c-9bfe-d629269041ea.zip GoogleAccessId=service-592245000498%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1705912424&Signature=erZXP0wpvONe2nGrm4lAh88TYvevd2ILOaz5gLH4Itt%2BjDaWt%2FvxLtAS9CpG3RHQ2EW9q0rd44zuExNBBm2L1jGxNXTHiwiMQJXlO7Guw%2BDCPRUimRHr%2BohVWJI624FmfFFJ2ox2KX70G5yI5mhPMhHjrki8DfV3B%2F66qXYcPvBtK6U8l%2FSignAPRyKAbR%2B8WuheAAFCZONcmG6V9i%2BM%2F2Xs%2BTM%2Ff3CI6WGbZya42uERKMFBOvLsBxvn9NnqJAJBJUyZ0MQzR2XNyLe2kpvdoKfTPHqEm0U1SoBnJNt8ArPT3gKhSDlKM4Ryn8%2BCXrkVFEvsBbOWneUSv6Lezygo0A%3D%3D
+[debug] [2024-01-22T08:03:44.797Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/3b9999b6-799e-470c-9bfe-d629269041ea.zip [stream]
+[debug] [2024-01-22T08:03:45.146Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/3b9999b6-799e-470c-9bfe-d629269041ea.zip 200
+[debug] [2024-01-22T08:03:45.146Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/3b9999b6-799e-470c-9bfe-d629269041ea.zip [omitted]
+[info] +  functions: functions folder uploaded successfully 
+[info] i  functions: updating Node.js 18 (1st Gen) function getImagekitKeys(us-central1)... 
+[debug] [2024-01-22T08:03:45.153Z] >>> [apiv2][query] PATCH https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions/getImagekitKeys updateMask=name%2CsourceUploadUrl%2CentryPoint%2Cruntime%2CdockerRegistry%2Clabels%2ChttpsTrigger.securityLevel%2CminInstances%2CmaxInstances%2CingressSettings%2CenvironmentVariables%2CserviceAccountEmail%2CavailableMemoryMb%2Ctimeout%2CvpcConnector%2CvpcConnectorEgressSettings%2CsourceToken%2CbuildEnvironmentVariables
+[debug] [2024-01-22T08:03:45.153Z] >>> [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions/getImagekitKeys {"name":"projects/markandgaea/locations/us-central1/functions/getImagekitKeys","sourceUploadUrl":"https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/3b9999b6-799e-470c-9bfe-d629269041ea.zip?GoogleAccessId=service-592245000498@gcf-admin-robot.iam.gserviceaccount.com&Expires=1705912424&Signature=erZXP0wpvONe2nGrm4lAh88TYvevd2ILOaz5gLH4Itt%2BjDaWt%2FvxLtAS9CpG3RHQ2EW9q0rd44zuExNBBm2L1jGxNXTHiwiMQJXlO7Guw%2BDCPRUimRHr%2BohVWJI624FmfFFJ2ox2KX70G5yI5mhPMhHjrki8DfV3B%2F66qXYcPvBtK6U8l%2FSignAPRyKAbR%2B8WuheAAFCZONcmG6V9i%2BM%2F2Xs%2BTM%2Ff3CI6WGbZya42uERKMFBOvLsBxvn9NnqJAJBJUyZ0MQzR2XNyLe2kpvdoKfTPHqEm0U1SoBnJNt8ArPT3gKhSDlKM4Ryn8%2BCXrkVFEvsBbOWneUSv6Lezygo0A%3D%3D","entryPoint":"getImagekitKeys","runtime":"nodejs18","dockerRegistry":"ARTIFACT_REGISTRY","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"0be61a9e03ee81b0112c6199249fe05ab1f1b927"},"httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"minInstances":null,"maxInstances":null,"ingressSettings":null,"environmentVariables":{"IMAGEKIT_URL_ENDPOINT":"https://ik.imagekit.io/q5892cimh","IMAGEKIT_PUBLIC_KEY":"public_U+84wSvy4KOD2CrjW8tmPOtIoaY=","FIREBASE_CONFIG":"{\"projectId\":\"markandgaea\",\"storageBucket\":\"markandgaea.appspot.com\"}","GCLOUD_PROJECT":"markandgaea","EVENTARC_CLOUD_EVENT_SOURCE":"projects/markandgaea/locations/us-central1/functions/getImagekitKeys"},"serviceAccountEmail":null,"availableMemoryMb":null,"timeout":null,"vpcConnector":null,"vpcConnectorEgressSettings":null,"buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}}
+[debug] [2024-01-22T08:03:45.416Z] <<< [apiv2][status] PATCH https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions/getImagekitKeys 403
+[debug] [2024-01-22T08:03:45.417Z] <<< [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions/getImagekitKeys {"error":{"code":403,"message":"Unable to retrieve the repository metadata for projects/markandgaea/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.","status":"PERMISSION_DENIED"}}
+[warn] !  functions: failed to update function projects/markandgaea/locations/us-central1/functions/getImagekitKeys 
+[error] Failed to update function projects/markandgaea/locations/us-central1/functions/getImagekitKeys
+[debug] [2024-01-22T08:03:45.425Z] Total Function Deployment time: 269
+[debug] [2024-01-22T08:03:45.425Z] 1 Functions Deployed
+[debug] [2024-01-22T08:03:45.425Z] 1 Functions Errored
+[debug] [2024-01-22T08:03:45.426Z] 0 Function Deployments Aborted
+[debug] [2024-01-22T08:03:45.426Z] Average Function Deployment time: 268
+[info] 
+[info] Functions deploy had errors with the following functions:
+	getImagekitKeys(us-central1)
+[debug] [2024-01-22T08:03:45.515Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2024-01-22T08:03:45.517Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/markandgaea/locations/us-central1/repositories/gcf-artifacts/packages/get_imagekit_keys [none]
+[debug] [2024-01-22T08:03:45.518Z] >>> [apiv2][query] GET https://us.gcr.io/v2/markandgaea/gcf/us-central1/tags/list [none]
+[debug] [2024-01-22T08:03:45.757Z] <<< [apiv2][status] GET https://us.gcr.io/v2/markandgaea/gcf/us-central1/tags/list 200
+[debug] [2024-01-22T08:03:45.757Z] <<< [apiv2][body] GET https://us.gcr.io/v2/markandgaea/gcf/us-central1/tags/list {"child":[],"manifest":{},"name":"markandgaea/gcf/us-central1","tags":[]}
+[debug] [2024-01-22T08:03:45.758Z] Could not find image for function projects/markandgaea/locations/us-central1/functions/getImagekitKeys
+[debug] [2024-01-22T08:03:45.866Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/markandgaea/locations/us-central1/repositories/gcf-artifacts/packages/get_imagekit_keys 403
+[debug] [2024-01-22T08:03:45.867Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/markandgaea/locations/us-central1/repositories/gcf-artifacts/packages/get_imagekit_keys {"error":{"code":403,"message":"This API method requires billing to be enabled. Please enable billing on project #markandgaea by visiting https://console.developers.google.com/billing/enable?project=markandgaea then retry. If you enabled billing for this project recently, wait a few minutes for the action to propagate to our systems and retry.","status":"PERMISSION_DENIED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Google developers console billing","url":"https://console.developers.google.com/billing/enable?project=markandgaea"}]},{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"BILLING_DISABLED","domain":"googleapis.com","metadata":{"service":"artifactregistry.googleapis.com","consumer":"projects/markandgaea"}}]}}
+[warn] !  functions: Unhandled error cleaning up build images. This could result in a small monthly bill if not corrected. You can attempt to delete these images by redeploying or you can delete them manually at https://console.cloud.google.com/artifacts/docker/markandgaea/us-central1/gcf-artifacts 
+[debug] [2024-01-22T08:03:45.869Z] Functions deploy failed.
+[debug] [2024-01-22T08:03:45.869Z] {
+  "endpoint": {
+    "id": "getImagekitKeys",
+    "project": "markandgaea",
+    "region": "us-central1",
+    "entryPoint": "getImagekitKeys",
+    "platform": "gcfv1",
+    "runtime": "nodejs18",
+    "httpsTrigger": {},
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "serviceAccount": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "vpc": null,
+    "environmentVariables": {
+      "IMAGEKIT_URL_ENDPOINT": "https://ik.imagekit.io/q5892cimh",
+      "IMAGEKIT_PUBLIC_KEY": "public_U+84wSvy4KOD2CrjW8tmPOtIoaY=",
+      "FIREBASE_CONFIG": "{\"projectId\":\"markandgaea\",\"storageBucket\":\"markandgaea.appspot.com\"}",
+      "GCLOUD_PROJECT": "markandgaea",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/markandgaea/locations/us-central1/functions/getImagekitKeys"
+    },
+    "codebase": "default",
+    "securityLevel": "SECURE_ALWAYS",
+    "targetedByOnly": false,
+    "hash": "0be61a9e03ee81b0112c6199249fe05ab1f1b927",
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    }
+  },
+  "op": "update",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "context": {
+      "function": "projects/markandgaea/locations/us-central1/functions/getImagekitKeys"
+    },
+    "exit": 1,
+    "message": "Failed to update function projects/markandgaea/locations/us-central1/functions/getImagekitKeys",
+    "original": {
+      "name": "FirebaseError",
+      "children": [],
+      "context": {
+        "body": {
+          "error": {
+            "code": 403,
+            "message": "Unable to retrieve the repository metadata for projects/markandgaea/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.",
+            "status": "PERMISSION_DENIED"
+          }
+        },
+        "response": {
+          "statusCode": 403
+        }
+      },
+      "exit": 1,
+      "message": "HTTP Error: 403, Unable to retrieve the repository metadata for projects/markandgaea/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.",
+      "status": 403
+    },
+    "status": 403,
+    "code": 403
+  }
+}
+[debug] [2024-01-22T08:03:45.957Z] Error: Failed to update function getImagekitKeys in region us-central1
+    at C:\Users\PAO\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:51:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Fabricator.updateV1Function (C:\Users\PAO\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:347:32)
+    at async Fabricator.updateEndpoint (C:\Users\PAO\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:151:13)
+    at async handle (C:\Users\PAO\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:88:17)
+[error] 
+[error] Error: There was an error deploying functions
+[debug] [2024-01-22T08:04:01.697Z] ----------------------------------------------------------------------
+[debug] [2024-01-22T08:04:01.700Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\PAO\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2024-01-22T08:04:01.700Z] CLI Version:   13.0.3
+[debug] [2024-01-22T08:04:01.700Z] Platform:      win32
+[debug] [2024-01-22T08:04:01.701Z] Node Version:  v18.12.1
+[debug] [2024-01-22T08:04:01.701Z] Time:          Mon Jan 22 2024 00:04:01 GMT-0800 (Pacific Standard Time)
+[debug] [2024-01-22T08:04:01.702Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-22T08:04:01.790Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-22T08:04:01.791Z] > authorizing via signed-in user (paolopaolobugarin@gmail.com)
+[debug] [2024-01-22T08:04:01.791Z] [iam] checking project markandgaea for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-01-22T08:04:01.794Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/markandgaea:testIamPermissions [none]
+[debug] [2024-01-22T08:04:01.794Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/markandgaea:testIamPermissions x-goog-quota-user=projects/markandgaea
+[debug] [2024-01-22T08:04:01.794Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/markandgaea:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-01-22T08:04:02.114Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/markandgaea:testIamPermissions 200
+[debug] [2024-01-22T08:04:02.115Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/markandgaea:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-01-22T08:04:02.115Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/markandgaea/serviceAccounts/markandgaea@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-01-22T08:04:02.115Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/markandgaea/serviceAccounts/markandgaea@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-01-22T08:04:02.444Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/markandgaea/serviceAccounts/markandgaea@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-01-22T08:04:02.444Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/markandgaea/serviceAccounts/markandgaea@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'markandgaea'...
+[info] 
+[info] i  deploying functions 
+[info] +  functions: Finished running predeploy script. 
+[debug] [2024-01-22T08:04:02.450Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea [none]
+[debug] [2024-01-22T08:04:02.778Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea 200
+[debug] [2024-01-22T08:04:02.778Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea {"projectId":"markandgaea","projectNumber":"592245000498","displayName":"markandgaea","name":"projects/markandgaea","resources":{"hostingSite":"markandgaea"},"state":"ACTIVE","etag":"1_cedc0cf0-5ce8-431b-b195-76b1adc841c8"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-01-22T08:04:02.780Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-01-22T08:04:02.780Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/markandgaea
+[debug] [2024-01-22T08:04:02.782Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-01-22T08:04:02.782Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/markandgaea
+[debug] [2024-01-22T08:04:02.783Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudbuild.googleapis.com [none]
+[debug] [2024-01-22T08:04:02.783Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudbuild.googleapis.com x-goog-quota-user=projects/markandgaea
+[debug] [2024-01-22T08:04:02.784Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/artifactregistry.googleapis.com [none]
+[debug] [2024-01-22T08:04:02.784Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/artifactregistry.googleapis.com x-goog-quota-user=projects/markandgaea
+[debug] [2024-01-22T08:04:03.205Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudbuild.googleapis.com 200
+[debug] [2024-01-22T08:04:03.206Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-01-22T08:04:03.210Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudfunctions.googleapis.com 200
+[debug] [2024-01-22T08:04:03.210Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-01-22T08:04:03.236Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/runtimeconfig.googleapis.com 200
+[debug] [2024-01-22T08:04:03.236Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-01-22T08:04:03.237Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/artifactregistry.googleapis.com 200
+[debug] [2024-01-22T08:04:03.237Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/markandgaea/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-01-22T08:04:03.238Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea/adminSdkConfig [none]
+[debug] [2024-01-22T08:04:03.569Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea/adminSdkConfig 200
+[debug] [2024-01-22T08:04:03.569Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea/adminSdkConfig {"projectId":"markandgaea","storageBucket":"markandgaea.appspot.com"}
+[debug] [2024-01-22T08:04:03.570Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/markandgaea/configs [none]
+[debug] [2024-01-22T08:04:03.763Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/markandgaea/configs 200
+[debug] [2024-01-22T08:04:03.763Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/markandgaea/configs {}
+[debug] [2024-01-22T08:04:03.764Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2024-01-22T08:04:05.610Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-01-22T08:04:05.610Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-01-22T08:04:05.611Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-01-22T08:04:05.625Z] Found firebase-functions binary at 'C:\Users\PAO\Desktop\MY PROJ\mark-and-gaea\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8290
+
+[debug] [2024-01-22T08:04:06.248Z] Got response from /__/functions.yaml {"endpoints":{"getImagekitKeys":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"getImagekitKeys"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] shutdown requested via /__/quitquitquit
+
+[info] i  functions: Loaded environment variables from .env. 
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged C:\Users\PAO\Desktop\MY PROJ\mark-and-gaea\functions (66.64 KB) for uploading 
+[debug] [2024-01-22T08:04:06.321Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/-/functions [none]
+[debug] [2024-01-22T08:04:06.698Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/-/functions 200
+[debug] [2024-01-22T08:04:06.698Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/-/functions {"functions":[{"name":"projects/markandgaea/locations/us-central1/functions/getImagekitKeys","httpsTrigger":{"url":"https://us-central1-markandgaea.cloudfunctions.net/getImagekitKeys","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"getImagekitKeys","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"markandgaea@appspot.gserviceaccount.com","updateTime":"2023-10-26T04:36:14.147Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"0194442b4b563cb05eae7a888cd88a1d7a712fd6"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/3dc650c4-72fb-46ec-a9dc-d7413cd0207a.zip","environmentVariables":{"IMAGEKIT_URL_ENDPOINT":"https://ik.imagekit.io/q5892cimh","IMAGEKIT_PUBLIC_KEY":"public_U+84wSvy4KOD2CrjW8tmPOtIoaY=","FIREBASE_CONFIG":"{\"projectId\":\"markandgaea\",\"storageBucket\":\"markandgaea.appspot.com\"}","GCLOUD_PROJECT":"markandgaea","EVENTARC_CLOUD_EVENT_SOURCE":"projects/markandgaea/locations/us-central1/functions/getImagekitKeys"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"64313904-cd9c-45ed-9ff2-2dc9688a91fb","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"buildName":"projects/592245000498/locations/us-central1/builds/64313904-cd9c-45ed-9ff2-2dc9688a91fb","dockerRegistry":"ARTIFACT_REGISTRY","automaticUpdatePolicy":{}}]}
+[debug] [2024-01-22T08:04:06.699Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/markandgaea/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2024-01-22T08:04:07.129Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/markandgaea/locations/-/functions 200
+[debug] [2024-01-22T08:04:07.129Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/markandgaea/locations/-/functions {}
+[debug] [2024-01-22T08:04:07.132Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea [none]
+[debug] [2024-01-22T08:04:07.424Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea 200
+[debug] [2024-01-22T08:04:07.424Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/markandgaea {"projectId":"markandgaea","projectNumber":"592245000498","displayName":"markandgaea","name":"projects/markandgaea","resources":{"hostingSite":"markandgaea"},"state":"ACTIVE","etag":"1_cedc0cf0-5ce8-431b-b195-76b1adc841c8"}
+[debug] [2024-01-22T08:04:07.425Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2024-01-22T08:04:07.425Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2024-01-22T08:04:07.881Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2024-01-22T08:04:07.881Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/bfb5fd80-727b-47cc-bc0b-b9fd9e00da93.zip?GoogleAccessId=service-592245000498@gcf-admin-robot.iam.gserviceaccount.com&Expires=1705912447&Signature=UB3bgvDeqXMKDe25yOu%2FRuwbY0EmZRnAwRpw93C10TRsl64oz9kkV8DI9zkVLrOZY68Hqnv%2BTIcWhoJZ9rNZW1TRy7CHPc8VbIrD0PFPqmPNc%2FrkLM6j7WcdFb%2FCx6Saty3YiyDn7EkNvZxCNccGqm0iRamZyzkoByu7Av6zy0s3mIZ6oUSMP7izlOJE%2B%2FX2%2FeJ9phWV%2Bh4Auo99rhkolk1BGzeLU%2BmmiqvaNrLAdpJVuVJ7X51ykvD4ZnlyMz1jnlDESoXSzkEIN2M9XUgswcgeZbxOuLHgne%2BMIxCT7LzHBwm3UvF6vg76WMJYS1S9M64Zhu4N8OT%2F3%2BheEWXrgg%3D%3D"}
+[debug] [2024-01-22T08:04:07.882Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/bfb5fd80-727b-47cc-bc0b-b9fd9e00da93.zip GoogleAccessId=service-592245000498%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1705912447&Signature=UB3bgvDeqXMKDe25yOu%2FRuwbY0EmZRnAwRpw93C10TRsl64oz9kkV8DI9zkVLrOZY68Hqnv%2BTIcWhoJZ9rNZW1TRy7CHPc8VbIrD0PFPqmPNc%2FrkLM6j7WcdFb%2FCx6Saty3YiyDn7EkNvZxCNccGqm0iRamZyzkoByu7Av6zy0s3mIZ6oUSMP7izlOJE%2B%2FX2%2FeJ9phWV%2Bh4Auo99rhkolk1BGzeLU%2BmmiqvaNrLAdpJVuVJ7X51ykvD4ZnlyMz1jnlDESoXSzkEIN2M9XUgswcgeZbxOuLHgne%2BMIxCT7LzHBwm3UvF6vg76WMJYS1S9M64Zhu4N8OT%2F3%2BheEWXrgg%3D%3D
+[debug] [2024-01-22T08:04:07.882Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/bfb5fd80-727b-47cc-bc0b-b9fd9e00da93.zip [stream]
+[debug] [2024-01-22T08:04:08.202Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/bfb5fd80-727b-47cc-bc0b-b9fd9e00da93.zip 200
+[debug] [2024-01-22T08:04:08.202Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/bfb5fd80-727b-47cc-bc0b-b9fd9e00da93.zip [omitted]
+[info] +  functions: functions folder uploaded successfully 
+[info] i  functions: updating Node.js 18 (1st Gen) function getImagekitKeys(us-central1)... 
+[debug] [2024-01-22T08:04:08.211Z] >>> [apiv2][query] PATCH https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions/getImagekitKeys updateMask=name%2CsourceUploadUrl%2CentryPoint%2Cruntime%2CdockerRegistry%2Clabels%2ChttpsTrigger.securityLevel%2CminInstances%2CmaxInstances%2CingressSettings%2CenvironmentVariables%2CserviceAccountEmail%2CavailableMemoryMb%2Ctimeout%2CvpcConnector%2CvpcConnectorEgressSettings%2CsourceToken%2CbuildEnvironmentVariables
+[debug] [2024-01-22T08:04:08.211Z] >>> [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions/getImagekitKeys {"name":"projects/markandgaea/locations/us-central1/functions/getImagekitKeys","sourceUploadUrl":"https://storage.googleapis.com/uploads-39432387362.us-central1.cloudfunctions.appspot.com/bfb5fd80-727b-47cc-bc0b-b9fd9e00da93.zip?GoogleAccessId=service-592245000498@gcf-admin-robot.iam.gserviceaccount.com&Expires=1705912447&Signature=UB3bgvDeqXMKDe25yOu%2FRuwbY0EmZRnAwRpw93C10TRsl64oz9kkV8DI9zkVLrOZY68Hqnv%2BTIcWhoJZ9rNZW1TRy7CHPc8VbIrD0PFPqmPNc%2FrkLM6j7WcdFb%2FCx6Saty3YiyDn7EkNvZxCNccGqm0iRamZyzkoByu7Av6zy0s3mIZ6oUSMP7izlOJE%2B%2FX2%2FeJ9phWV%2Bh4Auo99rhkolk1BGzeLU%2BmmiqvaNrLAdpJVuVJ7X51ykvD4ZnlyMz1jnlDESoXSzkEIN2M9XUgswcgeZbxOuLHgne%2BMIxCT7LzHBwm3UvF6vg76WMJYS1S9M64Zhu4N8OT%2F3%2BheEWXrgg%3D%3D","entryPoint":"getImagekitKeys","runtime":"nodejs18","dockerRegistry":"ARTIFACT_REGISTRY","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"0be61a9e03ee81b0112c6199249fe05ab1f1b927"},"httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"minInstances":null,"maxInstances":null,"ingressSettings":null,"environmentVariables":{"IMAGEKIT_URL_ENDPOINT":"https://ik.imagekit.io/q5892cimh","IMAGEKIT_PUBLIC_KEY":"public_U+84wSvy4KOD2CrjW8tmPOtIoaY=","FIREBASE_CONFIG":"{\"projectId\":\"markandgaea\",\"storageBucket\":\"markandgaea.appspot.com\"}","GCLOUD_PROJECT":"markandgaea","EVENTARC_CLOUD_EVENT_SOURCE":"projects/markandgaea/locations/us-central1/functions/getImagekitKeys"},"serviceAccountEmail":null,"availableMemoryMb":null,"timeout":null,"vpcConnector":null,"vpcConnectorEgressSettings":null,"buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}}
+[debug] [2024-01-22T08:04:08.488Z] <<< [apiv2][status] PATCH https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions/getImagekitKeys 403
+[debug] [2024-01-22T08:04:08.489Z] <<< [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v1/projects/markandgaea/locations/us-central1/functions/getImagekitKeys {"error":{"code":403,"message":"Unable to retrieve the repository metadata for projects/markandgaea/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.","status":"PERMISSION_DENIED"}}
+[warn] !  functions: failed to update function projects/markandgaea/locations/us-central1/functions/getImagekitKeys 
+[error] Failed to update function projects/markandgaea/locations/us-central1/functions/getImagekitKeys
+[debug] [2024-01-22T08:04:08.494Z] Total Function Deployment time: 282
+[debug] [2024-01-22T08:04:08.494Z] 1 Functions Deployed
+[debug] [2024-01-22T08:04:08.494Z] 1 Functions Errored
+[debug] [2024-01-22T08:04:08.494Z] 0 Function Deployments Aborted
+[debug] [2024-01-22T08:04:08.494Z] Average Function Deployment time: 281
+[info] 
+[info] Functions deploy had errors with the following functions:
+	getImagekitKeys(us-central1)
+[debug] [2024-01-22T08:04:08.591Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2024-01-22T08:04:08.593Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/markandgaea/locations/us-central1/repositories/gcf-artifacts/packages/get_imagekit_keys [none]
+[debug] [2024-01-22T08:04:08.593Z] >>> [apiv2][query] GET https://us.gcr.io/v2/markandgaea/gcf/us-central1/tags/list [none]
+[debug] [2024-01-22T08:04:08.813Z] <<< [apiv2][status] GET https://us.gcr.io/v2/markandgaea/gcf/us-central1/tags/list 200
+[debug] [2024-01-22T08:04:08.813Z] <<< [apiv2][body] GET https://us.gcr.io/v2/markandgaea/gcf/us-central1/tags/list {"child":[],"manifest":{},"name":"markandgaea/gcf/us-central1","tags":[]}
+[debug] [2024-01-22T08:04:08.813Z] Could not find image for function projects/markandgaea/locations/us-central1/functions/getImagekitKeys
+[debug] [2024-01-22T08:04:08.944Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/markandgaea/locations/us-central1/repositories/gcf-artifacts/packages/get_imagekit_keys 403
+[debug] [2024-01-22T08:04:08.944Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/markandgaea/locations/us-central1/repositories/gcf-artifacts/packages/get_imagekit_keys {"error":{"code":403,"message":"This API method requires billing to be enabled. Please enable billing on project #markandgaea by visiting https://console.developers.google.com/billing/enable?project=markandgaea then retry. If you enabled billing for this project recently, wait a few minutes for the action to propagate to our systems and retry.","status":"PERMISSION_DENIED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Google developers console billing","url":"https://console.developers.google.com/billing/enable?project=markandgaea"}]},{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"BILLING_DISABLED","domain":"googleapis.com","metadata":{"service":"artifactregistry.googleapis.com","consumer":"projects/markandgaea"}}]}}
+[warn] !  functions: Unhandled error cleaning up build images. This could result in a small monthly bill if not corrected. You can attempt to delete these images by redeploying or you can delete them manually at https://console.cloud.google.com/artifacts/docker/markandgaea/us-central1/gcf-artifacts 
+[debug] [2024-01-22T08:04:08.945Z] Functions deploy failed.
+[debug] [2024-01-22T08:04:08.945Z] {
+  "endpoint": {
+    "id": "getImagekitKeys",
+    "project": "markandgaea",
+    "region": "us-central1",
+    "entryPoint": "getImagekitKeys",
+    "platform": "gcfv1",
+    "runtime": "nodejs18",
+    "httpsTrigger": {},
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "serviceAccount": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "vpc": null,
+    "environmentVariables": {
+      "IMAGEKIT_URL_ENDPOINT": "https://ik.imagekit.io/q5892cimh",
+      "IMAGEKIT_PUBLIC_KEY": "public_U+84wSvy4KOD2CrjW8tmPOtIoaY=",
+      "FIREBASE_CONFIG": "{\"projectId\":\"markandgaea\",\"storageBucket\":\"markandgaea.appspot.com\"}",
+      "GCLOUD_PROJECT": "markandgaea",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/markandgaea/locations/us-central1/functions/getImagekitKeys"
+    },
+    "codebase": "default",
+    "securityLevel": "SECURE_ALWAYS",
+    "targetedByOnly": false,
+    "hash": "0be61a9e03ee81b0112c6199249fe05ab1f1b927",
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    }
+  },
+  "op": "update",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "context": {
+      "function": "projects/markandgaea/locations/us-central1/functions/getImagekitKeys"
+    },
+    "exit": 1,
+    "message": "Failed to update function projects/markandgaea/locations/us-central1/functions/getImagekitKeys",
+    "original": {
+      "name": "FirebaseError",
+      "children": [],
+      "context": {
+        "body": {
+          "error": {
+            "code": 403,
+            "message": "Unable to retrieve the repository metadata for projects/markandgaea/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.",
+            "status": "PERMISSION_DENIED"
+          }
+        },
+        "response": {
+          "statusCode": 403
+        }
+      },
+      "exit": 1,
+      "message": "HTTP Error: 403, Unable to retrieve the repository metadata for projects/markandgaea/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.",
+      "status": 403
+    },
+    "status": 403,
+    "code": 403
+  }
+}
+[debug] [2024-01-22T08:04:09.040Z] Error: Failed to update function getImagekitKeys in region us-central1
+    at C:\Users\PAO\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:51:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Fabricator.updateV1Function (C:\Users\PAO\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:347:32)
+    at async Fabricator.updateEndpoint (C:\Users\PAO\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:151:13)
+    at async handle (C:\Users\PAO\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:88:17)
+[error] 
+[error] Error: There was an error deploying functions

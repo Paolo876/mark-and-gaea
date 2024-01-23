@@ -47,10 +47,10 @@ export const AppContextProvider = ({ children }) => {
     }, [documents]);
 
     const init = async () => {
-        const { data } = await httpsCallable(functions, "getImagekitKeys")()
+        // const { data } = await httpsCallable(functions, "getImagekitKeys")()
         // getImagekitKeys
         // dispatch({ type: 'INIT', payload: { imagekitKeys: data, isLoading: false }})
-        dispatch({ type: 'INIT', payload: { imagekitKeys: data }})
+        dispatch({ type: 'INIT', payload: { imagekitKeys: {} }})    //temporary fix
 
         //get images
         dispatch({ type: 'SET_DATA', payload: documents.images })
